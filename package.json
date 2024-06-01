@@ -1,0 +1,15 @@
+{
+  "name": "Corbin's Site",
+  "version": "1.0.0",
+  "description": "Website for Corbin Davenport",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "None",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

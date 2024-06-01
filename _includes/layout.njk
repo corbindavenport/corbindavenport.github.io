@@ -1,0 +1,71 @@
+---
+title: Corbin Davenport
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ title }}</title>
+	<meta name="description" content="Corbin Davenport is a software developer, tech journalist, and podcast host.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="corbin, davenport, corbin davenport">
+	<meta name="language" content="English">
+	<meta name="supported-color-schemes" content="dark light">
+	<link rel="stylesheet" type="text/css" href="/media/styles.css">
+	<link rel="icon" type="image/png" href="/media/icon_x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/media/icon_x64.png" sizes="64x64">
+	<link rel="icon" type="image/png" href="/media/icon_x128.png" sizes="128x128">
+	<!--[if lte IE 8]>
+	<script>
+	document.createElement('main'); 
+	document.createElement('nav'); 
+	</script>
+	<![endif]-->
+	<!-- Analytics -->
+	<script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
+	<!-- Open Graph card -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ title }}" />
+	<meta property="og:description" content="Corbin Davenport is a software developer, tech journalist, and podcast host." />
+	<meta property="og:image" content="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500" />
+	<meta property="og:image:width" content="400" />
+	<meta property="og:image:height" content="400" />
+	<meta name="og:image:alt" content="Corbin's profile photo" />
+	<meta name="twitter:card" content="summary" />
+	<!-- RSS feeds -->
+	<link rel="alternate" type="application/rss+xml" title="Corbin's blog" href="https://blog.corbin.io/rss" />
+	<link rel="alternate" type="application/rss+xml" title="The Spacebar" href="https://www.spacebar.news/feed" />
+	<link rel="alternate" type="application/rss+xml" title="Tech Tales Podcast" href="https://feeds.soundcloud.com/users/soundcloud:users:971533159/sounds.rss" />
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/about">About</a>
+			</li>
+			<li>
+				<a href="/software">Software</a>
+			</li>
+			<li>
+				<a href="/podcast">Tech Tales</a>
+			</li>
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+		</ul>
+	</nav>
+
+	<main>
+		{{ content | safe }}
+	</main>
+
+</body>
+
+</html>
