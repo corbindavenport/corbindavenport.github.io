@@ -141,6 +141,20 @@ a.btn-container img:hover {
 
 }
 
+/* Smaller screens in landscape mode */
+
+@media screen and (max-height: 500px) {
+
+    nav {
+        margin-bottom: 0;
+    }
+
+    main {
+        padding-top: 0;
+    }
+
+}
+
 /* Compact screens */
 
 @media screen and (max-width: 600px) {
