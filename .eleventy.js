@@ -6,6 +6,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("robots.txt");
     // Add media folder to site
     eleventyConfig.addPassthroughCopy("media");
+    // Add main JS
+    eleventyConfig.addPassthroughCopy("main.js");
     // Download button shortcode
     eleventyConfig.addShortcode("downloadBtn", function (platform, url) {
         var html = '';
