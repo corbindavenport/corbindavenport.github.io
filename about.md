@@ -8,13 +8,13 @@ permalink: "about/index.html"
 
 {% photo %}
 
-Corbin Davenport is a tech journalist, independent software developer, and podcaster living in Raleigh, North Carolina. He currently works for [How-To Geek](https://www.howtogeek.com/) as News Editor, hosts the [Tech Tales podcast](https://techtalesshow.com), and maintains over a dozen open-source web apps, browser extensions, and utilities.
+I'm a tech journalist, independent software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/) as News Editor, host the [Tech Tales podcast](https://techtalesshow.com), and maintain over a dozen open-source web apps, browser extensions, and utilities.
 
-Corbin previously worked as a writer at XDA Developers, PC Gamer, and Android Police, after running a Minecraft fan blog called Powered by Redstone. He likes science fiction, photography, games, retro computers, and obscure trivia about Disney parks.
+I previously worked as a writer at XDA Developers, PC Gamer, and Android Police, after running a Minecraft fan blog called Powered by Redstone. I like science fiction, photography, games, retro computers, and obscure trivia about Disney parks.
 
 ### Profiles
 
-Corbin is usually `corbindavenport`, `Corbin_Davenport`, or `corbindav` online. This is a list of all official accounts, if it's not here it might be [a fake](https://www.youtube.com/watch?v=H6yQOs93Cgg).
+I'm usually `corbindavenport`, `Corbin_Davenport`, or `corbindav` online. This is a list of all official accounts, if it's not here it might be [a fake](https://www.youtube.com/watch?v=H6yQOs93Cgg).
 
 - [Mastodon](https://toot.community/@corbin)
 - [Bluesky](https://bsky.app/profile/corbin.io)
