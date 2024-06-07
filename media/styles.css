@@ -19,7 +19,7 @@ body {
     background-color: #FAFAFA;
     color: #424242;
     font-family: "MS Sans Serif", "Geneva", sans-serif;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 30px;
 }
 
@@ -127,12 +127,21 @@ a.btn-container img:hover {
     border: 3px solid #424242;
 }
 
+.fickr-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10px 20px;
+}
+
 /* Smaller desktop and tablet screens */
 
 @media screen and (max-width: 800px) {
 
     body {
-        font-size: 21px;
+        font-size: 18px;
     }
 
     nav {

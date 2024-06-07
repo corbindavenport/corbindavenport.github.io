@@ -10,7 +10,15 @@ permalink: "about/index.html"
 
 I'm a tech journalist, independent software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/) as News Editor, host the [Tech Tales podcast](https://techtalesshow.com), and maintain over a dozen open-source web apps, browser extensions, and utilities.
 
-I previously worked as a writer at XDA Developers, PC Gamer, and Android Police, after running a Minecraft fan blog called Powered by Redstone. I like science fiction, photography, games, retro computers, and obscure trivia about Disney parks.
+I previously worked as a writer at XDA Developers, PC Gamer, and Android Police. I like science fiction, photography, games, and retro computing.
+
+### Recently watched movies
+
+{% letterboxd %}
+
+### Recent photos
+
+{% flickr %}
 
 ### Profiles
 
@@ -31,4 +39,5 @@ I'm usually `corbindavenport`, `Corbin_Davenport`, or `corbindav` online. This i
 - [VRChat](https://vrchat.com/home/user/usr_403a92a2-9e52-4c00-ac74-85b204d4198b)
 - [YouTube channel](https://www.youtube.com/@corbindavenport)
 - [MacRumors Forum](https://forums.macrumors.com/members/corbindav.1320438/)
+- [Letterboxd](https://letterboxd.com/corbindavenport/)
 - [Twitter/X](https://twitter.com/corbindavenport) (inactive)

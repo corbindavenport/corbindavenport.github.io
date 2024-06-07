@@ -1,3 +1,7 @@
+
+const Parser = require('rss-parser');
+const parser = new Parser();
+
 // Eleventy configuration
 module.exports = function (eleventyConfig) {
     // Add favicon to site
@@ -27,5 +31,29 @@ module.exports = function (eleventyConfig) {
     // Redirect shortcode
     eleventyConfig.addShortcode("redirect", function (url) {
         return `<p>You are being redirected...</p><meta http-equiv="refresh" content="0; url=${url}" />`
+    });
+    // Letterboxd shortcode
+    eleventyConfig.addShortcode("letterboxd", async function (url) {
+        let html = '';
+        let feed = await parser.parseURL('https://letterboxd.com/corbindavenport/rss/');
+        console.log('Parsed feed:', feed);
+        for (let i = 0; i < Math.min(feed.items.length, 5); i++) {
+            let review = feed.items[i];
+            html += '<p><a href="' + review.link + '" target="_blank" rel="nofollow">' + review.title + '</a><br /><i>' + review.contentSnippet + '</i></p>';
+        }
+        return html;
+    });
+    // Flickr shortcode
+    eleventyConfig.addShortcode("flickr", async function (url) {
+        let html = '<div class="fickr-images">';
+        const regex = /<img src="(https:\/\/live\.staticflickr\.com\/\d+\/\d+_[a-zA-Z0-9]+_m\.jpg)"/;
+        let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
+        console.log('Parsed feed:', feed);
+        for (let i = 0; i < Math.min(feed.items.length, 6); i++) {
+            let photo = feed.items[i];
+            html += '<a href="' + photo.link + '" target="_blank" rel="nofollow"><img src="' + photo.content.match(regex)[1] + '" alt="' + photo.title + '" /></a>';
+        }
+        html += '</div>';
+        return html;
     });
 };
