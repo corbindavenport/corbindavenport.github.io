@@ -25,6 +25,10 @@ PhotoStack is a batch photo editor with offline support, advanced watermarking, 
 
 ImageShare is a lightweight web app for uploading images. It was originally designed as a replacement for the Nintendo 3DS Image Share Service, accessible through the Nintendo 3DS/2DS Browser, but it also works on many other basic/legacy web browsers.
 
+### [Snappy](https://thesnappy.app)
+
+Snappy is a web app for capturing automatic screenshots, inspired by AutoScreenCap. The user can select a window, screen, or browser tab, then start the capture to automatically save an image to local storage on a specified interval. It can even capture background tabs, which are normally not accessible to screenshot tools.
+
 Browser extensions
 ------------------
 
@@ -46,15 +50,27 @@ Picture-in-Picture Shortcut adds a keyboard shortcut and toolbar button for swit
 
 {% downloadBtn "chrome" "https://chromewebstore.google.com/detail/picture-in-picture-shortc/ednlokepbjfieampgfdabeglnceoheni" %} {% downloadBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/pictureinpicture-shortc/mmgmhaokamemfnkmfdhnkkjmpbfmlpck" %}
 
+### [Alt Text Creator](https://github.com/corbindavenport/alt-text-creator)
+
+Alt Text Creator is a browser extension that generates alternate text for images using the GPT-4 with Vision model from OpenAI. It uses an API key supplied by the user, without any extra costs.
+
+{% downloadBtn "chrome" "https://chromewebstore.google.com/detail/alt-text-creator-with-gpt/nlahkceofkdggfgfpheakpaphdfplaio" %} {% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/alt-text-creator/" %}
+
 ### [Wikipedia Search](https://github.com/corbindavenport/wikipedia-search)
 
 Wikipedia Search adds the ability to search Wikipedia straight from the address bar. You can also right-click a selected word or phrase to perform a search.
 
 {% downloadBtn "chrome" "https://chrome.google.com/webstore/detail/wikipedia-search/lipakennkogpodadpikgipnogamhklmk" %}
 
-Other
+Other projects
 -----
 
 ### [Nexus Tools](https://github.com/corbindavenport/nexus-tools)
 
 Nexus Tools is an installer for Google's [Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools) package, which includes ADB, Fastboot, and other applications. Nexus Tools is writen in Dart, and can run on Linux, macOS, Windows, Windows Subsystem for Linux, and Chrome OS with a single installation command.
+
+### [Cupertino](https://github.com/corbindavenport/cupertino)
+
+Cupertino is a theme for the Mozilla Firefox browser designed to match the macOS color scheme and design. It provides a slightly more native look and feel for Firefox on Mac computers, inspired by the design of Apple Safari, and it supports both light and dark modes.
+
+{% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/cupertino-theme/" %}
