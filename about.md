@@ -22,13 +22,13 @@ I previously worked as a writer at XDA Developers, PC Gamer, and Android Police.
 
 **Phone:** iPhone 15
 
-### Recently watched movies
-
-{% letterboxd %}
-
 ### Recent photos
 
 {% flickr %}
+
+### Recently watched movies
+
+{% letterboxd %}
 
 ### Profiles
 
