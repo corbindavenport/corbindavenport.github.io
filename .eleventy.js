@@ -39,7 +39,11 @@ module.exports = function (eleventyConfig) {
         console.log('Parsed feed:', feed);
         for (let i = 0; i < Math.min(feed.items.length, 5); i++) {
             let review = feed.items[i];
-            html += '<p><a href="' + review.link + '" target="_blank" rel="nofollow">' + review.title + '</a><br /><i>' + review.contentSnippet + '</i></p>';
+            let snippet = review.contentSnippet;
+            if (snippet.length > 300) {
+                snippet = snippet.substring(0, 300) + '...';
+            }
+            html += '<p><a href="' + review.link + '" target="_blank" rel="nofollow">' + review.title + '</a><br /><i>' + snippet + '</i></p>';
         }
         return html;
     });
