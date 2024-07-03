@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("letterboxd", async function (url) {
         let html = '';
         let feed = await parser.parseURL('https://letterboxd.com/corbindavenport/rss/');
-        console.log('Parsed feed:', feed);
+        // console.log('Parsed feed:', feed);
         for (let i = 0; i < Math.min(feed.items.length, 5); i++) {
             let review = feed.items[i];
             let snippet = review.contentSnippet;
@@ -52,7 +52,7 @@ module.exports = function (eleventyConfig) {
         let html = '<div class="fickr-images">';
         const regex = /<img src="(https:\/\/live\.staticflickr\.com\/\d+\/\d+_[a-zA-Z0-9]+_m\.jpg)"/;
         let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
-        console.log('Parsed feed:', feed);
+        // console.log('Parsed feed:', feed);
         for (let i = 0; i < Math.min(feed.items.length, 6); i++) {
             let photo = feed.items[i];
             html += '<a href="' + photo.link + '" target="_blank" rel="nofollow"><img src="' + photo.content.match(regex)[1] + '" alt="' + photo.title + '" /></a>';

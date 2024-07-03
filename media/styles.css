@@ -107,6 +107,11 @@ a:focus {
     outline: 2px solid #03A9F4;
     outline-offset: 2px;
     transition: none;
+    text-decoration: none;
+}
+
+nav ul li a:focus {
+    outline-offset: 0px;
 }
 
 nav ul li a:hover {
@@ -134,9 +139,11 @@ a.btn-container img:hover {
     float: right;
     border-radius: 50%;
     width: 25%;
-    margin-left: 30px;
+    margin: 0 0 25px 25px;
     border: 3px solid #424242;
 }
+
+/* Flickr image gallery */
 
 .fickr-images {
     display: flex;
@@ -145,6 +152,15 @@ a.btn-container img:hover {
     justify-content: space-between;
     align-items: stretch;
     gap: 10px 20px;
+}
+
+.fickr-images a {
+    flex-grow: 1;
+}
+
+.fickr-images a img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* Smaller desktop and tablet screens */

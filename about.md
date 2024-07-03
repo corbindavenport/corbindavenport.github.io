@@ -4,7 +4,7 @@ title: About
 permalink: "about/index.html"
 ---
 
-# About Corbin 📗
+# About Me 👨‍💻
 
 {% photo %}
 
