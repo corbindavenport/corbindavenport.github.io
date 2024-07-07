@@ -55,7 +55,8 @@ module.exports = function (eleventyConfig) {
         // console.log('Parsed feed:', feed);
         for (let i = 0; i < Math.min(feed.items.length, 6); i++) {
             let photo = feed.items[i];
-            html += '<a href="' + photo.link + '" target="_blank" rel="nofollow"><img src="' + photo.content.match(regex)[1] + '" alt="' + photo.title + '" /></a>';
+            let photoUrl = photo.content.match(regex)[1].replace('_m', '')
+            html += '<a href="' + photo.link + '" target="_blank" rel="nofollow"><img loading="lazy" src="' + photoUrl + '" alt="' + photo.title + '" /></a>';
         }
         html += '</div>';
         return html;

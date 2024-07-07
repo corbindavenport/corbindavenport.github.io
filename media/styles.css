@@ -156,6 +156,7 @@ a.btn-container img:hover {
 
 .fickr-images a {
     flex-grow: 1;
+    flex-basis: 30%;
 }
 
 .fickr-images a img {
@@ -212,6 +213,22 @@ a.btn-container img:hover {
         font-size: 16px;
         height: 30px;
         line-height: 30px;
+    }
+
+    .fickr-images a {
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
+
+}
+
+/* Compact screens */
+
+@media screen and (max-width: 400px) {
+
+    .fickr-images a {
+        flex-grow: 1;
+        flex-basis: 70%;
     }
 
 }
