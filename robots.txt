@@ -8,3 +8,4 @@ Disallow: /vault/*
 Disallow: /noplugin/*
 Disallow: /planr/*
 Disallow: /rockwell/*
+Disallow: /superembed.js/*
