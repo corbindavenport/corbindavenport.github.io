@@ -8,7 +8,7 @@ permalink: "about/index.html"
 
 {% photo %}
 
-I'm a tech journalist, independent software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/) as News Editor, host the [Tech Tales podcast](https://techtalesshow.com), and maintain over a dozen open-source web apps, browser extensions, and utilities.
+I'm a tech journalist, independent software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/author/corbindavenport/) as News Editor, host the [Tech Tales podcast](https://techtalesshow.com), and maintain over a dozen open-source web apps, browser extensions, and utilities.
 
 I previously worked as a writer at XDA Developers, PC Gamer, and Android Police. I like science fiction, photography, games, and retro computing.
 
