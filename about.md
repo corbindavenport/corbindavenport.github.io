@@ -51,4 +51,5 @@ I'm usually `corbindavenport`, `Corbin_Davenport`, or `corbindav` online. This i
 - [YouTube channel](https://www.youtube.com/@corbindavenport)
 - [MacRumors Forum](https://forums.macrumors.com/members/corbindav.1320438/)
 - [Letterboxd](https://letterboxd.com/corbindavenport/)
+- [TikTok](https://www.tiktok.com/@corbindavenport)
 - [Twitter/X](https://twitter.com/corbindavenport) (inactive)
