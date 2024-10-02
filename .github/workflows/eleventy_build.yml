@@ -23,7 +23,7 @@ jobs:
       run: npm install
 
     - name: Build site
-      uses: TartanLlama/actions-eleventy@master
+      run: npx @11ty/eleventy
 
     - name: Update pages artifact
       uses: actions/upload-pages-artifact@v3.0.1
