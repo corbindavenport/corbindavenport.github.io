@@ -10,7 +10,7 @@
   "author": "",
   "license": "None",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "2.0.1"
   },
   "dependencies": {
     "rss-parser": "^3.13.0"
