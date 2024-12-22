@@ -23,7 +23,7 @@ PhotoStack is a batch photo editor with offline support, advanced watermarking, 
 
 ### [ImageShare](https://imgshare.corbin.io/)
 
-ImageShare is a lightweight web app for uploading images. It was originally designed as a replacement for the Nintendo 3DS Image Share Service, accessible through the Nintendo 3DS/2DS Browser, but it also works on many other basic/legacy web browsers.
+ImageShare is a web app for sending images and videos to another device, designed for low-end and legacy web browsers. It supports both HTTP and HTTPS, uses QR codes and shortlinks for transfers, and has a static design for fast performance. ImageShare was originally designed as a replacement for the [Nintendo 3DS Image Share Service](https://web.archive.org/web/20170822055326/https://www.nintendo.com/3ds/image-share), and has additional features on Nintendo Wii U and 3DS consoles.
 
 ### [Snappy](https://thesnappy.app)
 
