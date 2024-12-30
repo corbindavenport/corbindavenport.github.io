@@ -5,6 +5,6 @@ title: Corbin Davenport
 
 # Hi, I'm Corbin 👋
 
-I'm a tech journalist and software developer. I created [The Spacebar](https://www.spacebar.news/) blog and newsletter, as well as the [Tech Tales podcast](https://techtalesshow.com/?utm_source=corbin.io).
+I'm a tech journalist and software developer. I created [The Spacebar](https://www.spacebar.news/#/portal/signup) blog and newsletter, as well as the [Tech Tales podcast](https://techtalesshow.com/).
 
-You can follow me on [Mastodon](https://toot.community/@corbin) and [Bluesky](https://bsky.app/profile/corbin.io). I also have [a personal blog](https://blog.corbin.io).
+You can follow me on [Bluesky](https://bsky.app/profile/corbin.io), [Mastodon](https://toot.community/@corbin), and [LinkedIn](https://www.linkedin.com/in/corbindavenport/). I also have [a personal blog](https://blog.corbin.io).

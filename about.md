@@ -4,23 +4,13 @@ title: About
 permalink: "about/index.html"
 ---
 
-# About Me 👨‍💻
+# About Me 📓
 
 {% photo %}
 
 I'm a tech journalist, independent software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/author/corbindavenport/) as News Editor, host the [Tech Tales podcast](https://techtalesshow.com), and maintain over a dozen open-source web apps, browser extensions, and utilities.
 
-I previously worked as a writer at XDA Developers, PC Gamer, and Android Police.
-
-### My tech
-
-**Desktop:** 2020 M1 Mac Mini (16GB RAM, 512GB SSD), Dell UltraSharp U2913WM monitor, Logitech MX Keys Mini keyboard, Logitech Lift mouse, Blue Yeti microphone
-
-**Gaming PC:** Ryzen 5 1600 CPU, 16GB RAM, 500GB Samsung 960 SSD, 1TB Samsung 860 Evo SSD, Zotac GTX 1080 Mini, Thermaltake Core V1 case
-
-**Laptop:** 2020 M1 MacBook Air (8GB RAM, 512GB SSD)
-
-**Phone:** iPhone 15
+I previously worked as a writer at XDA Developers, PC Gamer, and Android Police. I also made a Minecraft blog years ago called Powered by Redstone and Redstone Central.
 
 ### Recent photos
 
@@ -28,7 +18,11 @@ I previously worked as a writer at XDA Developers, PC Gamer, and Android Police.
 
 ### Recently watched movies
 
-{% letterboxd %}
+{% rssFeed "https://letterboxd.com/corbindavenport/rss/" %}
+
+### Recent code activity
+
+{% rssFeed "https://github.com/corbindavenport.atom" false true %}
 
 ### Profiles
 
@@ -51,5 +45,4 @@ I'm usually `corbindavenport`, `Corbin_Davenport`, or `corbindav` online. This i
 - [YouTube channel](https://www.youtube.com/@corbindavenport)
 - [MacRumors Forum](https://forums.macrumors.com/members/corbindav.1320438/)
 - [Letterboxd](https://letterboxd.com/corbindavenport/)
-- [TikTok](https://www.tiktok.com/@corbindavenport)
 - [Twitter/X](https://twitter.com/corbindavenport) (inactive)

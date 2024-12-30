@@ -2,6 +2,12 @@
 const Parser = require('rss-parser');
 const parser = new Parser();
 
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
 // Eleventy configuration
 module.exports = function (eleventyConfig) {
     // Add favicon to site
@@ -32,20 +38,41 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("redirect", function (url) {
         return `<p>You are being redirected...</p><meta http-equiv="refresh" content="0; url=${url}" />`
     });
-    // Letterboxd shortcode
-    eleventyConfig.addShortcode("letterboxd", async function (url) {
-        let html = '';
-        let feed = await parser.parseURL('https://letterboxd.com/corbindavenport/rss/');
-        // console.log('Parsed feed:', feed);
-        for (let i = 0; i < Math.min(feed.items.length, 5); i++) {
-            let review = feed.items[i];
-            let snippet = review.contentSnippet;
-            if (snippet.length > 300) {
-                snippet = snippet.substring(0, 300) + '...';
+    // RSS feed shortcode
+    eleventyConfig.addShortcode("rssFeed", async function (url, showDescription = true, showDate = false) {
+        try {
+            let html = '';
+            let feed = await parser.parseURL(url);
+            // console.log('Parsed feed:', feed);
+            for (let i = 0; i < Math.min(feed.items.length, 5); i++) {
+                let item = feed.items[i];
+                let title = item.title;
+                let description = item.contentSnippet;
+                // Remove username from title on GitHub feeds
+                if (url.includes('github.com/')) {
+                    // Get GitHub username
+                    const username = url.split("/")[3].split(".")[0];
+                    title = title.replace(`${username} `, '');
+                }
+                // Shorten description
+                if (description.length > 230) {
+                    description = description.substring(0, 230) + '...';
+                }
+                // Return generated snippet
+                html += `<p><a href="${item.link}" target="_blank" rel="nofollow">${title}</a>`;
+                if (showDate && Object.hasOwn(item, 'isoDate')) {
+                    html += ` (${formatDate(item.isoDate)})`;
+                }
+                if (showDescription) {
+                    html += `<br /><i>${description}</i>`;
+                }
+                html += `</p>`;
             }
-            html += '<p><a href="' + review.link + '" target="_blank" rel="nofollow">' + review.title + '</a><br /><i>' + snippet + '</i></p>';
+            return html;
+        } catch (e) {
+            console.error(e);
+            return 'There was an error loading this content.';
         }
-        return html;
     });
     // Flickr shortcode
     eleventyConfig.addShortcode("flickr", async function (url) {
