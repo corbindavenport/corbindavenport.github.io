@@ -57,9 +57,9 @@ h3,
 h4,
 h5,
 h6 {
+    color: #597445;
     /* Fix broken line height on headers */
     line-height: initial;
-    color: #597445;
 }
 
 main ul,
@@ -281,12 +281,22 @@ a.btn-container img:hover {
     body,
     nav {
         background-color: #262626;
+    }
+
+    body,
+    nav,
+    a {
         color: #FAFAFA;
     }
 
-    a:hover,
-    nav ul li a:hover {
-        color: #9adefe;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a:hover {
+        color: #729762;
     }
 
 }
