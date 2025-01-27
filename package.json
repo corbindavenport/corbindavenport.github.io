@@ -10,10 +10,11 @@
   "author": "",
   "license": "None",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.1"
+    "@11ty/eleventy": "3.0.0"
   },
   "dependencies": {
     "jsdom": "^26.0.0",
+    "npm-check-updates": "^17.1.14",
     "rss-parser": "^3.13.0"
   }
 }
