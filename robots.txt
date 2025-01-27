@@ -9,3 +9,7 @@ Disallow: /noplugin/*
 Disallow: /planr/*
 Disallow: /rockwell/*
 Disallow: /superembed.js/*
+
+# Hidden pages
+User-agent: *
+Disallow: /portfolio*

@@ -13,6 +13,7 @@
     "@11ty/eleventy": "2.0.1"
   },
   "dependencies": {
+    "jsdom": "^26.0.0",
     "rss-parser": "^3.13.0"
   }
 }

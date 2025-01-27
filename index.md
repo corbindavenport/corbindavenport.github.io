@@ -1,6 +1,6 @@
 ---
 layout: layout.njk
-title: Corbin Davenport
+title: Home
 ---
 
 # Hi, I'm Corbin 👋

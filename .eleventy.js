@@ -1,6 +1,8 @@
 
 const Parser = require('rss-parser');
 const parser = new Parser();
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -88,4 +90,15 @@ module.exports = function (eleventyConfig) {
         html += '</div>';
         return html;
     });
+    // Set nofollow, noreferrer, noopener, and target blank attributes for all external links
+	eleventyConfig.addTransform("update-links", async function (content) {
+        const dom = new JSDOM(content);
+		dom.window.document.querySelectorAll('a').forEach(function (el) {
+            if (el.href.startsWith('https://') || el.href.startsWith('http://')) {
+                el.setAttribute('rel', 'nofollow noreferrer noopener');
+                el.setAttribute('target', '_blank');
+            }
+        });
+        return dom.serialize();
+	});
 };
