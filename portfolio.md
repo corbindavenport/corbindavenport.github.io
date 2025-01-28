@@ -10,9 +10,11 @@ Here are some recent writing samples across different categories and verticals.
 
 ## Technical writing
 
-[ImageShare documentation](https://github.com/corbindavenport/imageshare/blob/main/DEV.md)
+[How to install yt-dlp on Windows, Mac, and Linux](https://www.spacebar.news/how-to-install-yt-dlp/)
 
-[How I made my new personal website](https://blog.corbin.io/post/752757825366835200/how-i-made-my-new-personal-website)
+[ImageShare setup documentation](https://github.com/corbindavenport/imageshare/blob/main/DEV.md)
+
+[How to install SimCity 2000 on a modern Mac](https://www.spacebar.news/how-to-play-simcity-2000-mac/)
 
 ## Editorial & opinion
 
