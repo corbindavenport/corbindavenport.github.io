@@ -74,3 +74,5 @@ Nexus Tools is an installer for Google's [Android SDK Platform Tools](https://de
 Cupertino is a theme for the Mozilla Firefox browser designed to match the macOS color scheme and design. It provides a slightly more native look and feel for Firefox on Mac computers, inspired by the design of Apple Safari, and it supports both light and dark modes.
 
 {% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/cupertino-theme/" %}
+
+*This website is also [a software project](https://github.com/corbindavenport/corbindavenport.github.io)!*
