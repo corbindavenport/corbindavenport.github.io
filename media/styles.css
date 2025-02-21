@@ -256,8 +256,6 @@ a.btn-container img:hover {
 
 }
 
-/* Compact screens */
-
 @media screen and (max-width: 400px) {
 
     .fickr-images a {
@@ -301,6 +299,22 @@ a.btn-container img:hover {
 
 }
 
+/* Print layout */
+
+@media print {
+
+    nav {
+        display: none;
+    }
+
+    body {
+        background-color: #FFF;
+        font-family: "Arial", sans-serif;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+}
 
 /* Disable animations on user request */
 
