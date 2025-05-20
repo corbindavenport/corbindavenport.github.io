@@ -6,7 +6,7 @@ permalink: "software/index.html"
 
 # Software 💾
 
-Here are some of my software projects, all of which are free to use and open-source. They've been featured on [XDA](https://www.xda-developers.com/set-up-adb-and-fastboot-on-linux-mac-os-x-and-chrome-os-with-a-single-command/), [9to5Google](https://9to5google.com/2021/12/02/how-to-downgrade-from-android-12-to-android-11-on-google-pixel/#:~:text=Nexus%20Tools), [Wccftech](https://wccftech.com/set-android-adb-fastboot-mac-os/), [ComputerWorld](https://www.computerworld.com/article/3622366/the-best-progressive-web-apps-for-productivity.html#:~:text=PhotoStack), Google’s [Project Fugu API showcase](https://developer.chrome.com/fugu-showcase/#linkcleaner.app), and other places. 
+Here are some of my software projects, all of which are free to use and open-source. They've been featured on [XDA](https://www.xda-developers.com/set-up-adb-and-fastboot-on-linux-mac-os-x-and-chrome-os-with-a-single-command/), [9to5Google](https://9to5google.com/2021/12/02/how-to-downgrade-from-android-12-to-android-11-on-google-pixel/#:~:text=Nexus%20Tools), [Wccftech](https://wccftech.com/set-android-adb-fastboot-mac-os/), [ComputerWorld](https://www.computerworld.com/article/3622366/the-best-progressive-web-apps-for-productivity.html#:~:text=PhotoStack), Google’s [Project Fugu API showcase](https://developer.chrome.com/docs/capabilities/fugu-showcase?text=Link%20Cleaner), and other places. 
 
 I have a [Patreon page](https://www.patreon.com/corbindavenport) for supporting my software projects.
 
