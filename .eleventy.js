@@ -83,9 +83,10 @@ module.exports = function (eleventyConfig) {
         let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
         // console.log('Parsed feed:', feed);
         for (let i = 0; i < Math.min(feed.items.length, 6); i++) {
-            let photo = feed.items[i];
-            let photoUrl = photo.content.match(regex)[1].replace('_m', '')
-            html += '<a href="' + photo.link + '" target="_blank" rel="nofollow"><img loading="lazy" src="' + photoUrl + '" alt="' + photo.title + '" /></a>';
+            // Image size documentation: https://www.flickr.com/services/api/misc.urls.html
+            const photo = feed.items[i];
+            const imgUrl = photo.content.match(regex)[1].replace('_m', '_c');
+            html += `<a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${photo?.title}" /></a>`
         }
         html += '</div>';
         return html;
