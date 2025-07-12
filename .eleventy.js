@@ -32,10 +32,6 @@ module.exports = function (eleventyConfig) {
         }
         return html;
     });
-    // Profile picture shortcode
-    eleventyConfig.addShortcode("photo", function (url) {
-        return `<img alt="Photo of Corbin" class="profile-photo" src="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500">`
-    });
     // Redirect shortcode
     eleventyConfig.addShortcode("redirect", function (url) {
         return `<p>You are being redirected...</p><meta http-equiv="refresh" content="0; url=${url}" />`
