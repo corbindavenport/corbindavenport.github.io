@@ -10,6 +10,10 @@ I'm a tech journalist, independent software developer, and podcaster living in R
 
 I previously worked as a writer at XDA Developers, PC Gamer, and Android Police. I also made a Minecraft blog years ago called Powered by Redstone and Redstone Central.
 
+### Recent blog posts
+
+{% rssFeed "https://blog.corbin.io/rss" false %}
+
 ### Recent photos
 
 {% flickr %}
@@ -17,3 +21,7 @@ I previously worked as a writer at XDA Developers, PC Gamer, and Android Police.
 ### Recently watched movies
 
 {% rssFeed "https://letterboxd.com/corbindavenport/rss/" %}
+
+### Recent code activity
+
+{% rssFeed "https://github.com/corbindavenport.atom" false true %}
