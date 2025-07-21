@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
                     title = title.replace(`${username} `, '');
                 }
                 // Shorten description
-                if (description.length > 230) {
+                if (description?.length > 230) {
                     description = description.substring(0, 230) + '...';
                 }
                 // Return generated snippet
@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
                 if (showDate && Object.hasOwn(item, 'isoDate')) {
                     html += ` (${formatDate(item.isoDate)})`;
                 }
-                if (showDescription) {
+                if (description && showDescription) {
                     html += `<br /><i>${description}</i>`;
                 }
                 html += `</p>`;
