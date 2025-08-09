@@ -12,9 +12,7 @@ Here are some recent writing samples across different categories and verticals.
 
 [How to install yt-dlp on Windows, Mac, and Linux](https://www.spacebar.news/how-to-install-yt-dlp/)
 
-[ImageShare setup documentation](https://github.com/corbindavenport/imageshare/blob/main/DEV.md)
-
-[How to install SimCity 2000 on a modern Mac](https://www.spacebar.news/how-to-play-simcity-2000-mac/)
+[ImageShare web server documentation](https://github.com/corbindavenport/imageshare/blob/main/DEV.md)
 
 ## Editorial & opinion
 
@@ -35,8 +33,6 @@ Here are some recent writing samples across different categories and verticals.
 [You Don't Need A New Webcam, You Need a Light](https://www.howtogeek.com/you-dont-need-a-new-webcam-you-need-a-light/)
 
 [This Is My Must-Have Accessory for the Meta Quest 3](https://www.howtogeek.com/meta-quest-3-must-have-accessory/)
-
-[Apple Mac Mini with M1 chip is back on sale](https://www.xda-developers.com/apple-mac-mini-with-m1-chip-is-back-on-sale-for-600-100-off/)
 
 ## Guides & explainers
 
@@ -75,3 +71,5 @@ Here are some recent writing samples across different categories and verticals.
 > The ASUS Eee PC, with its adorable design and unique operating system, helped kick off a short-lived (but important) revolution in computing.
 
 [VisiCalc: The first 'killer app'](https://www.spacebar.news/visicalc-the-first-killer-app/)
+
+[Moonbase Alpha: That time NASA made a meme video game](https://www.spacebar.news/moonbase-alpha-nasa-video-game/)
