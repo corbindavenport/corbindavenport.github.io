@@ -1,10 +1,11 @@
 {
   "name": "corbin-website",
   "version": "1.0.0",
-  "description": " Personal website built with Eleventy",
-  "main": "index.js",
+  "description": "Personal website built with Eleventy",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve",
+    "bundle": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "Corbin Davenport",
