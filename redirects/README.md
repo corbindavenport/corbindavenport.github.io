@@ -1,1 +1,0 @@
-This directory contains redirects for moved pages and external links.

@@ -32,10 +32,6 @@ module.exports = function (eleventyConfig) {
         }
         return html;
     });
-    // Redirect shortcode
-    eleventyConfig.addShortcode("redirect", function (url) {
-        return `<p>You are being redirected...</p><meta http-equiv="refresh" content="0; url=${url}" />`
-    });
     // RSS feed shortcode
     eleventyConfig.addShortcode("rssFeed", async function (url, showDescription = true, showDate = false) {
         try {
