@@ -18,8 +18,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("robots.txt");
     // Add media folder to site
     eleventyConfig.addPassthroughCopy("media");
-    // Add main JS
-    eleventyConfig.addPassthroughCopy("main.js");
     // Download button shortcode
     eleventyConfig.addShortcode("downloadBtn", function (platform, url) {
         var html = '';
@@ -64,34 +62,39 @@ module.exports = function (eleventyConfig) {
             }
             return html;
         } catch (e) {
-            console.error(e);
+            console.error(`Error parsing RSS feed at ${url}:`, e);
             return 'There was an error loading this content.';
         }
     });
     // Flickr shortcode
     eleventyConfig.addShortcode("flickr", async function (url) {
-        let html = '<div class="fickr-images">';
-        const regex = /<img src="(https:\/\/live\.staticflickr\.com\/\d+\/\d+_[a-zA-Z0-9]+_m\.jpg)"/;
-        let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
-        // console.log('Parsed feed:', feed);
-        for (let i = 0; i < Math.min(feed.items.length, 6); i++) {
-            // Image size documentation: https://www.flickr.com/services/api/misc.urls.html
-            const photo = feed.items[i];
-            const imgUrl = photo.content.match(regex)[1].replace('_m', '_c');
-            html += `<a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${photo?.title}" /></a>`
+        try {
+            let html = '<div class="fickr-images">';
+            const regex = /<img src="(https:\/\/live\.staticflickr\.com\/\d+\/\d+_[a-zA-Z0-9]+_m\.jpg)"/;
+            let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
+            // console.log('Parsed feed:', feed);
+            for (let i = 0; i < Math.min(feed.items.length, 6); i++) {
+                // Image size documentation: https://www.flickr.com/services/api/misc.urls.html
+                const photo = feed.items[i];
+                const imgUrl = photo.content.match(regex)[1].replace('_m', '_c');
+                html += `<a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${photo?.title}" /></a>`
+            }
+            html += '</div>';
+            return html;
+        } catch (e) {
+            console.error(`Error parsing Flickr feed`, e);
+            return 'There was an error loading my photos, <a href="https://www.flickr.com/photos/corbindavenport/" target="_blank">check them out on Flickr</a> instead!';
         }
-        html += '</div>';
-        return html;
     });
     // Set nofollow, noreferrer, noopener, and target blank attributes for all external links
-	eleventyConfig.addTransform("update-links", async function (content) {
+    eleventyConfig.addTransform("update-links", async function (content) {
         const dom = new JSDOM(content);
-		dom.window.document.querySelectorAll('a').forEach(function (el) {
+        dom.window.document.querySelectorAll('a').forEach(function (el) {
             if (el.href.startsWith('https://') || el.href.startsWith('http://')) {
                 el.setAttribute('rel', 'nofollow noreferrer noopener');
                 el.setAttribute('target', '_blank');
             }
         });
         return dom.serialize();
-	});
+    });
 };

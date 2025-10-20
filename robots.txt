@@ -1,7 +1,3 @@
-# Don't index redirects
-User-agent: *
-Disallow: /redirects/*
-
 # Don't index old software projects in other repositories
 User-agent: *
 Disallow: /vault/*

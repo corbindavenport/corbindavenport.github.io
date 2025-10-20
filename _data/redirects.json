@@ -56,7 +56,23 @@
 		"https://blog.corbin.io/post/667791666532483072/ending-development-of-noplugin"
 	],
 	[
-		"/projects/",
+		"/projects",
 		"/software"
+	],
+	[
+		"/back-to-the-mac",
+		"https://blog.corbin.io/post/706477032079605761/back-to-the-mac"
+	],
+	[
+		"/tech-tales-year-one",
+		"https://blog.corbin.io/post/706473428691156992/tech-tales-year-one"
+	],
+	[
+		"/imageshare-is-now-an-even-better-image-upload-tool-for-the-3ds",
+		"https://web.archive.org/web/20221206204032/https://corbin.io/imageshare-is-now-an-even-better-image-upload-tool-for-the-3ds/"
+	],
+	[
+		"/shutting-down-whatdevice",
+		"https://blog.corbin.io/post/671846248691777536/shutting-down-whatdevice"
 	]
 ]
