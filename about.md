@@ -10,6 +10,8 @@ I'm Corbin Davenport (he/him) and I'm a tech writer, software developer, and pod
 
 I was formerly a writer at XDA Developers, PC Gamer, and Android Police. I also made a Minecraft blog years ago called Powered by Redstone and Redstone Central.
 
+**New:** Check out all my [product reviews](/reviews)!
+
 ### Recent photos
 
 {% flickr %}

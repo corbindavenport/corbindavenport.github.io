@@ -165,6 +165,34 @@ a.btn-container img:hover {
     border: 3px solid #729762;
 }
 
+table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+}
+
+th,
+td.review-name,
+td.review-date {
+    padding: 0.5rem;
+}
+
+th {
+    text-align: left;
+}
+
+thead, tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+td.review-site img {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
 /* Flickr image gallery */
 
 .flickr-images img {

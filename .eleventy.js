@@ -97,4 +97,13 @@ module.exports = function (eleventyConfig) {
         });
         return dom.serialize();
     });
+    // Function to get favicon of an external site (used for reviews page)
+    eleventyConfig.addShortcode("favicon", function (value) {
+        var url = new URL(value);
+        var domain = url.hostname;
+        var favicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+        var el = `<img src="${favicon}" alt="" />`
+        return el;
+    });
+
 };

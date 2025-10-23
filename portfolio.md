@@ -6,7 +6,27 @@ permalink: "portfolio/index.html"
 
 # Writing Portfolio ✏️
 
-Here are some recent writing and media samples across different categories and verticals.
+Here are some of my writing samples across different categories and verticals.
+
+## Guides & explainers
+
+[Here's what's happening to ad blockers in Google Chrome](https://www.spacebar.news/p/chrome-ad-blocking-manifest-v3-ublock-origin)
+
+[This is the best way to download videos and audio](https://www.spacebar.news/yt-dlp-best-way-to-download-videos-audio/)
+
+> There is a better way to download videos and audio from YouTube, SoundCloud, TikTok, Instagram, Reddit, Twitter/X, and hundreds of other websites. It's called yt-dlp.
+
+[What Is the Circle on Phone Cases?](https://www.howtogeek.com/what-is-the-circle-on-phone-cases/)
+
+## News coverage
+
+[Samsung's New Galaxy XR Headset Could Succeed Where Apple Failed](https://www.howtogeek.com/samsungs-new-galaxy-xr-headset-could-succeed-where-apple-failed/)
+
+[HMD OffGrid Gives Satellite Texting to Any Phone or Tablet](https://www.howtogeek.com/hmd-offgrid-gives-satellite-texting-to-any-phone/)
+
+[No, Microsoft Won’t Let You Install Windows 11 on Unsupported PCs](https://www.howtogeek.com/windows-11-unsupported-pc-false-reports/)
+
+[Qualcomm’s Snapdragon X Brings ARM Magic to Cheaper Windows PCs](https://www.howtogeek.com/qualcomm-snapdragon-x-chip/)
 
 ## Technical writing
 
@@ -26,14 +46,6 @@ Here are some recent writing and media samples across different categories and v
 
 > The ASUS Eee PC, with its adorable design and unique operating system, helped kick off a short-lived (but important) revolution in computing.
 
-## Podcasts
-
-[Tech Tales - Google AMP](https://soundcloud.com/techtalespodcast/google-amp)
-
-> Google introduced AMP in 2015 as a solution for slow and unresponsive mobile websites. It didn't go well.
-
-[Tech Tales - Internet Time and Sputnik 99](https://soundcloud.com/techtalespodcast/internet-time-sputnik-99)
-
 ## Commerce & deals
 
 [You Should Have a Super-Fast USB Car Charger](https://www.howtogeek.com/get-a-super-fast-usb-car-charger/)
@@ -42,32 +54,12 @@ Here are some recent writing and media samples across different categories and v
 
 [This Is My Must-Have Accessory for the Meta Quest 3](https://www.howtogeek.com/meta-quest-3-must-have-accessory/)
 
-## Guides & explainers
-
-[Here's what's happening to ad blockers in Google Chrome](https://www.spacebar.news/p/chrome-ad-blocking-manifest-v3-ublock-origin)
-
-[This is the best way to download videos and audio](https://www.spacebar.news/yt-dlp-best-way-to-download-videos-audio/)
-
-> There is a better way to download videos and audio from YouTube, SoundCloud, TikTok, Instagram, Reddit, Twitter/X, and hundreds of other websites. It's called yt-dlp.
-
-[What Is the Circle on Phone Cases?](https://www.howtogeek.com/what-is-the-circle-on-phone-cases/)
-
 ## Product reviews
+
+[This EcoFlow Station Is the Ultimate Power Outage Companion](https://www.howtogeek.com/ecoflow-delta-3-max-plus-review/)
+
+> The EcoFlow Delta 3 Max Plus worked perfectly in all my testing, and it could be a great option for anyone needing a battery for camping or power outages.
 
 [Apple iPhone 15 Review: Fitting In](https://www.howtogeek.com/apple-iphone-15-review/)
 
-> Even if the iPhone 15 is mostly just the iPhone 14 Pro with a new port, it's almost exactly what I want out of a phone. You still have to deal with the usual iOS software quirks, though.
-
 [Lenovo Yoga Slim 7x Review: Windows on Snapdragon Is Not Ready](https://www.howtogeek.com/lenovo-yoga-slim-7x-review/)
-
-[TP-Link Deco X68 Review: A good mesh router ruined by bizarre software](https://www.xda-developers.com/tp-link-deco-x68-review/)
-
-## News coverage
-
-[HMD OffGrid Gives Satellite Texting to Any Phone or Tablet](https://www.howtogeek.com/hmd-offgrid-gives-satellite-texting-to-any-phone/)
-
-[No, Microsoft Won’t Let You Install Windows 11 on Unsupported PCs](https://www.howtogeek.com/windows-11-unsupported-pc-false-reports/)
-
-[Qualcomm’s Snapdragon X Brings ARM Magic to Cheaper Windows PCs](https://www.howtogeek.com/qualcomm-snapdragon-x-chip/)
-
-[Boost Mobile Is a Real Carrier Now](https://www.howtogeek.com/boost-mobile-real-carrier/)

@@ -1,0 +1,44 @@
+---
+title: Reviews
+layout: layout.njk
+---
+
+<h1>Reviews 📱 (Beta)</h1>
+
+<p>This is a database of every product I have reviewed. This data has not been fully cleaned up yet.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% set sorted = reviews | sort(attribute='isoDate') | reverse %}
+    {% for product in sorted %}
+    <tr>
+      <td class="review-site">
+        {% favicon product.url %}
+      </td>
+      <td class="review-name">
+        {% if product.url.startsWith('https://www.howtogeek.com/') or product.url.startsWith('https://www.spacebar.news/') %}
+          <!-- Reviews from these domains should still work correctly -->
+          <a href="{{ product.url }}" target="_blank">{{ product.name }}</a>
+        {% else %}
+          <!-- These reviews got mangled in CMS transitions, use oldest available copy on Internet Archive -->
+          <a href="https://web.archive.org/web/0if_/{{ product.url }}" target="_blank">{{ product.name }}</a>
+        {% endif %}
+        <br />
+        <small>{{ product.site }}</small>
+        </td>
+      <td class="review-date">
+        {{ product.date }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<p>Total reviews: {{ reviews.length }}</p>
