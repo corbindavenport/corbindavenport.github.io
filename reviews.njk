@@ -3,15 +3,18 @@ title: Reviews
 layout: layout.njk
 ---
 
-<h1>Reviews 📱 (Beta)</h1>
+<h1>Reviews 📱</h1>
 
-<p>This is a database of every product I have reviewed. This data has not been fully cleaned up yet.</p>
+<p>This is a list of every product, application, and game I have reviewed. The scores have been adjusted to a universal 1-100 scale.</p>
+
+<p>Some links use the Internet Archive to better preserve the original formatting and images.</p>
 
 <table>
   <thead>
     <tr>
       <th></th>
       <th>Product</th>
+      <th>Score</th>
       <th>Date</th>
     </tr>
   </thead>
@@ -32,7 +35,12 @@ layout: layout.njk
         {% endif %}
         <br />
         <small>{{ product.site }}</small>
-        </td>
+      </td>
+      <td class="review-score">
+        {% if product.score %}
+          {{ product.score*100 | round(2) }}
+        {% endif %}
+      </td>
       <td class="review-date">
         {{ product.date }}
       </td>

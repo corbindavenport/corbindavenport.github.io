@@ -173,7 +173,8 @@ table {
 
 th,
 td.review-name,
-td.review-date {
+td.review-date,
+td.review-score {
     padding: 0.5rem;
 }
 
@@ -281,6 +282,11 @@ td.review-site img {
         columns: 2;
         -webkit-columns: 2;
         -moz-columns: 2;
+    }
+
+    table {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
     }
 
 }
