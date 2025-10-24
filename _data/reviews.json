@@ -52,7 +52,8 @@
         "name": "Eero Pro 6",
         "url": "https://www.androidpolice.com/2020/12/30/eero-pro-6-review/",
         "date": "Dec 30, 2020",
-        "isoDate": "2020-12-30T05:00:00.000Z"
+        "isoDate": "2020-12-30T05:00:00.000Z",
+        "score": 0.9
     },
     {
         "name": "Motorola One 5G Ace",
@@ -88,7 +89,8 @@
         "name": "Lenovo IdeaPad Flex 5",
         "url": "https://www.androidpolice.com/2020/06/07/lenovo-ideapad-flex-5-chromebook-review/",
         "date": "Jun 7, 2020",
-        "isoDate": "2020-06-07T04:00:00.000Z"
+        "isoDate": "2020-06-07T04:00:00.000Z",
+        "score": 0.75
     },
     {
         "name": "RollerCoaster Tycoon Classic",
@@ -124,25 +126,29 @@
         "name": "Samsung Galaxy A10e",
         "url": "https://www.androidpolice.com/2020/06/13/samsung-galaxy-a10e-review-this-180-phone-is-still-a-good-buy/",
         "date": "Jun 13, 2020",
-        "isoDate": "2020-06-13T04:00:00.000Z"
+        "isoDate": "2020-06-13T04:00:00.000Z",
+        "score": 0.75
     },
     {
         "name": "LG K22",
         "url": "https://www.androidpolice.com/2021/01/30/lg-k22-review-better-than-i-was-expecting-for-70/",
         "date": "Jan 30, 2021",
-        "isoDate": "2021-01-30T05:00:00.000Z"
+        "isoDate": "2021-01-30T05:00:00.000Z",
+        "score": 0.8
     },
     {
         "name": "Amazon Fire HD 8 (2020)",
         "url": "https://www.androidpolice.com/2020/06/24/amazon-fire-hd-8-2020-review/",
         "date": "Jun 24, 2020",
-        "isoDate": "2020-06-24T04:00:00.000Z"
+        "isoDate": "2020-06-24T04:00:00.000Z",
+        "score": 0.8
     },
     {
         "name": "LG Stylo 6",
         "url": "https://www.androidpolice.com/2020/07/04/lg-stylo-6-review/",
         "date": "Jul 4, 2020",
-        "isoDate": "2020-07-04T04:00:00.000Z"
+        "isoDate": "2020-07-04T04:00:00.000Z",
+        "score": 0.6
     },
     {
         "name": "Xiaomi Mi A1 (Android One)",
@@ -185,13 +191,15 @@
         "name": "Skagen Jorn Hybrid HR",
         "url": "https://www.androidpolice.com/2021/02/06/skagen-jorn-hybrid-hr-review-a-great-not-smartwatch/",
         "date": "Feb 6, 2021",
-        "isoDate": "2021-02-06T05:00:00.000Z"
+        "isoDate": "2021-02-06T05:00:00.000Z",
+        "score": 0.8
     },
     {
         "name": "Samsung Galaxy Tab S6 Lite",
         "url": "https://www.androidpolice.com/2020/06/27/samsung-galaxy-tab-s6-lite-review/",
         "date": "Jun 27, 2020",
-        "isoDate": "2020-06-27T04:00:00.000Z"
+        "isoDate": "2020-06-27T04:00:00.000Z",
+        "score": 0.8
     },
     {
         "name": "Walmart Onn 8 Pro",
@@ -279,7 +287,8 @@
         "name": "Nokia 8 V 5G UW",
         "url": "https://www.androidpolice.com/2020/11/12/nokia-8-v-5g-uw-review/",
         "date": "Nov 12, 2020",
-        "isoDate": "2020-11-12T05:00:00.000Z"
+        "isoDate": "2020-11-12T05:00:00.000Z",
+        "score": 0.6
     },
     {
         "name": "Linksys dual-band Velop",
@@ -309,7 +318,8 @@
         "name": "Amazon Fire HD 8 Plus (2020)",
         "url": "https://www.androidpolice.com/2020/07/18/fire-hd-8-plus-2020-review-one-step-closer-to-the-combo-tablet-smart-display-dream/",
         "date": "Jul 18, 2020",
-        "isoDate": "2020-07-18T04:00:00.000Z"
+        "isoDate": "2020-07-18T04:00:00.000Z",
+        "score": 0.75
     },
     {
         "name": "Anker Nebula Prizm II",
