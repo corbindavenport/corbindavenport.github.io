@@ -105,5 +105,8 @@ module.exports = function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" />`
         return el;
     });
-
+    // Profile picture shortcode
+    eleventyConfig.addShortcode("photo", function (url) {
+        return `<img alt="Photo of Corbin" class="profile-photo" src="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500">`
+    });
 };
