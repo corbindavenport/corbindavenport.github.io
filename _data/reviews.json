@@ -34,7 +34,8 @@
         "name": "Samsung Galaxy A11",
         "url": "https://www.androidpolice.com/2021/04/15/samsung-galaxy-a11-review/",
         "date": "Apr 15, 2021",
-        "isoDate": "2021-04-15T04:00:00.000Z"
+        "isoDate": "2021-04-15T04:00:00.000Z",
+        "score": 0.7
     },
     {
         "name": "ASUS Chromebook Flip C302",
@@ -59,7 +60,8 @@
         "name": "Motorola One 5G Ace",
         "url": "https://www.androidpolice.com/2021/02/26/motorola-one-5g-ace-review-just-buy-a-pixel-4a/",
         "date": "Feb 26, 2021",
-        "isoDate": "2021-02-26T05:00:00.000Z"
+        "isoDate": "2021-02-26T05:00:00.000Z",
+        "score": 0.6
     },
     {
         "name": "LineageOS 17.1",
@@ -179,13 +181,15 @@
         "name": "Moto 360 (2019)",
         "url": "https://www.androidpolice.com/2020/01/30/moto-360-2019-review/",
         "date": "Jan 30, 2020",
-        "isoDate": "2020-01-30T05:00:00.000Z"
+        "isoDate": "2020-01-30T05:00:00.000Z",
+        "score": 0.6
     },
     {
         "name": "Sennheiser HD 450BT Headphones",
         "url": "https://www.androidpolice.com/2020/12/16/sennheiser-hd-450bt-review/",
         "date": "Dec 16, 2020",
-        "isoDate": "2020-12-16T05:00:00.000Z"
+        "isoDate": "2020-12-16T05:00:00.000Z",
+        "score": 0.7
     },
     {
         "name": "Skagen Jorn Hybrid HR",
@@ -242,7 +246,8 @@
         "name": "Galaxy Watch Active 2",
         "url": "https://www.androidpolice.com/2019/10/09/galaxy-watch-active2-review-dancing-on-the-grave-of-wear-os/",
         "date": "Oct 9, 2019",
-        "isoDate": "2019-10-09T04:00:00.000Z"
+        "isoDate": "2019-10-09T04:00:00.000Z",
+        "score": 0.9
     },
     {
         "name": "ASUS Chromebook Flip C434",
@@ -338,7 +343,8 @@
         "name": "TP-Link Kasa Smart Light Strip",
         "url": "https://www.androidpolice.com/2019/11/16/tp-link-kasa-smart-light-strip-review-voice-controlled-rgb-lights-for-your-furniture/",
         "date": "Nov 16, 2019",
-        "isoDate": "2019-11-16T05:00:00.000Z"
+        "isoDate": "2019-11-16T05:00:00.000Z",
+        "score": 0.8
     },
     {
         "name": "Wemo WiFi Smart Plug WSP080",
@@ -443,7 +449,8 @@
         "name": "Razer Hammerhead True Wireless Pro",
         "url": "https://www.androidpolice.com/2020/12/13/razer-hammerhead-true-wireless-pro-review-great-sound-not-so-great-everything-else/",
         "date": "Dec 13, 2020",
-        "isoDate": "2020-12-13T05:00:00.000Z"
+        "isoDate": "2020-12-13T05:00:00.000Z",
+        "score": 0.7
     },
     {
         "name": "Roku Streaming Stick & Stick+",

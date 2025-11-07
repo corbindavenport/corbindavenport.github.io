@@ -28,14 +28,12 @@ permalink: "reviews/index.html"
       </td>
       <td class="review-name">
         {% if product.url.startsWith('https://www.howtogeek.com/') or product.url.startsWith('https://www.spacebar.news/') %}
-          <!-- Reviews from these domains should still work correctly -->
+          {# Reviews from these domains should still work correctly #}
           <a href="{{ product.url }}" target="_blank">{{ product.name }}</a>
         {% else %}
-          <!-- These reviews got mangled in CMS transitions, use oldest available copy on Internet Archive -->
+          {# These reviews got mangled in CMS transitions, use oldest available copy on Internet Archive #}
           <a href="https://web.archive.org/web/0if_/{{ product.url }}" target="_blank">{{ product.name }}</a>
         {% endif %}
-        <br />
-        <small>{{ product.site }}</small>
       </td>
       <td class="review-score">
         {% if product.score %}
