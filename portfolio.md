@@ -8,31 +8,27 @@ permalink: "portfolio/index.html"
 
 Here are some of my writing samples across different categories and verticals.
 
-## Guides & explainers
+## Technical writing & guides
+
+[How to install yt-dlp on Windows, Mac, and Linux](https://www.spacebar.news/how-to-install-yt-dlp/)
+
+[ImageShare web server documentation](https://github.com/corbindavenport/imageshare/blob/main/DEV.md)
+
+> ImageShare is built to run as a multi-container Docker application, using Nginx as the reverse proxy web server, Node as the application server, and Let's Encrypt Certbot for obtaining an SSL certificate.
+
+[How to use Python on an Android phone, iPhone, or iPad through a Raspberry Pi](https://www.howtogeek.com/you-can-use-python-on-any-phone-or-tablet-with-a-raspberry-pi/)
 
 [Here's what's happening to ad blockers in Google Chrome](https://www.spacebar.news/p/chrome-ad-blocking-manifest-v3-ublock-origin)
-
-[This is the best way to download videos and audio](https://www.spacebar.news/yt-dlp-best-way-to-download-videos-audio/)
-
-> There is a better way to download videos and audio from YouTube, SoundCloud, TikTok, Instagram, Reddit, Twitter/X, and hundreds of other websites. It's called yt-dlp.
-
-[What Is the Circle on Phone Cases?](https://www.howtogeek.com/what-is-the-circle-on-phone-cases/)
 
 ## News coverage
 
 [Samsung's New Galaxy XR Headset Could Succeed Where Apple Failed](https://www.howtogeek.com/samsungs-new-galaxy-xr-headset-could-succeed-where-apple-failed/)
 
-[HMD OffGrid Gives Satellite Texting to Any Phone or Tablet](https://www.howtogeek.com/hmd-offgrid-gives-satellite-texting-to-any-phone/)
-
 [No, Microsoft Won’t Let You Install Windows 11 on Unsupported PCs](https://www.howtogeek.com/windows-11-unsupported-pc-false-reports/)
 
-[Qualcomm’s Snapdragon X Brings ARM Magic to Cheaper Windows PCs](https://www.howtogeek.com/qualcomm-snapdragon-x-chip/)
+[Windows games on Linux just got better, thanks to CrossOver](https://www.howtogeek.com/windows-games-on-linux-just-got-another-upgrade/)
 
-## Technical writing
-
-[How to install yt-dlp on Windows, Mac, and Linux](https://www.spacebar.news/how-to-install-yt-dlp/)
-
-[ImageShare web server documentation](https://github.com/corbindavenport/imageshare/blob/main/DEV.md)
+[Plex is still trying to fix its Roku app](https://www.howtogeek.com/plexs-roku-app-is-getting-yet-another-redesign/)
 
 ## Editorials
 
@@ -58,8 +54,10 @@ Here are some of my writing samples across different categories and verticals.
 
 [This EcoFlow Station Is the Ultimate Power Outage Companion](https://www.howtogeek.com/ecoflow-delta-3-max-plus-review/)
 
-> The EcoFlow Delta 3 Max Plus worked perfectly in all my testing, and it could be a great option for anyone needing a battery for camping or power outages.
+> EcoFlow sells many portable power stations, but the Delta 3 Max Plus is one of the most versatile options. The 120V and 20A AC output support and rated capacity of 2048Wh makes it a great option for outdoors trips, home power outages, and everything in between. There are a few catches, though.
 
 [Apple iPhone 15 Review: Fitting In](https://www.howtogeek.com/apple-iphone-15-review/)
 
 [Lenovo Yoga Slim 7x Review: Windows on Snapdragon Is Not Ready](https://www.howtogeek.com/lenovo-yoga-slim-7x-review/)
+
+*More product reviews are listed on my [reviews page](/reviews).*
