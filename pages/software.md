@@ -4,7 +4,7 @@ title: Software
 permalink: "software/index.html"
 ---
 
-Here are some of my software projects, all of which are free to use and open-source. They've been featured at [XDA](https://www.xda-developers.com/set-up-adb-and-fastboot-on-linux-mac-os-x-and-chrome-os-with-a-single-command/), [9to5Google](https://9to5google.com/2021/12/02/how-to-downgrade-from-android-12-to-android-11-on-google-pixel/#:~:text=Nexus%20Tools), [Lifehacker](https://lifehacker.com/tech/if-you-ever-shared-spotify-link-publicly-disable-spotify-dms#:~:text=Link%20Cleaner), [Fast Company](https://www.fastcompany.com/91404012/photostack-bulk-photo-editor), [ComputerWorld](https://www.computerworld.com/article/3622366/the-best-progressive-web-apps-for-productivity.html#:~:text=PhotoStack), Google’s [Project Fugu API showcase](https://developer.chrome.com/docs/capabilities/fugu-showcase?text=Link%20Cleaner), and other places. 
+Here are some of my software projects, all of which are free to use and open-source. They've been featured at [The Register](https://www.theregister.com/2026/01/19/just_the_browser/), [9to5Google](https://9to5google.com/2021/12/02/how-to-downgrade-from-android-12-to-android-11-on-google-pixel/#:~:text=Nexus%20Tools), [Lifehacker](https://lifehacker.com/tech/if-you-ever-shared-spotify-link-publicly-disable-spotify-dms#:~:text=Link%20Cleaner), [Fast Company](https://www.fastcompany.com/91404012/photostack-bulk-photo-editor), [ComputerWorld](https://www.computerworld.com/article/3622366/the-best-progressive-web-apps-for-productivity.html#:~:text=PhotoStack), [PC Gamer](https://www.pcgamer.com/software/browsers/heroic-former-pc-gamer-writer-creates-a-script-to-banish-all-the-ai-features-from-google-chrome/), Google’s [Project Fugu API showcase](https://developer.chrome.com/docs/capabilities/fugu-showcase?text=Link%20Cleaner), and other places. 
 
 I have a [Patreon page](https://www.patreon.com/corbindavenport) for supporting my software projects.
 
@@ -62,6 +62,10 @@ Wikipedia Search adds the ability to search Wikipedia straight from the address 
 
 Other projects
 -----
+
+### [Just the Browser](https://justthebrowser.com/)
+
+Just the Browser helps you remove AI features, telemetry data reporting, sponsored content, product integrations, and other annoyances from desktop web browsers. The goal is to give you "just the browser" and nothing else, using hidden settings in web browsers intended for companies and other organizations.
 
 ### [Nexus Tools](https://github.com/corbindavenport/nexus-tools)
 
