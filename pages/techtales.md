@@ -4,8 +4,6 @@ title: Tech Tales
 permalink: "podcast/index.html"
 ---
 
-# Tech Tales 🎧
-
 Tech Tales is a podcast exploring the technology world’s epic failures, forgotten successes, and everything in between. The show is created and hosted by me, with a revolving cast of entertaining and knowledgeable guests.
 
 **[Spotify](https://open.spotify.com/show/5gFB6RWAeCG3HA2ezn4dtQ)** • **[YouTube](https://www.youtube.com/channel/UCoJhtqauQgAykvSLQSyu7UQ?sub_confirmation=1)** • **[Apple Podcasts](https://podcasts.apple.com/us/podcast/tech-tales/id1572321390)** • **[YouTube Music](https://music.youtube.com/playlist?list=PLePvabLJGxqZKT6HG4AOD9AT8g8GD8QwY&si=X69cUHfUqg45rrRi)** • **[Pocket Casts](https://pca.st/bphfxx5c)** • **[Amazon Music](https://music.amazon.com/podcasts/f250358a-af1a-477a-a0d5-cec00e359cb6/tech-tales)** • **[RSS Feed](https://feeds.soundcloud.com/users/soundcloud:users:971533159/sounds.rss)**

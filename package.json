@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Personal website built with Eleventy",
   "scripts": {
-    "test": "npx @11ty/eleventy --serve",
-    "start": "npx @11ty/eleventy --serve",
+    "test": "npx @11ty/eleventy --serve --port=8081",
+    "start": "npx @11ty/eleventy --serve --port=8081",
     "bundle": "npx @11ty/eleventy"
   },
   "keywords": [],
@@ -12,7 +12,7 @@
   "license": "None",
   "dependencies": {
     "@11ty/eleventy": "^3.1.0",
-    "jsdom": "^26.1.0",
+    "jsdom": "^28.0.0",
     "rss-parser": "^3.13.0"
   }
 }

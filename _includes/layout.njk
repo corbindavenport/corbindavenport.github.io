@@ -8,7 +8,13 @@ title: Corbin Davenport
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ title }} - Corbin Davenport</title>
+	<title>
+	{% if title == "Corbin Davenport" %}
+		Corbin Davenport
+	{% else %}
+		{{ title }} - Corbin Davenport
+	{% endif %}
+	</title>
 	<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at How-To Geek, XDA Developers, PC Gamer, and other places.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="corbin, davenport, corbin davenport">
@@ -17,10 +23,38 @@ title: Corbin Davenport
 	<link rel="icon" type="image/png" href="/media/icon_x64.png" sizes="64x64">
 	<link rel="icon" type="image/png" href="/media/icon_x128.png" sizes="128x128">
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/media/styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/simpledotcss@2.3.7/simple.min.css">
+	<style>
+	:root {
+		--bg: #E7F0DC;
+		--accent-bg: #dcefc5;
+		--border: #658147;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--bg: #262626;
+			--accent-bg: #3e5235;
+			--border: #898ea4;
+		}
+	}
+	a.download-btn img {
+		margin-right: 15px;
+		height: 60px;
+		width: auto;
+		border: 2px solid var(--accent);
+		transition: 0.3s;
+		border-radius: 10px;
+	}
+	table {
+		width: 100%;
+	}
+	a.download-btn img:hover {
+		border-color: var(--accent-hover);
+	}
+	</style>
 	<meta name="supported-color-schemes" content="dark light">
-	<meta name="theme-color" content="#262626" media="(prefers-color-scheme: dark)" />
-	<meta name="theme-color" content="#E7F0DC" />
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2b2b2b">
+    <meta name="theme-color" content="#f5f7ff">
 	<!--[if lte IE 8]>
 	<script>
 	document.createElement('main'); 
@@ -45,32 +79,30 @@ title: Corbin Davenport
 </head>
 
 <body>
-	<nav>
-		<ul>
-			<li>
-				<a href="/">Home</a>
-			</li>
-			<li>
-				<a href="/about">About</a>
-			</li>
-			<li>
-				<a href="/software">Software</a>
-			</li>
-			<li>
-				<a href="/podcast">Tech Tales</a>
-			</li>
-			<li>
-				<a href="/contact">Contact</a>
-			</li>
-		</ul>
-	</nav>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/software">Software</a>
+			<a href="/podcast">Tech Tales</a>
+			<a href="/contact">Contact</a>
+		</nav>
+      <h1>{{ title }}</h1>
+      <!-- <p>Text will go here</p> -->
+    </header>
 
 	<main>
 		{{ content | safe }}
 	</main>
 
-	<!-- Mastodon verification -->
-	<a href="https://toot.community/@corbin" rel="me" style="display:none">My Mastodon</a>
+	<footer>
+		Corbin Davenport ·
+		<a href="https://bsky.app/profile/corbin.io" target="_blank">Bluesky</a>
+		 ·
+		<a href="https://toot.community/@corbin" target="_blank">Mastodon</a>
+		 ·
+		<a href="https://www.linkedin.com/in/corbindavenport/" target="_blank">LinkedIn</a>
+	</footer>
 
 </body>
 

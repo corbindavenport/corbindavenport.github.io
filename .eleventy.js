@@ -22,11 +22,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("downloadBtn", function (platform, url) {
         var html = '';
         if (platform === 'chrome') {
-            html = `<a href="${url}" target="_blank" class="btn-container"><img src="/media/chrome-button.png" alt="Download on Chrome Web Store" /></a>`;
+            html = `<a href="${url}" target="_blank" class="download-btn"><img src="/media/chrome-button.png" alt="Download on Chrome Web Store" /></a>`;
         } else if (platform === 'firefox') {
-            html = `<a href="${url}" target="_blank" class="btn-container"><img src="/media/firefox-button.png" alt="Download for Firefox" /></a>`;
+            html = `<a href="${url}" target="_blank" class="download-btn"><img src="/media/firefox-button.png" alt="Download for Firefox" /></a>`;
         } else if (platform === 'edge') {
-            html = `<a href="${url}" target="_blank" class="btn-container"><img src="/media/microsoft-button.png" alt="Download for Microsoft Edge" /></a>`;
+            html = `<a href="${url}" target="_blank" class="download-btn"><img src="/media/microsoft-button.png" alt="Download for Microsoft Edge" /></a>`;
         }
         return html;
     });
@@ -69,7 +69,7 @@ module.exports = function (eleventyConfig) {
     // Flickr shortcode
     eleventyConfig.addShortcode("flickr", async function (url) {
         try {
-            let html = '<div class="fickr-images">';
+            let html = '';
             const regex = /<img src="(https:\/\/live\.staticflickr\.com\/\d+\/\d+_[a-zA-Z0-9]+_m\.jpg)"/;
             let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
             // console.log('Parsed feed:', feed);
@@ -77,9 +77,9 @@ module.exports = function (eleventyConfig) {
                 // Image size documentation: https://www.flickr.com/services/api/misc.urls.html
                 const photo = feed.items[i];
                 const imgUrl = photo.content.match(regex)[1].replace('_m', '_c');
-                html += `<a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${photo?.title}" /></a>`
+                const imgTitle = photo?.title || 'Photo';
+                html += `<figure><a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${imgTitle}" /></a><figcaption>${imgTitle}</figcaption></figure>`;
             }
-            html += '</div>';
             return html;
         } catch (e) {
             console.error(`Error parsing Flickr feed`, e);
@@ -102,11 +102,11 @@ module.exports = function (eleventyConfig) {
         var url = new URL(value);
         var domain = url.hostname;
         var favicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-        var el = `<img src="${favicon}" alt="" />`
+        var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
     // Profile picture shortcode
     eleventyConfig.addShortcode("photo", function (url) {
-        return `<img alt="Photo of Corbin" class="profile-photo" src="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500">`
-    });
+        return `<img alt="Photo of Corbin" style="float: right; margin-left: 1rem; margin-bottom: 1rem; margin-top: 1.5rem; max-width: 20%" src="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500">`
+    })
 };

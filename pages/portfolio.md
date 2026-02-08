@@ -4,8 +4,6 @@ title: Portfolio
 permalink: "portfolio/index.html"
 ---
 
-# Writing Portfolio ✏️
-
 Here are some of my writing samples across different categories and verticals.
 
 ## Technical writing & guides

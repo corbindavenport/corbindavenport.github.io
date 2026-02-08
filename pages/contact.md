@@ -4,8 +4,6 @@ title: Contact Me
 permalink: "contact/index.html"
 ---
 
-# Contact Me 📬
-
 Need to reach me? The best way is probably email. Please do not send the same email to multiple addresses.
 
 **How-To Geek email for feedback, pitches, corrections:**

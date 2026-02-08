@@ -4,8 +4,6 @@ title: About Me
 permalink: "about/index.html"
 ---
 
-# About Me 🧑‍💻
-
 {% photo %}
 
 I'm Corbin Davenport (he/him), a tech writer, software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/author/corbindavenport/) as News Editor, and previously was at XDA Developers, PC Gamer, and Android Police. That has included news coverage, hundreds of guides and tutorials, [over 100 product reviews](/reviews), and editorials.
