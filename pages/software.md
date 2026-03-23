@@ -48,12 +48,6 @@ Picture-in-Picture Shortcut adds a keyboard shortcut and toolbar button for swit
 
 {% downloadBtn "chrome" "https://chromewebstore.google.com/detail/picture-in-picture-shortc/ednlokepbjfieampgfdabeglnceoheni" %} {% downloadBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/pictureinpicture-shortc/mmgmhaokamemfnkmfdhnkkjmpbfmlpck" %}
 
-### [Alt Text Creator](https://github.com/corbindavenport/alt-text-creator)
-
-Alt Text Creator is a browser extension that generates alternate text for images using the GPT-4 with Vision model from OpenAI. It uses an API key supplied by the user, without any extra costs.
-
-{% downloadBtn "chrome" "https://chromewebstore.google.com/detail/alt-text-creator-with-gpt/nlahkceofkdggfgfpheakpaphdfplaio" %} {% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/alt-text-creator/" %}
-
 ### [Wikipedia Search](https://github.com/corbindavenport/wikipedia-search)
 
 Wikipedia Search adds the ability to search Wikipedia straight from the address bar. You can also right-click a selected word or phrase to perform a search.
@@ -66,10 +60,6 @@ Other projects
 ### [Just the Browser](https://justthebrowser.com/)
 
 Just the Browser helps you remove AI features, telemetry data reporting, sponsored content, product integrations, and other annoyances from desktop web browsers. The goal is to give you "just the browser" and nothing else, using hidden settings in web browsers intended for companies and other organizations.
-
-### [Nexus Tools](https://github.com/corbindavenport/nexus-tools)
-
-Nexus Tools is an installer for Google's [Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools) package, which includes ADB, Fastboot, and other applications. Nexus Tools is writen in Dart, and can run on Linux, macOS, Windows, Windows Subsystem for Linux, and Chrome OS with a single installation command.
 
 ### [Cupertino](https://github.com/corbindavenport/cupertino)
 
