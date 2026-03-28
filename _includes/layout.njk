@@ -23,38 +23,11 @@ title: Corbin Davenport
 	<link rel="icon" type="image/png" href="/media/icon_x64.png" sizes="64x64">
 	<link rel="icon" type="image/png" href="/media/icon_x128.png" sizes="128x128">
 	<!-- Styles -->
-	<link rel="stylesheet" href="https://unpkg.com/simpledotcss@2.3.7/simple.min.css">
-	<style>
-	:root {
-		--bg: #fafafa;
-		--accent-bg: #E7F0DC;
-		--border: #658147;
-	}
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--bg: #262626;
-			--accent-bg: #3e5235;
-			--border: #898ea4;
-		}
-	}
-	a.download-btn img {
-		margin-right: 15px;
-		height: 60px;
-		width: auto;
-		border: 2px solid var(--accent);
-		transition: 0.3s;
-		border-radius: 10px;
-	}
-	table {
-		width: 100%;
-	}
-	a.download-btn img:hover {
-		border-color: var(--accent-hover);
-	}
+	<link rel="stylesheet" href="/media/styles.css">
 	</style>
 	<meta name="supported-color-schemes" content="dark light">
 	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2b2b2b">
-    <meta name="theme-color" content="#f5f7ff">
+    <meta name="theme-color" content="#5A7863">
 	<!--[if lte IE 8]>
 	<script>
 	document.createElement('main'); 
@@ -63,15 +36,19 @@ title: Corbin Davenport
 	<![endif]-->
 	<!-- Analytics -->
 	<script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
-	<!-- Open Graph card -->
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{ title }} - Corbin Davenport" />
-	<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at How-To Geek, XDA Developers, PC Gamer, and other places." />
-	<meta property="og:image" content="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500" />
-	<meta property="og:image:width" content="400" />
-	<meta property="og:image:height" content="400" />
-	<meta name="og:image:alt" content="Corbin's profile photo" />
-	<meta name="twitter:card" content="summary" />
+	<!-- Embed card for social media and messaging -->
+    <meta property="og:site_name" content="Corbin Davenport">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at How-To Geek, XDA Developers, PC Gamer, and other places.">
+    <meta property="og:image" content="https://corbin.io/media/card.png">
+    <meta name="og:image:alt" content="Happy Mac icon" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at How-To Geek, XDA Developers, PC Gamer, and other places.">
+    <meta name="twitter:image" content="https://corbin.io/media/card.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
 	<!-- RSS feeds -->
 	<link rel="alternate" type="application/rss+xml" title="Corbin's blog" href="https://blog.corbin.io/rss" />
 	<link rel="alternate" type="application/rss+xml" title="The Spacebar" href="https://www.spacebar.news/feed" />
@@ -80,6 +57,7 @@ title: Corbin Davenport
 
 <body>
 	<header>
+		<h1>Corbin Davenport</h1>
 		<nav>
 			<a href="/">Home</a>
 			<a href="/about">About</a>
@@ -87,22 +65,14 @@ title: Corbin Davenport
 			<a href="/podcast">Tech Tales</a>
 			<a href="/contact">Contact</a>
 		</nav>
-      <h1>{{ title }}</h1>
-      <!-- <p>Text will go here</p> -->
     </header>
 
 	<main>
+		{% if title != "Corbin Davenport" %}
+		<h1 class="page-title">{{ title }}</h1>
+		{% endif %}
 		{{ content | safe }}
 	</main>
-
-	<footer>
-		Corbin Davenport ·
-		<a href="https://bsky.app/profile/corbin.io" target="_blank">Bluesky</a>
-		 ·
-		<a href="https://toot.community/@corbin" target="_blank">Mastodon</a>
-		 ·
-		<a href="https://www.linkedin.com/in/corbindavenport/" target="_blank">LinkedIn</a>
-	</footer>
 
 </body>
 

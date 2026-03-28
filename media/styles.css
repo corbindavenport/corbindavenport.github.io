@@ -1,0 +1,198 @@
+/* Root variables and animations */
+
+:root {
+    --text-color: #000;
+    --primary-bg: #EBF4DD;
+    --secondary-bg: #90AB8B;
+    --tertiary-bg: #5A7863;
+    --link-color: #4C8CE4;
+    --link-hover-color: #c4d4ea:
+}
+
+@keyframes fadein {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Main document */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--primary-bg);
+    font-family: Tahoma, sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+header {
+    background: var(--tertiary-bg);
+    margin: 0;
+    color: #FFF;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+}
+
+header nav,
+header h1,
+main {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Verdana, sans-serif;
+}
+
+a {
+    color: var(--link-color);
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #406093;
+}
+
+header a {
+    display: inline-block;
+    margin: 0 1rem 0.5rem 0;
+    color: #FFF;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: var(--link-hover-color);
+}
+
+a,
+img {
+    border: none;
+    outline: none;
+}
+
+pre {
+    background: var(--secondary-bg);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #FFF;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 3rem 1rem 2rem 1rem;
+    }
+
+    h1.page-title {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Software buttons */
+
+a.download-btn img {
+    margin-right: 0.5rem;
+    height: 60px;
+    width: auto;
+    border: 2px solid var(--link-color);
+    transition: 0.3s;
+    border-radius: 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+a.download-btn img:hover {
+    border-color: #406093;
+}
+
+/* Flickr image gallery */
+
+.flickr-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+
+.flickr-container a {
+    display: inline-flex;
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+.flickr-container a img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Reviews page */
+
+table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+}
+
+th,
+td.review-name,
+td.review-date,
+td.review-score {
+    padding: 0.5rem;
+}
+
+th {
+    text-align: left;
+}
+
+thead,
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+td.review-site img {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: #262626;
+        --secondary-bg: #495847;
+        --tertiary-bg: #3a4d3f;
+        --text-color: #FFF
+    }
+}

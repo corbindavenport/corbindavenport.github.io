@@ -51,14 +51,13 @@ module.exports = function (eleventyConfig) {
                     description = description.substring(0, 230) + '...';
                 }
                 // Return generated snippet
-                html += `<p><a href="${item.link}" target="_blank" rel="nofollow">${title}</a>`;
+                html += `<h4 style="margin-bottom: 0"><a href="${item.link}" target="_blank" rel="nofollow">${title}</a></h4>`;
                 if (showDate && Object.hasOwn(item, 'isoDate')) {
                     html += ` (${formatDate(item.isoDate)})`;
                 }
                 if (description && showDescription) {
-                    html += `<br /><i>${description}</i>`;
+                    html += `<i>${description}</i>`;
                 }
-                html += `</p>`;
             }
             return html;
         } catch (e) {
@@ -69,7 +68,7 @@ module.exports = function (eleventyConfig) {
     // Flickr shortcode
     eleventyConfig.addShortcode("flickr", async function (url) {
         try {
-            let html = '';
+            let html = '<div class="flickr-container">';
             const regex = /<img src="(https:\/\/live\.staticflickr\.com\/\d+\/\d+_[a-zA-Z0-9]+_m\.jpg)"/;
             let feed = await parser.parseURL('https://www.flickr.com/services/feeds/photos_public.gne?id=199183592@N06&lang=en-us&format=rss');
             // console.log('Parsed feed:', feed);
@@ -78,8 +77,9 @@ module.exports = function (eleventyConfig) {
                 const photo = feed.items[i];
                 const imgUrl = photo.content.match(regex)[1].replace('_m', '_c');
                 const imgTitle = photo?.title || 'Photo';
-                html += `<figure><a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${imgTitle}" /></a><figcaption>${imgTitle}</figcaption></figure>`;
+                html += `<a href="${photo.link}" target="_blank" rel="nofollow"><img loading="lazy" src="${imgUrl}" alt="${imgTitle}" /></a>`;
             }
+            html += '</div>'
             return html;
         } catch (e) {
             console.error(`Error parsing Flickr feed`, e);
@@ -105,8 +105,4 @@ module.exports = function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
-    // Profile picture shortcode
-    eleventyConfig.addShortcode("photo", function (url) {
-        return `<img alt="Photo of Corbin" style="float: right; margin-left: 1rem; margin-bottom: 1rem; margin-top: 1.5rem; max-width: 20%" src="https://www.gravatar.com/avatar/bd4dc9257737f89e59f71b4851fc1b74?s=500">`
-    })
 };

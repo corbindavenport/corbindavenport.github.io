@@ -4,8 +4,6 @@ title: About Me
 permalink: "about/index.html"
 ---
 
-{% photo %}
-
 I'm Corbin Davenport (he/him), a tech writer, software developer, and podcaster living in Raleigh, North Carolina. I currently work for [How-To Geek](https://www.howtogeek.com/author/corbindavenport/) as News Editor, and previously was at XDA Developers, PC Gamer, and Android Police. That has included news coverage, hundreds of guides and tutorials, [over 100 product reviews](/reviews), and editorials.
 
 
@@ -19,6 +17,6 @@ I also created [the Tech Tales podcast](https://techtalesshow.com) and [The Spac
 
 {% rssFeed "https://letterboxd.com/corbindavenport/rss/" %}
 
-### Recent code activity
+### Recent video appearances
 
-{% rssFeed "https://github.com/corbindavenport.atom" false true %}
+{% rssFeed "https://www.youtube.com/feeds/videos.xml?playlist_id=PLwPYWyYQzoKeCH1R2ZZS1kxo_Dn8NPUD_" %}
