@@ -29,7 +29,7 @@ permalink: "reviews/index.html"
         {% favicon product.url %}
       </td>
       <td class="review-name">
-        {% if product.url.startsWith('https://www.howtogeek.com/') or product.url.startsWith('https://www.spacebar.news/') %}
+        {% if product.url.startsWith('https://www.howtogeek.com/') or product.url.startsWith('https://www.spacebar.news/') or product.url.startsWith('https://www.pcgamer.com/') %}
           {# Reviews from these domains should still work correctly #}
           <a href="{{ product.url }}" target="_blank">{{ product.name }}</a>
         {% else %}
