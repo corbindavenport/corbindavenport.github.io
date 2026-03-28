@@ -9,18 +9,6 @@
     --link-hover-color: #c4d4ea:
 }
 
-@keyframes fadein {
-    from {
-        transform: translateY(-10px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 /* Main document */
 
 html,
@@ -32,7 +20,8 @@ body {
 body {
     background: var(--primary-bg);
     font-family: Tahoma, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    line-height: 1.5;
     color: var(--text-color);
 }
 
@@ -44,7 +33,8 @@ header {
 }
 
 header h1 {
-    margin: 0 0 1rem 0;
+    margin: 0;
+    padding: 0 0 1rem 0;
     font-size: 1.8rem;
 }
 
@@ -80,7 +70,7 @@ a:hover {
 
 header a {
     display: inline-block;
-    margin: 0 1rem 0.5rem 0;
+    padding: 0 1rem 0.5rem 0;
     color: #FFF;
     font-weight: bold;
 }
@@ -110,6 +100,15 @@ pre {
     h1.page-title {
         font-size: 3rem;
         margin-bottom: 3rem;
+    }
+}
+
+/* Detached header bar on mobile Safari */
+@supports (-webkit-text-size-adjust:none) and (font: -apple-system-body) {
+    header {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
     }
 }
 
