@@ -6,7 +6,7 @@
     --secondary-bg: #90AB8B;
     --tertiary-bg: #5A7863;
     --link-color: #4C8CE4;
-    --link-hover-color: #c4d4ea:
+    --link-hover-color: #3c70b9;
 }
 
 /* Main document */
@@ -27,20 +27,24 @@ body {
 
 header {
     background: var(--tertiary-bg);
-    margin: 0;
+    backdrop-filter: blur(14px) !important;
+    padding: 0 1rem;
+}
+
+header .title {
     color: #FFF;
-    padding: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem 0 0 0;
+    font-weight: bold;
 }
 
-header h1 {
-    margin: 0;
-    padding: 0 0 1rem 0;
-    font-size: 1.8rem;
+header nav {
+    padding: 1rem 0;
 }
 
-header nav,
-header h1,
-main {
+main,
+header .title,
+header nav {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
@@ -68,15 +72,15 @@ a:hover {
     color: #406093;
 }
 
-header a {
+header nav a {
     display: inline-block;
-    padding: 0 1rem 0.5rem 0;
     color: #FFF;
     font-weight: bold;
+    padding: 0 0.5rem 0 0;
 }
 
-header a:hover {
-    color: var(--link-hover-color);
+header nav a:hover {
+    color: var(--link-color);
 }
 
 a,
@@ -100,15 +104,6 @@ pre {
     h1.page-title {
         font-size: 3rem;
         margin-bottom: 3rem;
-    }
-}
-
-/* Detached header bar on mobile Safari */
-@supports (-webkit-text-size-adjust:none) and (font: -apple-system-body) {
-    header {
-        margin: 0.5rem;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
     }
 }
 
@@ -138,7 +133,7 @@ a.download-btn img:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     gap: 0.5rem;
 }
 
@@ -150,6 +145,7 @@ a.download-btn img:hover {
 
 .flickr-container a img {
     width: 100%;
+    height: auto;
     border-radius: 0.5rem;
 }
 
