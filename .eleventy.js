@@ -22,35 +22,47 @@ module.exports = function (eleventyConfig) {
     // Add media folder to site
     eleventyConfig.addPassthroughCopy("media");
     // Download button shortcode
-    eleventyConfig.addShortcode("downloadBtn", function (platform, url) {
+    eleventyConfig.addShortcode("imgBtn", function (platform, url) {
         var html = '';
         if (platform === 'chrome') {
-            html = `<a href="${url}" target="_blank" class="download-btn"><img src="/media/chrome-button.png" alt="Download on Chrome Web Store" /></a>`;
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/chrome-btn.png" alt="Download on Chrome Web Store" /></a>`;
         } else if (platform === 'firefox') {
-            html = `<a href="${url}" target="_blank" class="download-btn"><img src="/media/firefox-button.png" alt="Download for Firefox" /></a>`;
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/firefox-btn.png" alt="Download for Firefox" /></a>`;
         } else if (platform === 'edge') {
-            html = `<a href="${url}" target="_blank" class="download-btn"><img src="/media/microsoft-button.png" alt="Download for Microsoft Edge" /></a>`;
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/microsoft-btn.png" alt="Download for Microsoft Edge" /></a>`;
+        } else if (platform === "spotify") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/spotify-btn.png" alt="Listen on Spotify" /></a>`;
+        } else if (platform === "youtube") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/youtube-btn.png" alt="Available on YouTube" /></a>`;
+        } else if (platform === "youtube-music") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/youtube-music-btn.png" alt="Listen on YouTube Music" /></a>`;
+        } else if (platform === "pocket-casts") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/pocket-casts-btn.png" alt="Listen on Pocket Casts" /></a>`;
+        } else if (platform === "apple-podcasts") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/apple-podcasts-btn.png" alt="Listen on Apple Podcasts" /></a>`;
+        } else if (platform === "amazon-music") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/amazon-music-btn.png" alt="Listen on Amazon Music" /></a>`;
+        } else if (platform === "rss") {
+            html = `<a href="${url}" target="_blank" class="img-btn"><img src="/media/rss-btn.png" alt="Get the RSS feed" /></a>`;
         }
         return html;
     });
     // RSS feed shortcode
-    eleventyConfig.addShortcode("rssFeed", async function (url, showDescription = true, showDate = false) {
+    eleventyConfig.addShortcode("rssFeed", async function (url, showDescription = true, showDate = false, maxLength = 5) {
         try {
             let html = '';
             let feed = await parser.parseURL(url);
             // console.log('Parsed feed:', feed);
-            for (let i = 0; i < Math.min(feed.items.length, 5); i++) {
+            for (let i = 0; i < Math.min(feed.items.length, maxLength); i++) {
+                console.log(feed.items[i]?.itunes)
                 let item = feed.items[i];
                 let title = item.title;
                 let description = item.contentSnippet;
-                // Remove username from title on GitHub feeds
-                if (url.includes('github.com/')) {
-                    // Get GitHub username
-                    const username = url.split("/")[3].split(".")[0];
-                    title = title.replace(`${username} `, '');
-                }
-                // Shorten description
-                if (description?.length > 230) {
+                let episodeLength = item?.itunes?.duration;
+                // Cut description off at first line break
+                description = description.split('\n', 1)[0];
+                // Shorten description further if needed
+                if (description.length > 230) {
                     description = description.substring(0, 230) + '...';
                 }
                 // Return generated snippet
@@ -61,11 +73,14 @@ module.exports = function (eleventyConfig) {
                 if (description && showDescription) {
                     html += `<i>${description}</i>`;
                 }
+                if (episodeLength) {
+                    html += `<br \><small>${episodeLength}</small>`;
+                }
             }
             return html;
         } catch (e) {
             console.error(`Error parsing RSS feed at ${url}:`, e);
-            return 'There was an error loading this content.';
+            return 'There was an error loading these feed items.';
         }
     });
     // Flickr shortcode

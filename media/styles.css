@@ -109,20 +109,20 @@ pre {
 
 /* Software buttons */
 
-a.download-btn img {
+a.img-btn img {
     margin-right: 0.5rem;
     height: 60px;
     width: auto;
     border: 2px solid var(--link-color);
     transition: 0.3s;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 }
 
 table {
     width: 100%;
 }
 
-a.download-btn img:hover {
+a.img-btn img:hover {
     border-color: #406093;
 }
 

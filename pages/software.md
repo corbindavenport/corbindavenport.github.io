@@ -34,25 +34,25 @@ Browser extensions
 
 Share to Mastodon is a browser extension for quickly sharing links and tabs to the [Mastodon social network](https://joinmastodon.org/). You can click the Mastodon button in the top bar (or the keyboard shortcut) to share the current tab, or right-click a link on any page.
 
-{% downloadBtn "chrome" "https://chrome.google.com/webstore/detail/bibnjflclpdmbbcncejifemmbggkcjde" %} {% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/share-to-mastodon/" %} {% downloadBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/share-to-mastodon/ppgabkpkgkkcejnnmgckomgfdeanejnc" %}
+{% imgBtn "chrome" "https://chrome.google.com/webstore/detail/bibnjflclpdmbbcncejifemmbggkcjde" %} {% imgBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/share-to-mastodon/" %} {% imgBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/share-to-mastodon/ppgabkpkgkkcejnnmgckomgfdeanejnc" %}
 
 ### [Peek](https://github.com/corbindavenport/peek)
 
 Peek is a browser extension that shows previews for links to files and supported services in web pages. Just hover your mouse over a link, and Peek will display a small popup with an interactive preview of the link's content.
 
-{% downloadBtn "chrome" "https://chrome.google.com/webstore/detail/peek/bfpogemllmpcpclnadighnpeeaegigjk" %} {% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/peek-preview/" %} {% downloadBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/peek/dgpocgoebbbfmliabbfhobcmphodhdaf" %}
+{% imgBtn "chrome" "https://chrome.google.com/webstore/detail/peek/bfpogemllmpcpclnadighnpeeaegigjk" %} {% imgBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/peek-preview/" %} {% imgBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/peek/dgpocgoebbbfmliabbfhobcmphodhdaf" %}
 
 ### [Picture-in-Picture Shortcut](https://github.com/corbindavenport/pip-shortcut/)
 
 Picture-in-Picture Shortcut adds a keyboard shortcut and toolbar button for switching video players to the Picture-in-Picture mode in the web browser. It also overrides websites that attempt to block PiP mode.
 
-{% downloadBtn "chrome" "https://chromewebstore.google.com/detail/picture-in-picture-shortc/ednlokepbjfieampgfdabeglnceoheni" %} {% downloadBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/pictureinpicture-shortc/mmgmhaokamemfnkmfdhnkkjmpbfmlpck" %}
+{% imgBtn "chrome" "https://chromewebstore.google.com/detail/picture-in-picture-shortc/ednlokepbjfieampgfdabeglnceoheni" %} {% imgBtn "edge" "https://microsoftedge.microsoft.com/addons/detail/pictureinpicture-shortc/mmgmhaokamemfnkmfdhnkkjmpbfmlpck" %}
 
 ### [Wikipedia Search](https://github.com/corbindavenport/wikipedia-search)
 
 Wikipedia Search adds the ability to search Wikipedia straight from the address bar. You can also right-click a selected word or phrase to perform a search.
 
-{% downloadBtn "chrome" "https://chrome.google.com/webstore/detail/wikipedia-search/lipakennkogpodadpikgipnogamhklmk" %}
+{% imgBtn "chrome" "https://chrome.google.com/webstore/detail/wikipedia-search/lipakennkogpodadpikgipnogamhklmk" %}
 
 Other projects
 -----
@@ -65,4 +65,4 @@ Just the Browser helps you remove AI features, telemetry data reporting, sponsor
 
 Cupertino is a theme for the Mozilla Firefox browser designed to match the macOS color scheme and design. It provides a more native look and feel for Firefox on Mac computers, with a curved toolbar and colors based on Finder and Safari.
 
-{% downloadBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/cupertino-theme/" %}
+{% imgBtn "firefox" "https://addons.mozilla.org/en-US/firefox/addon/cupertino-theme/" %}
