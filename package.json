@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Personal website built with Eleventy",
   "scripts": {
-    "test": "npx @11ty/eleventy --serve --port=8081",
-    "start": "npx @11ty/eleventy --serve --port=8081",
-    "bundle": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy --serve --port=8081",
+    "start": "npx @11ty/eleventy --serve --port=8081"
   },
   "keywords": [],
   "author": "Corbin Davenport",

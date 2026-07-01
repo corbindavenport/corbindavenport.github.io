@@ -1,7 +1,7 @@
 
 const Parser = require("rss-parser");
 const parser = new Parser({
-    headers: {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"},
+    headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" },
     timeout: 5000,
 });
 const jsdom = require("jsdom");
@@ -54,7 +54,6 @@ module.exports = function (eleventyConfig) {
             let feed = await parser.parseURL(url);
             // console.log('Parsed feed:', feed);
             for (let i = 0; i < Math.min(feed.items.length, maxLength); i++) {
-                console.log(feed.items[i]?.itunes)
                 let item = feed.items[i];
                 let title = item.title;
                 let description = item.contentSnippet;
@@ -123,4 +122,11 @@ module.exports = function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
+    // Force exit on site builds, because there's sometimes a hanging process
+    if (process.env.ELEVENTY_ENV === "production" || !process.argv.includes("--serve")) {
+        eleventyConfig.on("eleventy.after", function () {
+            console.log("Forcing exit...");
+            process.exit(0);
+        });
+    }
 };
