@@ -111,7 +111,7 @@ pre {
 
 a.img-btn img {
     margin-right: 0.5rem;
-    height: 60px;
+    height: 40px;
     width: auto;
     border: 2px solid var(--link-color);
     transition: 0.3s;
@@ -179,6 +179,14 @@ td.review-site img {
     border-radius: 5px;
     vertical-align: middle;
     margin-left: 0.5rem;
+}
+
+/* Medium devices */
+
+@media (min-width: 768px) {
+    a.img-btn img {
+        height: 60px;
+    }
 }
 
 /* Dark mode */
