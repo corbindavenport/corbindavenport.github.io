@@ -4,7 +4,7 @@ title: Support Me
 permalink: "support/index.html"
 ---
 
-Do yoou want to support something I made? Here are some ways to do that!
+Do you want to support something I made? Here are some ways to do that!
 
 [Patreon](https://www.patreon.com/corbindavenport)
 
