@@ -69,7 +69,7 @@ module.exports = function (eleventyConfig) {
                     html += `\n<i>${description}</i>`;
                 }
                 if (item?.enclosure?.type && item?.enclosure?.type && item?.enclosure?.url) {
-                    html += `\n<audio loading="lazy" controls><source src="${item.enclosure.url}" type="${item.enclosure.type}"></audio><br />`;
+                    html += `\n<audio preload="none" controls><source src="${item.enclosure.url}" type="${item.enclosure.type}"></audio><br />`;
                 }
             }
             return html;
