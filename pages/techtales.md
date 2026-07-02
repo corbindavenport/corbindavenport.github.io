@@ -14,4 +14,4 @@ As of 2026, there are over 60 episodes available for free. You can also follow t
 
 ### Recent episodes
 
-{% rssFeed "https://feeds.soundcloud.com/users/soundcloud:users:971533159/sounds.rss" show false 10 %}
+{% rssFeed "https://feeds.soundcloud.com/users/soundcloud:users:971533159/sounds.rss" show 10 %}

@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
         return html;
     });
     // RSS feed shortcode
-    eleventyConfig.addShortcode("rssFeed", async function (url, showDescription = true, showDate = false, maxLength = 5) {
+    eleventyConfig.addShortcode("rssFeed", async function (url, showDescription = true, maxLength = 5) {
         try {
             let html = '';
             let feed = await parser.parseURL(url);
@@ -56,24 +56,20 @@ module.exports = function (eleventyConfig) {
             for (let i = 0; i < Math.min(feed.items.length, maxLength); i++) {
                 let item = feed.items[i];
                 let title = item.title;
-                let description = item.contentSnippet;
-                let episodeLength = item?.itunes?.duration;
-                // Cut description off at first line break
-                description = description.split('\n', 1)[0];
-                // Shorten description further if needed
-                if (description.length > 230) {
-                    description = description.substring(0, 230) + '...';
-                }
+                let description = item?.contentSnippet;
                 // Return generated snippet
-                html += `<h4 style="margin-bottom: 0"><a href="${item.link}" target="_blank" rel="nofollow">${title}</a></h4>`;
-                if (showDate && Object.hasOwn(item, 'isoDate')) {
-                    html += ` (${formatDate(item.isoDate)})`;
-                }
+                html += `\n<h4 style="margin-bottom: 0"><a href="${item.link}" target="_blank" rel="nofollow">${title}</a></h4>`;
                 if (description && showDescription) {
-                    html += `<i>${description}</i>`;
+                    // Cut description off at first line break
+                    description = description.split('\n', 1)[0];
+                    // Shorten description further if needed
+                    if (description && (description.length > 230)) {
+                        description = description.substring(0, 230) + '...';
+                    }
+                    html += `\n<i>${description}</i>`;
                 }
-                if (episodeLength) {
-                    html += `<br \><small>${episodeLength}</small>`;
+                if (item?.enclosure?.type && item?.enclosure?.type && item?.enclosure?.url) {
+                    html += `\n<audio loading="lazy" controls><source src="${item.enclosure.url}" type="${item.enclosure.type}"></audio><br />`;
                 }
             }
             return html;

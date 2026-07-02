@@ -181,6 +181,11 @@ td.review-site img {
     margin-left: 0.5rem;
 }
 
+audio {
+    margin-top: 1rem;
+    width: 100%;
+}
+
 /* Medium devices */
 
 @media (min-width: 768px) {
