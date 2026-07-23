@@ -16,12 +16,24 @@ permalink: "{{ redirect[0] }}"
     <meta http-equiv="refresh" content="0; url={{ redirect[1] }}" />
     <style>
         body {
+            background: #FAFAFA;
+            color: #424242;
             font-family: "MS Sans Serif", "Geneva", sans-serif;
+            font-size: 1.15rem;
             text-align: center;
+            margin: 0;
+            padding: 1rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #262626;
+                color: #FFFFFF;
+            }
         }
     </style>
 </head>
 <body>
     <p>You are being redirected...</p>
+    <p><br /><br />Didn't work? Click <a href="{{ redirect[1] }}">here</a> instead.</p>
 </body>
 </html>

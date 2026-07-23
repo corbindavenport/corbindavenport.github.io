@@ -68,9 +68,6 @@ module.exports = function (eleventyConfig) {
                     }
                     html += `\n<i>${description}</i>`;
                 }
-                if (item?.enclosure?.type && item?.enclosure?.type && item?.enclosure?.url) {
-                    html += `\n<audio preload="none" controls><source src="${item.enclosure.url}" type="${item.enclosure.type}"></audio><br />`;
-                }
             }
             return html;
         } catch (e) {
@@ -101,6 +98,10 @@ module.exports = function (eleventyConfig) {
     });
     // Set nofollow, noreferrer, noopener, and target blank attributes for all external links
     eleventyConfig.addTransform("update-links", async function (content) {
+        // Skip this step for links in redirect pages
+        if (this.inputPath.includes("redirects.njk")) {
+            return content;
+        }
         const dom = new JSDOM(content);
         dom.window.document.querySelectorAll('a').forEach(function (el) {
             if (el.href.startsWith('https://') || el.href.startsWith('http://')) {
