@@ -4,11 +4,15 @@ title: About Me
 permalink: "about/index.html"
 ---
 
-I'm Corbin Davenport (he/him), a tech writer, software developer, and podcaster living in Raleigh, North Carolina. I currently work for [SerpApi](https://serpapi.com/) as a Developer Advocate.
+I'm Corbin Davenport, a tech writer and software developer living in Raleigh, North Carolina. I currently work for [SerpApi](https://serpapi.com/) as a Developer Advocate. I also created [the Tech Tales podcast](/podcast) and [The Spacebar](https://www.spacebar.news/#/portal/signup), in addition to some open-source web apps, browser extensions, and utilities.
 
-I was previously a writer and editor at How-To Geek, XDA Developers, PC Gamer, and Android Police, which included news coverage, hundreds of guides and tutorials, and editorials. I have written [over 100 product reviews](/reviews).
+My previous jobs were writing and editing at How-To Geek, XDA Developers, PC Gamer, and Android Police. That included news coverage, hundreds of guides and tutorials, editorials, and [over 100 product reviews](/reviews).
 
-I also created [the Tech Tales podcast](/podcast) and [The Spacebar](https://www.spacebar.news/#/portal/signup), in addition to some open-source web apps, browser extensions, and utilities. I also made a Minecraft blog years ago called Powered by Redstone and Redstone Central.
+I like reading, video games, fixing other people's computers, photography, Star Trek, podcasts, and obscure history topics. You might find me in a round of Overwatch.
+
+**Pronouns:** He/Him
+
+**Time zone:** U.S. Eastern Time (New York)
 
 ### Recent photos
 

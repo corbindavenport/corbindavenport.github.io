@@ -180,6 +180,24 @@ td.review-site img {
     margin-left: 0.5rem;
 }
 
+table thead,
+table thead th:first-of-type {
+    border-top-left-radius: var(--border-radius);
+}
+
+table thead,
+table thead th:last-of-type {
+    border-top-right-radius: var(--border-radius);
+}
+
+table tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: var(--border-radius);
+}
+
+table tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: var(--border-radius);
+}
+
 audio {
     margin-top: 1rem;
     width: 100%;
