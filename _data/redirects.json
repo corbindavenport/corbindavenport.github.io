@@ -108,15 +108,7 @@
 		"https://blog.corbin.io"
 	],
 	[
-		"/wp-login.php",
-		"https://youtube.com/watch?v=dQw4w9WgXcQ"
-	],
-	[
 		"/wp-admin/index.html",
-		"https://youtube.com/watch?v=dQw4w9WgXcQ"
-	],
-	[
-		"/admin/login.php",
 		"https://youtube.com/watch?v=dQw4w9WgXcQ"
 	]
 ]
