@@ -110,5 +110,9 @@
 	[
 		"/wp-admin/index.html",
 		"https://youtube.com/watch?v=dQw4w9WgXcQ"
+	],
+	[
+		"/vrcvid/index.html",
+		"https://gist.github.com/corbindavenport/e29ceef0841ab843a40b987ad68e704c"
 	]
 ]
