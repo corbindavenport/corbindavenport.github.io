@@ -88,6 +88,10 @@
 		"/support"
 	],
 	[
+		"/podcast/contact/index.html",
+		"/contact"
+	],
+	[
 		"/how-i-built-my-website/index.html",
 		"https://blog.corbin.io/post/177683469374/how-i-built-my-website"
 	],
