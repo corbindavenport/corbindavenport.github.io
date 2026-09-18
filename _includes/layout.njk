@@ -69,9 +69,16 @@ title: Corbin Davenport
 	</header>
 
 	<main>
-		{% if title != "Corbin Davenport" %}
-		<h1 class="page-title">{{ title }}</h1>
+		{% if tags and "post" in tags %}
+			<h1 class="blog-title">{{ title }}</h1>
+			{% if snippet %}
+				<p>{{ snippet }}</p>
+			{% endif %}
+			<p>Published {{ date | niceDate }}</p>
+		{% elseif not index %}
+			<h1 class="page-title">{{ title }}</h1>
 		{% endif %}
+
 		{{ content | safe }}
 	</main>
 

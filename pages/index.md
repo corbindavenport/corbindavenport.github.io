@@ -2,6 +2,7 @@
 layout: layout.njk
 title: Corbin Davenport
 permalink: "/index.html"
+index: true
 ---
 
 Hi, I'm Corbin. 👋 I'm a tech writer and software developer. I created [The Spacebar](https://www.spacebar.news/#/portal/signup) blog and newsletter, as well as the [Tech Tales podcast](/podcast).
