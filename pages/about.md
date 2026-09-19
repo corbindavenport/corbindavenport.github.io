@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: About Me
 permalink: "about/index.html"
 ---

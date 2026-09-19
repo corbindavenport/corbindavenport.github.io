@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Portfolio
 permalink: "portfolio/index.html"
 ---

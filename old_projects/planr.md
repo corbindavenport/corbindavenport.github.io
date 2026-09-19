@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Planr
 permalink: "planr/index.html"
 ---

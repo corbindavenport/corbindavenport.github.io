@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Software
 permalink: "software/index.html"
 ---

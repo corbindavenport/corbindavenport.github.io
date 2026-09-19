@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Support Me
 permalink: "support/index.html"
 ---
