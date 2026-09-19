@@ -66,9 +66,17 @@ img {
     outline: none;
 }
 
+.note,
 pre:has(code) {
     background: var(--secondary-bg);
     padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+iframe[src*="youtube.com"] {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
     border-radius: var(--border-radius);
 }
 

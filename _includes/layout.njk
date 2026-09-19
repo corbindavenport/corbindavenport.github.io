@@ -1,25 +1,16 @@
----
-title: Corbin Davenport
----
-
 <!doctype html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>
 	{% if title == "Corbin Davenport" %}
-		Corbin Davenport
+		<title>Corbin Davenport</title>
 	{% else %}
-		{{ title }} - Corbin Davenport
+		<title>{{ title }} - Corbin Davenport</title>
 	{% endif %}
-	</title>
-	<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="corbin, davenport, corbin davenport">
-	<meta name="language" content="English">
-	<link rel="canonical" href="{{ page.outputPath | replace("./_site/", "https://corbin.io/") | replace("/index.html", "/") }}" />
+	<link rel="canonical" href="https://corbin.io{{ page.url }}" />
 	<link rel="icon" type="image/png" href="/media/icon_x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="/media/icon_x64.png" sizes="64x64">
 	<link rel="icon" type="image/png" href="/media/icon_x128.png" sizes="128x128">
@@ -34,15 +25,15 @@ title: Corbin Davenport
     <meta name="theme-color" content="#5A7863">
 	<!-- Analytics -->
 	<script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
-	<!-- OpenGraph -->
-    <meta property="og:site_name" content="Corbin Davenport">
-    <meta property="og:title" content="{{ title }}">
+	<!-- OpenGraph and meta description -->
 	{% if snippet %}
+		<meta name="description" content="{{ snippet }}">
 		<meta property="og:description" content="{{ snippet }}">
 	{% else %}
+		<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 		<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 	{% endif %}
-	<meta property="og:url" content="{{ page.outputPath | replace("./_site/", "https://corbin.io/") | replace("/index.html", "/") }}" />
+	<meta property="og:url" content="https://corbin.io{{ page.url }}" />
 	{% if tags and "post" in tags %}
 		<meta property="og:type" content="article" />
 		<meta property="article:author" content="https://corbin.io/about" />
@@ -77,11 +68,12 @@ title: Corbin Davenport
 
 	<main>
 		{% if tags and "post" in tags %}
+			<div class="note">This is the new home of <b>The Spacebar</b> and <b>blog.corbin.io</b>. Please update your bookmarks and RSS feeds!</div>
 			<h1 class="blog-title">{{ title }}</h1>
 			{% if snippet %}
-				<p>{{ snippet }}</p>
+				<h4>{{ snippet }}</h4>
 			{% endif %}
-			<p>Published {{ page.date | longDate }}</p>
+			<p>{{ page.date | longDate }}</p>
 		{% elseif not index %}
 			<h1 class="page-title">{{ title }}</h1>
 		{% endif %}
