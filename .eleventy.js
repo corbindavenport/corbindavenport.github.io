@@ -135,6 +135,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("niceDate", function (date) {
         return dateFormat.format(date);
     })
+    // Convert dates to ISO format
+    eleventyConfig.addFilter("dateToIso", function (date) {
+        const d = new Date(date);
+        return d.toISOString();
+    });
     // Image generation for blog posts
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         formats: ["avif", "webp", "auto"],

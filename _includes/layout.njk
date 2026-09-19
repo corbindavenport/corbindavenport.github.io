@@ -19,36 +19,43 @@ title: Corbin Davenport
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="corbin, davenport, corbin davenport">
 	<meta name="language" content="English">
+	<link rel="canonical" href="{{ page.outputPath | replace("./_site/", "https://corbin.io/") | replace("/index.html", "/") }}" />
 	<link rel="icon" type="image/png" href="/media/icon_x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="/media/icon_x64.png" sizes="64x64">
 	<link rel="icon" type="image/png" href="/media/icon_x128.png" sizes="128x128">
+	<!-- Opt out of AI training -->
+	<meta name="bingbot" content="noarchive">
+	<meta name="amazonbot" content="noarchive">
 	<!-- Styles -->
 	<link rel="stylesheet" href="/media/styles.css">
 	</style>
 	<meta name="supported-color-schemes" content="dark light">
 	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#3a4d3f">
     <meta name="theme-color" content="#5A7863">
-	<!--[if lte IE 8]>
-	<script>
-	document.createElement('main'); 
-	document.createElement('nav'); 
-	</script>
-	<![endif]-->
 	<!-- Analytics -->
 	<script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
-	<!-- Embed card for social media and messaging -->
+	<!-- OpenGraph -->
     <meta property="og:site_name" content="Corbin Davenport">
-    <meta property="og:type" content="website">
     <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
-    <meta property="og:image" content="https://corbin.io/media/card.png">
-    <meta name="og:image:alt" content="Happy Mac icon" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
-    <meta name="twitter:image" content="https://corbin.io/media/card.png">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="720">
+	{% if snippet %}
+		<meta property="og:description" content="{{ snippet }}">
+	{% else %}
+		<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
+	{% endif %}
+	<meta property="og:url" content="{{ page.outputPath | replace("./_site/", "https://corbin.io/") | replace("/index.html", "/") }}" />
+	{% if tags and "post" in tags %}
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="https://corbin.io/about" />
+	{% else %}
+		<meta property="og:type" content="website">
+	{% endif %}
+	{% if date %}
+		<meta property="article:published_time" content="{{ date | dateToIso }}">
+	{% endif %}
+	<!-- Web Monetization: https://webmonetization.org/ -->
+	<link rel="monetization" href="https://corbin.io/support" />
+	<!-- Fediverse creator tag: https://rknight.me/blog/setting-up-mastodon-author-tags -->
+	<meta name="fediverse:creator" content="@corbin@social.corbin.io" />
 	<!-- RSS feeds -->
 	<link rel="alternate" type="application/rss+xml" title="Corbin's blog" href="https://blog.corbin.io/rss" />
 	<link rel="alternate" type="application/rss+xml" title="The Spacebar" href="https://www.spacebar.news/feed" />
