@@ -1,4 +1,4 @@
-
+const { DateTime } = require("luxon");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const Parser = require("rss-parser");
 const parser = new Parser({
@@ -8,15 +8,37 @@ const parser = new Parser({
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-// Date format for blog posts
-const dateFormat = new Intl.DateTimeFormat("en-US", {
-    dateStyle: "full"
-});
+// Time zone for blog posts
+const globalTimeZone = "America/New_York";
 
 // Eleventy configuration
 module.exports = function (eleventyConfig) {
+    // Set time zone for all date strings
+    // Credit: https://www.11ty.dev/docs/dates/#change-a-projects-default-time-zone
+    eleventyConfig.addDateParsing(function (dateValue) {
+        let localDate;
+        if (dateValue instanceof Date) { // and YAML
+            localDate = DateTime.fromJSDate(dateValue, { zone: "utc" }).setZone(globalTimeZone, { keepLocalTime: true });
+        } else if (typeof dateValue === "string") {
+            localDate = DateTime.fromISO(dateValue, { zone: globalTimeZone });
+        }
+        if (localDate?.isValid === false) {
+            throw new Error(`Invalid \`date\` value (${dateValue}) is invalid for ${this.page.inputPath}: ${localDate.invalidReason}`);
+        }
+        return localDate;
+    });
     // Set default layout
     eleventyConfig.addGlobalData("layout", "layout.njk");
+    // Render images in pages
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+        formats: ["webp", "auto"],
+        htmlOptions: {
+            imgAttributes: {
+                loading: "lazy",
+                decoding: "async",
+            }
+        },
+    });
     // Add favicon to site
     eleventyConfig.addPassthroughCopy("favicon.ico");
     // Add robots.txt to site
@@ -121,7 +143,7 @@ module.exports = function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
-    // Blog
+    // Blog snippets
     eleventyConfig.addShortcode('excerpt', post => extractExcerpt(post));
     function extractExcerpt(post) {
         if (!post.templateContent) return '';
@@ -131,26 +153,17 @@ module.exports = function (eleventyConfig) {
         }
         return post.templateContent;
     }
-    // Convert dates to long format
-    eleventyConfig.addFilter("niceDate", function (date) {
-        return dateFormat.format(date);
-    })
-    // Convert dates to ISO format
-    eleventyConfig.addFilter("dateToIso", function (date) {
-        const d = new Date(date);
-        return d.toISOString();
+    // Short date format, like "8/19/2026"
+    eleventyConfig.addFilter("shortDate", function (date) {
+        return Intl.DateTimeFormat("en").format(date);
     });
-    // Image generation for blog posts
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-        formats: ["avif", "webp", "auto"],
-        widths: ["auto"],
-        htmlOptions: {
-            imgAttributes: {
-                loading: "lazy",
-                decoding: "async",
-            },
-            pictureAttributes: {}
-        },
+    // Long date format, like "Wednesday, August 19, 2026"
+    eleventyConfig.addFilter("longDate", function (date) {
+        return Intl.DateTimeFormat("en", { dateStyle: "full" }).format(date);
+    });
+    // ISO date format, like "2026-08-19T00:00:00.000-04:00"
+    eleventyConfig.addFilter("isoDate", function (date) {
+        return DateTime.fromJSDate(new Date(date)).toISO(); 
     });
     // Force exit on site builds, because there's sometimes a hanging process
     if (process.env.ELEVENTY_ENV === "production" || !process.argv.includes("--serve")) {

@@ -50,7 +50,7 @@ title: Corbin Davenport
 		<meta property="og:type" content="website">
 	{% endif %}
 	{% if date %}
-		<meta property="article:published_time" content="{{ date | dateToIso }}">
+		<meta property="article:published_time" content="{{ page.date | isoDate }}">
 	{% endif %}
 	<!-- Web Monetization: https://webmonetization.org/ -->
 	<link rel="monetization" href="https://corbin.io/support" />
@@ -81,7 +81,7 @@ title: Corbin Davenport
 			{% if snippet %}
 				<p>{{ snippet }}</p>
 			{% endif %}
-			<p>Published {{ date | niceDate }}</p>
+			<p>Published {{ page.date | longDate }}</p>
 		{% elseif not index %}
 			<h1 class="page-title">{{ title }}</h1>
 		{% endif %}
