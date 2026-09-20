@@ -1,0 +1,62 @@
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="1080" data-orig-width="1920">
+<img src="../tumblr_media/748500250878263296_0.jpg" data-orig-height="1080" data-orig-width="1920" srcset="../tumblr_media/748500250878263296_0.jpg 75w, ../tumblr_media/748500250878263296_0.jpg 100w, ../tumblr_media/748500250878263296_0.jpg 250w, ../tumblr_media/748500250878263296_0.jpg 400w, ../tumblr_media/748500250878263296_0.jpg 500w, ../tumblr_media/748500250878263296_0.jpg 540w, ../tumblr_media/748500250878263296_0.jpg 640w, ../tumblr_media/748500250878263296_0.jpg 1280w, ../tumblr_media/748500250878263296_0.jpg 1920w" sizes="(max-width: 1280px) 100vw, 1280px" alt="Podcast chapters in Spotify, YouTube, and Apple Podcasts" />
+</figure>
+</div>
+<p>I currently produce and edit the <a href="https://techtalesshow.com/">Tech Tales Podcast</a>, and last month, I decided to finally try adding chapter markers to episodes. It turns out that chapter markers in podcasts is pretty complicated, especially if you want listeners to have the best possible experience across YouTube and popular podcast apps. I figured my process was interesting enough for a short blog post, and the steps explained here might help other people.</p>
+
+<p>Audio podcasts are usually distributed as MP3 or MP4 audio files. The show name, episode title, artwork, description, and other data can be encoded in the file using <a href="https://en.wikipedia.org/wiki/ID3#Chapters">ID3 metadata</a>, though most podcast apps and services now take that data from the show&#x2019;s RSS feed or another source.</p>
+<p>Chapter markers can also be encoded in the file using ID3 metadata, with each chapter having a title and timestamp. When Apple added support for podcasts to iTunes and iPod players in 2005, it included support for &#x201C;enhanced podcasts,&#x201D; which <a href="https://www.ilounge.com/index.php/articles/comments/the-complete-guide-to-itunes-49-with-podcasts">could include per-chapter artwork and web links</a>. Apple still supports chapter-specific artwork in Apple Podcasts, but the links feature seems to have vanished at some point, and per-chapter artwork <a href="https://www.reddit.com/r/podcasting/comments/13xstb3/some_experiences_with_chapters_in_podcasts/">doesn&#x2019;t seem to be well-supported</a> outside of Apple&#x2019;s software.</p>
+<p>I currently edit Tech Tales episodes with Apple&#x2019;s Logic Pro, and I use <a href="https://support.apple.com/guide/logicpro/markers-overview-lgcp0ec9fc09/mac">the markers feature</a> to set each chapter. Audacity has <a href="https://manual.audacityteam.org/man/creating_and_selecting_labels.html">a similar &#x201C;labels&#x201D; feature</a>.</p>
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="563" data-orig-width="818">
+<img src="../tumblr_media/748500250878263296_1.png" data-orig-height="563" data-orig-width="818" srcset="../tumblr_media/748500250878263296_1.png 75w, ../tumblr_media/748500250878263296_1.png 100w, ../tumblr_media/748500250878263296_1.png 250w, ../tumblr_media/748500250878263296_1.png 400w, ../tumblr_media/748500250878263296_1.png 500w, ../tumblr_media/748500250878263296_1.png 540w, ../tumblr_media/748500250878263296_1.png 640w, ../tumblr_media/748500250878263296_1.png 818w" sizes="(max-width: 818px) 100vw, 818px" alt="Screenshot of markers list in Logic Pro" />
+</figure>
+</div>
+<p>Logic Pro only seems to save the markers as chapter metadata when exporting as a PCM/WAV file, not when I select MP3. It&#x2019;s also a bit complicated to export as a mono channel MP3, especially if the project tracks have stereo channels.</p>
+<h2 id="mp3-chapter-data">MP3 Chapter Data</h2>
+<p>My solution for the audio version of the podcast is to export as WAV from Logic Pro, then use the free and open-source <a href="https://ffmpeg.org/">FFMPEG</a> tool to create a mono-channel 128kbps MP3 file with the chapter data intact.</p>
+<pre><code>fmpeg -i "original.wav" -map_chapters 0 -ac 1 -b:a 128k -f mp3 "exported.mp3"</code></pre>
+<p>The extra step is annoying, but it does give me an MP3 file with the exact desired settings and the chapter data encoded in the file. When I re-encoded an earlier episode with those settings and uploaded it, the chapter markers showed up as expected in Apple Podcasts and Pocket Casts.</p>
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="545" data-orig-width="1113">
+<img src="../tumblr_media/748500250878263296_2.png" data-orig-height="545" data-orig-width="1113" srcset="../tumblr_media/748500250878263296_2.png 75w, ../tumblr_media/748500250878263296_2.png 100w, ../tumblr_media/748500250878263296_2.png 250w, ../tumblr_media/748500250878263296_2.png 400w, ../tumblr_media/748500250878263296_2.png 500w, ../tumblr_media/748500250878263296_2.png 540w, ../tumblr_media/748500250878263296_2.png 640w, ../tumblr_media/748500250878263296_2.png 1113w" sizes="(max-width: 1113px) 100vw, 1113px" alt="Apple Podcasts screenshot with chapter markers" />
+</figure>
+</div>
+<p>There were still two problems. First, there&#x2019;s a video version I upload to the Tech Tales YouTube channel, and that needs chapter markers. Second, I discovered Spotify wasn&#x2019;t showing the chapter markers from the MP3 file, even when other players did. It turned out both problems had the same solution.</p>
+<h2 id="youtube-and-spotify-support">YouTube and Spotify Support</h2>
+<p>YouTube supports <a href="https://support.google.com/youtube/answer/9884579?hl=en">video chapters</a>, which have to be added as time stamps and titles somewhere in the video description. YouTube gives you some wiggle room with the formatting: the timestamps can be anywhere in the description, and the hour isn&#x2019;t necessary for videos under one hour (e.g. you can have 18:30 instead of 00:18:30). I&#x2019;ve also seen different styles for separating the timestamp from the chapter title. For example, a <a href="https://www.youtube.com/watch?v=Qp3BGu3vixk">GamersNexus video</a> about Intel Arc Drivers uses a dash surrounded by spaces, while other videos just put a single space between the timestamp and the title.</p>
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="406" data-orig-width="779">
+<img src="../tumblr_media/748500250878263296_3.png" data-orig-height="406" data-orig-width="779" srcset="../tumblr_media/748500250878263296_3.png 75w, ../tumblr_media/748500250878263296_3.png 100w, ../tumblr_media/748500250878263296_3.png 250w, ../tumblr_media/748500250878263296_3.png 400w, ../tumblr_media/748500250878263296_3.png 500w, ../tumblr_media/748500250878263296_3.png 540w, ../tumblr_media/748500250878263296_3.png 640w, ../tumblr_media/748500250878263296_3.png 779w" sizes="(max-width: 779px) 100vw, 779px" alt="Chapter markers in a YouTube video description" />
+</figure>
+</div>
+<p>Spotify supports <a href="https://support.spotify.com/bb/podcasters/article/enabling-podcast-chapters/">a few different methods</a> of adding chapters to podcast episodes, but none of them are MP3 encoding, which explains why the chapters weren&#x2019;t showing up. The easiest method, and the only one accessible to me while using SoundCloud as a host, is adding timestamps to the episode description. The format is similar to YouTube, but with a few additional requirements. There must be at least three chapters, and the first one must start at zero seconds (00:00).</p>
+<p>Logic Pro can&#x2019;t export markers to a text file, and I didn&#x2019;t really want to type them out each time I published an episode. The best solution ended up involving two different tools. First, I use <a href="https://ffmpeg.org/ffprobe.html">FFPROBE</a> (a media analysis tool usually included with FFMPEG) to read chapter data from that original WAV file and convert it to JSON format.</p>
+<pre><code>ffprobe -i "original.wav" -show_chapters -sexagesimal -of json -loglevel error &gt; json.txt</code></pre>
+<p>That gives me a text file with all the chapter data, including detailed start and end times and the titles, in JSON format. That&#x2019;s not the correct format for YouTube and Spotify, but it can be easily read by other tools. As far as I can tell, FFPROBE on its own can&#x2019;t create the format I need.</p>
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="663" data-orig-width="881">
+<img src="../tumblr_media/748500250878263296_4.png" data-orig-height="663" data-orig-width="881" srcset="../tumblr_media/748500250878263296_4.png 75w, ../tumblr_media/748500250878263296_4.png 100w, ../tumblr_media/748500250878263296_4.png 250w, ../tumblr_media/748500250878263296_4.png 400w, ../tumblr_media/748500250878263296_4.png 500w, ../tumblr_media/748500250878263296_4.png 540w, ../tumblr_media/748500250878263296_4.png 640w, ../tumblr_media/748500250878263296_4.png 881w" sizes="(max-width: 881px) 100vw, 881px" />
+</figure>
+</div>
+<p>The next step is using <a href="https://github.com/jqlang/jq">JQ</a> to write the chapters with time stamps to a text file, using the data provided in the JSON file. I actually used Microsoft Copilot to help me write the command, because I&#x2019;m not too familiar with JQ&#x2019;s options.</p>
+<pre><code>jq -r '.chapters[] | "\(.start_time | split(".")[0]) \(.tags.title)"' > chapters.txt</code></pre>
+<p>This creates a text file called chapters.txt with the time stamps and titles in the exact required format. Success!</p>
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="545" data-orig-width="773">
+<img src="../tumblr_media/748500250878263296_5.png" data-orig-height="545" data-orig-width="773" srcset="../tumblr_media/748500250878263296_5.png 75w, ../tumblr_media/748500250878263296_5.png 100w, ../tumblr_media/748500250878263296_5.png 250w, ../tumblr_media/748500250878263296_5.png 400w, ../tumblr_media/748500250878263296_5.png 500w, ../tumblr_media/748500250878263296_5.png 540w, ../tumblr_media/748500250878263296_5.png 640w, ../tumblr_media/748500250878263296_5.png 773w" sizes="(max-width: 773px) 100vw, 773px" alt="Text file with audio chapters" />
+</figure>
+</div>
+<p>When I copy and paste that into the audio episode description, the chapters appear as expected in the Spotify desktop and mobile applications, and pasting the text into the YouTube video description adds the correct chapter markers to the video player.</p>
+<div class="npf_row">
+<figure class="tmblr-full" data-orig-height="593" data-orig-width="1115">
+<img src="../tumblr_media/748500250878263296_6.png" data-orig-height="593" data-orig-width="1115" srcset="../tumblr_media/748500250878263296_6.png 75w, ../tumblr_media/748500250878263296_6.png 100w, ../tumblr_media/748500250878263296_6.png 250w, ../tumblr_media/748500250878263296_6.png 400w, ../tumblr_media/748500250878263296_6.png 500w, ../tumblr_media/748500250878263296_6.png 540w, ../tumblr_media/748500250878263296_6.png 640w, ../tumblr_media/748500250878263296_6.png 1115w" sizes="(max-width: 1115px) 100vw, 1115px" />
+</figure>
+</div>
+<p>You can see it working on the latest Tech Tales episode on <a href="https://open.spotify.com/episode/4bvcRI0bG7zchtdJGmxikA">Spotify</a> and <a href="https://youtu.be/RH8jmdl7XtQ">YouTube</a>. I didn&#x2019;t expect chapters support to be so annoying, but I&#x2019;m glad to have a mostly-automated solution.</p>
+<h2 id="doing-it-yourself">Doing It Yourself</h2>
+<p>I created a bash script file to run all three commands at once on my Mac, and then save the final audio MP3 and chapters text file to the Desktop. You can <a href="https://gist.github.com/corbindavenport/03764b176bc7be79fd507e698987b55e">see it on GitHub</a>.</p>
+<p>You need FFMPEG/FFPROBE and JQ installed for the commands to work. Since I&#x2019;m on a Mac, I <a href="https://brew.sh/">installed the Homebrew package manager</a>, then ran the below command to install both packages.</p>
+<pre><code>brew install jq ffmpeg</code></pre>
+<p>I hope this helps anyone else having similar issues with podcast chapters!</p>

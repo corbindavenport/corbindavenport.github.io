@@ -1,0 +1,41 @@
+<p>Now that Google Photos is getting rid of its free cloud storage backup, I decided to move my 6+ years of photos and videos to Dropbox. I already pay for Dropbox because it&#x2019;s the only major service that supports Linux, and the mobile app backs up photos in the same manner as Google Photos. I decided to document my process here, in case it becomes useful for anyone else.</p>
+
+<p>My first step was to <a href="https://takeout.google.com/">ask for a Google Takeout</a> of my data, which tells Google&#x2019;s servers to package up everything in ZIP files. You&#x2019;ll get an email when all the ZIPs are ready.</p>
+<p>After I downloaded everything, I found out each ZIP file had nested subdirectories, which made it harder to sort through them. Some images also had accompanying JSON files with geo-location data, face tags, and the upload origin. The only information I really want to keep here is the original capture date, but most of my images already had that in the EXIF data.<br />
+</p>
+<figure class="tmblr-full" data-orig-width="815" data-orig-height="593">
+<img src="../tumblr_media/635622024114520064_0.png" data-orig-width="815" data-orig-height="593" alt="image" />
+</figure>
+<figure class="tmblr-full" data-orig-width="815" data-orig-height="593">
+<img src="../tumblr_media/635622024114520064_1.png" data-orig-width="815" data-orig-height="593" alt="image" />
+</figure>
+<p>My first step was to move all the images and videos into a single directory that I could easily scroll through. I emptied the Downloads folder on my PC, downloaded all the Photos ZIPs, and extracted them into their respective folders. Then I made a "temp" folder in my Documents folder, and ran these commands:</p>
+<pre><code>find . -name "*.jpg" -exec mv "{}" ~/Documents/temp \;
+find . -name "*.mp4" -exec mv "{}" ~/Documents/temp \;
+find . -name "*.m4v" -exec mv "{}" ~/Documents/temp \;
+find . -name "*.mov" -exec mv "{}" ~/Documents/temp \;
+find . -name "*.avi" -exec mv "{}" ~/Documents/temp \;
+find . -name "*.png" -exec mv "{}" ~/Documents/temp \;
+</code></pre>
+<p>This located every image and video file from my exported data into the single "temp" directory. Your data might have other file formats, but that&#x2019;s what all my files were. Now all my files were all in one place:</p>
+<figure class="tmblr-full" data-orig-width="1142" data-orig-height="741">
+<img src="../tumblr_media/635622024114520064_2.png" data-orig-width="1142" data-orig-height="741" alt="image" />
+</figure>
+<p>The battle isn&#x2019;t over yet, though. The export process assigned today to the &#x2018;Last Modified&#x2019; date on most of my files, which made it much harder to see my files in chronological order. It turns out there&#x2019;s an easy fix for this &#x2014; install exiv2, and run a batch operation that changes the date to the date in each image&#x2019;s EXIF info:</p>
+<pre><code>sudo apt install exiv2
+exiv2 -T rename *.jpg
+</code></pre>
+<p>Now all my images could be sorted by date in any file manager. If you have additional file formats that might store EXIF data, run that last command for each extension.<br />
+</p>
+<figure class="tmblr-full" data-orig-width="1076" data-orig-height="741">
+<img src="../tumblr_media/635622024114520064_3.png" data-orig-width="1076" data-orig-height="741" alt="image" />
+</figure>
+<p>The battle still wasn&#x2019;t over, though. My backup still had plenty of junk files that I had no interest in keeping, like uploaded images in old Google Hangouts conversations (usually labelled like "2015-05-20.jpg") and photos I had shared on Google+ back when that was a thing.</p>
+<p>I ran these command to delete all the images Google Photos had automatically applied filters to:</p>
+<pre><code>rm *EFFECTS.jpg
+rm *EFFECTS-edited.jpg
+</code></pre>
+<p>And this command to delete all of Google Photos&#x2019; auto-generated movies (which are neat, but I never look at):</p>
+<pre><code>rm AUTO_AWESOME*</code></pre>
+<p>This process still leaves my videos and screenshots without date data, and I have to re-make all the albums I had previously. I&#x2019;m sure someone will build a better way to do this eventually (by processing the JSON data for each file), but for the moment, this is enough for my needs.<br />
+</p>

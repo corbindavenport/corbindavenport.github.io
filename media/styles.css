@@ -71,6 +71,7 @@ pre:has(code) {
     background: var(--secondary-bg);
     padding: 1rem;
     border-radius: var(--border-radius);
+    overflow-x: auto;
 }
 
 iframe[src*="youtube.com"] {

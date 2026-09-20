@@ -1,0 +1,12 @@
+<h1 id="how-to-fix-spocjs-memory-leak-on-windows-10">How to fix &#x2018;SPOCJS&#x2019; memory leak on Windows 10</h1>
+<p>I recently solved a problem that seems to be plaguing Windows 10 users. After I updated my Surface Pro 2 to Windows 10 and attached my keyboard, a task called &#x2018;SPOCJS&#x2019; (more specifically, the service &#x2018;Jack Sensing Device for USB Audio&#x2019;) would continually take up more and more RAM until Windows would crash.</p>
+<p>Anyways, since I couldn&#x2019;t find a guide anywhere to fix this, I made one myself! Here&#x2019;s how to fix it:</p>
+<ol>
+<li>Search for the &#x2018;Services&#x2019; program from the Start Menu and open it.</li>
+<li>Scroll down to &#x2018;Jack Sensing Device for USB Audio&#x2019;.</li>
+<li>Right-click on it and click Properties.</li>
+<li>Click the menu next to &#x2018;Startup type&#x2019; and change it to disabled.</li>
+<li>Click OK.</li>
+</ol>
+<p><strong>You&#x2019;re done!</strong></p>
+<p>The memory leak should be gone now.</p>

@@ -1,0 +1,69 @@
+<p>I bought the Developer Edition of the Dell XPS 13 9370 (early 2018 model) a few months ago, which came with Ubuntu 18.04 LTS. I later installed Fedora Linux, which worked fine, except the laptop would always wake itself up from sleep mode or never actually sleep in the first place (just turn the screen off).<br />
+</p>
+<p>After a bit of digging, I found a solution across a few forum threads. It turned out that the laptop was never entering a &#x201C;deep sleep&#x201D; mode, instead using a &#x201C;<a href="https://www.kernel.org/doc/Documentation/power/states.txt">s2idle</a>&#x201C; (Suspend-To-Idle) mode. This bug was <a href="https://bugzilla.kernel.org/show_bug.cgi?id=199689">filed with the Linux kernel last year</a>, but it has yet to be fixed. Since it&#x2019;s a kernel-related bug, it affects pretty much every Linux distribution using a recent kernel release.<br />
+</p>
+
+<p><strong>Note:</strong> I only tested this on a Dell XPS 13 9370 while running Fedora 29, Fedora 30 Beta, and Pop_OS 19.04. I have no idea if this works with other laptops or Linux distributions, and most of it was copy-pasted from <a href="https://askubuntu.com/a/1036122">Ask Ubuntu</a> and <a href="https://ask.fedoraproject.org/en/question/80362/how-do-i-update-grub-in-fedora-23/">Ask Fedora</a>.<br />
+</p>
+<h2 id="diagnosing-the-problem">Diagnosing the problem</h2>
+<p>To confirm that the &#x2018;s2idle&#x2019; mode is what is causing your laptop&#x2019;s sleep issues, first close the lid (or put the laptop to sleep using another method). Then wake the laptop up and run this Terminal command:</p>
+<blockquote>
+<p>cat /sys/power/mem_sleep</p>
+</blockquote>
+<p>If the output is:</p>
+<blockquote>
+<p>[s2idle] deep</p>
+</blockquote>
+<p>Then your laptop isn&#x2019;t entering deep sleep, and the default suspend mode is s2idle (since it is highlighted with brackets).</p>
+<h2 id="temporary-fix">Temporary fix</h2>
+<p>To try a temporary fix, run this command:</p>
+<blockquote>
+<p>sudo deep &gt; /sys/power/mem_sleep</p>
+</blockquote>
+<p>The output should look like this:<br />
+</p>
+<blockquote>
+<p>s2idle [deep]</p>
+</blockquote>
+<p>Then suspend the laptop and wake up again. The laptop will probably take an extra second or two to wake up, but to truly test it, you can put your computer to sleep for a couple of hours and check back.<br />
+</p>
+<h2 id="permanent-fix">Permanent fix</h2>
+<p>To make this change permanent, you have to edit your kernel options. This process varies by what Linux distribution you&#x2019;re using.</p>
+<p><strong>Ubuntu, Fedora, and other systems with GRUB2:</strong><br />
+</p>
+<p>On Linux distributions using GRUB2 as the bootloader, edit as root user the file /etc/default/grub, by running this command:</p>
+<blockquote>
+<p>sudo nano /etc/default/grub</p>
+</blockquote>
+<p>Find the line that says &#x201C;GRUB_CMDLINE_LINUX&#x201D;. Find where it says &#x201C;quiet splash&#x201D; (it&#x2019;s probably at the end of the line), and then add this after &#x201C;quiet splash&#x201D;, but before the ending quote:<br />
+</p>
+<blockquote>
+<p>mem_sleep_default=deep</p>
+</blockquote>
+<p>Then do CTRL-X to exit nano, and type &#x2018;Y&#x2019; to save changes.<br />
+</p>
+<p>Then you have to regenerate your grub configuration. Here&#x2019;s the command for Ubuntu:</p>
+<blockquote>
+<p>sudo grub-mkconfig -o /boot/grub/grub.cfg</p>
+</blockquote>
+<p>And here&#x2019;s the command on Fedora:</p>
+<blockquote>
+<p>grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg</p>
+</blockquote>
+<p>Then try shutting down your laptop (not rebooting) and make sure the changes are permanent.<br />
+</p>
+<p><strong>Pop_OS and other systems with systemd-boot:</strong></p>
+<p>Some distributions use systemd-boot instead of GRUB2 as the bootloader. On Pop_OS, all you have to do is run this command:</p>
+<blockquote>
+<p>sudo kernelstub -a mem_sleep_default=deep</p>
+</blockquote>
+<p>Then run this command to see all your bootloader options:</p>
+<blockquote>
+<p>sudo kernelstub -p</p>
+</blockquote>
+<p>The kernel boot options should now include the sleep mode:</p>
+<blockquote>
+<p>Kernel Boot Options:.quiet loglevel=0 systemd.show_status=false splash mem_sleep_default=deep</p>
+</blockquote>
+<p>Then try shutting down your laptop (not rebooting) and make sure the changes are permanent.<br />
+</p>

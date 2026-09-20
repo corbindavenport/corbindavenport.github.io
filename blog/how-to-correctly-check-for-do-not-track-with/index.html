@@ -1,0 +1,27 @@
+<p>Every modern browser has a&#xA0;<a href="https://en.wikipedia.org/wiki/Do_Not_Track">Do Not Track</a>&#xA0;setting, which tells sites whether the user wants to be tracked or not. Many sites don&#x2019;t respect this setting, but it&#x2019;s there regardless.</p>
+<p>However, checking the value of this setting is far more complicated than it needs to be. Major browsers are split on whether it should be `navigator.doNotTrack` or `window.doNotTrack`, and the value can either be a string, a Boolean, or `undefined`. Here&#x2019;s how it boils down:</p>
+
+<ol>
+<li>Chrome, Opera, and other Blink-based browsers use `navigator.doNotTrack`, with values of either `1` for true or `0` for false.</li>
+<li>Firefox also uses `navigator.doNotTrack` with the same values, but older versions use a different syntax. Prior to v32, Firefox would report `yes`, `no`, or `unspecified` (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=887703">more info</a>).</li>
+<li>Safari 7.1.3 and later use `window.doNotTrack`, while older versions use `navigator.doNotTrack`.</li>
+<li>Microsoft Edge and Internet Explorer 11 use `window.doNotTrack`, and reports `1` when enabled and &#x2018;unspecified&#x2019; (Edge) or 'null&#x2019; (IE11) when disabled.</li>
+<li>Internet Explorer 10 and older use `navigator.msDoNotTrack`, which return '1&#x2019; or '0&#x2019;.</li>
+<li>On all versions of Internet Explorer, you can also check `window.external.msTrackingProtectionEnabled()`, which returns either `true` or `false`. This was removed in MS Edge.</li>
+</ol>
+<p>Suffice to say, the implementation of DND across browsers is pretty inconsistent. But with all those different methods in mind, it&#x2019;s not too difficult to create a fool-proof and universal DNT check:</p>
+<blockquote>
+<p>if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled&#x2019; in window.external) {</p>
+<p>&#xA0; &#xA0;// The browser supports Do Not Track!</p>
+<p>&#xA0; &#xA0;if (window.doNotTrack == &#x201C;1&#x201D; || navigator.doNotTrack == &#x201C;yes&#x201D; || navigator.doNotTrack == &#x201C;1&#x201D; || navigator.msDoNotTrack == &#x201C;1&#x201D; || window.external.msTrackingProtectionEnabled()) {</p>
+<p>&#xA0; &#xA0; &#xA0; &#xA0;// Do Not Track is enabled!</p>
+<p>&#xA0; &#xA0;} else {</p>
+<p>&#xA0; &#xA0; &#xA0; &#xA0;// Do Not Track is disabled!</p>
+<p>&#xA0; &#xA0;}</p>
+<p>} else {</p>
+<p>&#xA0; &#xA0;// Do Not Track is not supported</p>
+<p>}</p>
+</blockquote>
+<p>The above code works on every major browser, including Internet Explorer all the way back to IE6 (and possibly earlier, I can&#x2019;t tell when the `msTrackingProtectionEnabled` function was implemented). You can try a demo&#xA0;<a href="https://codepen.io/anon/pen/bKbPbQ">here</a>.</p>
+<p>Hopefully this helps anyone else running into this problem!</p>
+<p><em>This post is also available <a href="https://dev.to/corbindavenport/how-to-correctly-check-for-do-not-track-with-javascript-135d">on DEV.to</a>.</em></p>

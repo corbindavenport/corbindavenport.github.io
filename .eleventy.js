@@ -31,6 +31,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData("layout", "layout.njk");
     // Render images in pages
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+        defaultAttributes: {
+            alt: ""
+        },
         formats: ["webp", "auto"],
         htmlOptions: {
             imgAttributes: {

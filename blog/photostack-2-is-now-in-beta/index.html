@@ -1,0 +1,17 @@
+<p>I finished the first version of PhotoStack <a href="https://blog.corbin.io/post/185118375014/introducing-photostack">back in May 2019</a>, after a few months of development. It&#x2019;s a batch photo editor, with the ability to make changes to many images at once - including adding a watermark, changing the file name and image format, removing EXIF data, and more.</p>
+<p>PhotoStack has received several updates since then, but now there&#x2019;s a major upgrade: PhotoStack 2. It&#x2019;s now available at <a href="https://edit.photostack.app">edit.photostack.app</a> as a beta. The existing version will stay live at <a href="https://photostack.app">photostack.app</a> until V2 is complete.</p>
+
+<figure class="tmblr-full" data-orig-width="1304" data-orig-height="625">
+<img src="../tumblr_media/190452073284_0.png" data-orig-width="1304" data-orig-height="625" alt="image" />
+</figure>
+<p>PhotoStack 2 may look very similar to the existing version, but it has been significantly re-written to take better advantage of newer browser features like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">JavaScript Promises</a>. It&#x2019;s now a single-page web app, so switching between pages won&#x2019;t flash the screen.<br />
+</p>
+<p>The main improvement to the editor is that images are now resized using <a href="https://github.com/nodeca/pica">Pica.js</a>, which means photos scaled down in size will no longer appear heavily pixelated. There&#x2019;s also a new sharpness setting for the resize function.</p>
+<p>The watermark editor has also been significantly overhauled. Clicking the &#x2018;Manage watermarks&#x2019; button in the main editor now opens a popup containing a list of all saved watermarks - along with edit, delete, and export buttons for each. Also, you can now import multiple watermark files at once.</p>
+<figure class="tmblr-full" data-orig-width="1314" data-orig-height="625">
+<img src="../tumblr_media/190452073284_1.png" data-orig-width="1314" data-orig-height="625" alt="image" />
+</figure>
+<p>Some of the other changes in PhotoStack 2: you now get a progress bar instead of a spinner on the export screen, opening the print dialog (CTRL+P on desktops) will now let you print a preview image, and the new &#x2018;Clear&#x2019; button will clear your imported images.</p>
+<p>Due to browser limitations, PhotoStack 2 can&#x2019;t automatically access watermarks created in the original PhotoStack. You can download old watermarks and re-import them using the instructions <a href="https://github.com/photostack/photostack/wiki/Move-your-watermarks-to-PhotoStack-2">here</a>.</p>
+<p>I don&#x2019;t anticipate PhotoStack 2 being in beta for very long: I just need to do more cross-browser testing and update the Android app to point to the new URL. Give it a try and let me know what you think!<br />
+</p>
