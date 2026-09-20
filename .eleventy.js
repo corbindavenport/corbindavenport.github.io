@@ -1,4 +1,7 @@
 const { DateTime } = require("luxon");
+const fs = require("node:fs/promises");
+const path = require("node:path");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const Parser = require("rss-parser");
 const parser = new Parser({
@@ -166,7 +169,32 @@ module.exports = function (eleventyConfig) {
     });
     // ISO date format, like "2026-08-19T00:00:00.000-04:00"
     eleventyConfig.addFilter("isoDate", function (date) {
-        return DateTime.fromJSDate(new Date(date)).toISO(); 
+        return DateTime.fromJSDate(new Date(date)).toISO();
+    });
+    // RSS feed
+    eleventyConfig.addPlugin(feedPlugin, {
+        type: "atom",
+        outputPath: "/feed.xml",
+        collection: {
+            name: "post",
+            limit: 10
+        },
+        metadata: {
+            language: "en",
+            title: "Corbin Davenport",
+            subtitle: "Corbin's blog (previously blog.corbin.io)",
+            base: "https://corbin.io",
+            author: {
+                name: "Corbin Davenport"
+            }
+        }
+    });
+    // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss
+    eleventyConfig.on("eleventy.after", async function ({ dir }) {
+        const source = path.join(dir.output, "feed.xml");
+        const dest = path.join(dir.output, "rss");
+        await fs.mkdir(path.dirname(dest), { recursive: true });
+        await fs.copyFile(source, dest);
     });
     // Force exit on site builds, because there's sometimes a hanging process
     if (process.env.ELEVENTY_ENV === "production" || !process.argv.includes("--serve")) {
