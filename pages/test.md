@@ -6,4 +6,6 @@ permalink: "/signuptest/index.html"
 
 # Sign up for email updates
 
+<div data-getsitecontrol-inline="629378"></div>
+
 <script type="text/javascript" async src="//l.getsitecontrol.com/79236pgw.js"></script>
