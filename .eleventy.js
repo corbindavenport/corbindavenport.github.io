@@ -1,7 +1,7 @@
 const { DateTime } = require("luxon");
 const fs = require("node:fs/promises");
 const path = require("node:path");
-const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
+const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const Parser = require("rss-parser");
 const parser = new Parser({
@@ -171,24 +171,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("isoDate", function (date) {
         return DateTime.fromJSDate(new Date(date)).toISO();
     });
-    // RSS feed
-    eleventyConfig.addPlugin(feedPlugin, {
-        type: "atom",
-        outputPath: "/feed.xml",
-        collection: {
-            name: "post",
-            limit: 10
-        },
-        metadata: {
-            language: "en",
-            title: "Corbin Davenport",
-            subtitle: "Corbin's blog (previously blog.corbin.io)",
-            base: "https://corbin.io",
-            author: {
-                name: "Corbin Davenport"
-            }
-        }
-    });
+    // Generate RSS feeds
+    eleventyConfig.addPlugin(rssPlugin);
     // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss
     eleventyConfig.on("eleventy.after", async function ({ dir }) {
         const source = path.join(dir.output, "feed.xml");
