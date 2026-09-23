@@ -1,9 +1,7 @@
 {
-  "permalink": "post/177683469374/how-i-built-my-website/index.html",
-  "date": "2018-04-01T04:00:00Z",
-  "tumblr_id": 177683469374,
-  "tumblr_url": "https://blog.corbin.io/post/177683469374/how-i-built-my-website",
   "title": "How I built my website",
+  "permalink": "/post/177683469374/how-i-built-my-website/index.html",
+  "date": "2018-04-01T04:00:00Z",
   "tags": [
     "post",
     "accelerated mobile pages",
@@ -17,5 +15,9 @@
     "web development",
     "website",
     "web site"
-  ]
+  ],
+  "tumblr_id": 177683469374,
+  "tumblr_url": "https://blog.corbin.io/post/177683469374/how-i-built-my-website",
+  "tumblr_short_url": "https://tmblr.co/ZEbilY2bUmfG_",
+  "tumblr_blog_name": "corbindavenport"
 }

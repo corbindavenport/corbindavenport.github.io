@@ -1,30 +1,66 @@
-<p>I&#x2019;ve been developing a browser extension called NoPlugin for a few years now. It acts as a compatibility layer for modern browsers, allowing content from many plugin embeds (Adobe Flash, QuickTime, Windows Media Player, etc.) to be viewed without said plugins. In recent updates, it has added support for upgrading old Flash players for popular video sites (like Twitch, YouTube, and Vimeo) to their newer HTML5 versions.</p>
-<p>NoPlugin 7.0 is now rolling out to Chrome, Firefox, and Opera, and it&#x2019;s a <em>big</em> update. It includes many of the features I&#x2019;ve wanted to implement for years, along with some much-needed design updates.</p>
-
-<h2 id="interface">Interface</h2>
-<p>Previously, NoPlugin would add a giant yellow banner to the top of webpages where it detected plugin objects, with easy buttons for reporting bugs and viewing the help document. It was modeled after the banner that Chrome used to add when it detected an unsupported plugin. However, it sometimes cut off content on the webpage (and wasted space), so it&#x2019;s finally going away.</p>
-<p>In NoPlugin 7.0, hovering over a media object that NoPlugin replaced will now show a tooltip message with the same controls. It looks much better, and still gives you the same options for reporting bugs.</p>
-<figure class="tmblr-full" data-orig-height="329" data-orig-width="725">
-<img src="../tumblr_media/638155534677245952_0.gif" data-orig-height="329" data-orig-width="725" />
-</figure>
-<p>NoPlugin 7.0 also no longer shows a popup when a media file has been downloaded, with buttons to install VLC Media Player. The code was becoming difficult to maintain (Chrome, Opera, and Firefox all have varying support for the look and functionality in notifications), so now when a file can&#x2019;t be played in-browser, it will just download with the same popup that your browser uses for all downloads.</p>
-<h2 id="adobe-flash">Adobe Flash</h2>
-<p>NoPlugin can&#x2019;t play Adobe Flash content directly in the browser, it can only replace the object with an HTML5 equivelent wherever possible (e.g. converting an old Flash-style Vimeo embed to the newer HTML5 version) or walk you through opening the content in the separate Adobe Flash Projector application. Starting with NoPlugin 7.0, when you click one of the buttons to download Flash Projector, the proper version for your platform will be automatically downloaded from a mirror on the <a href="https://archive.org/index.php">Internet Archive</a>.</p>
-<figure class="tmblr-full" data-orig-width="1132" data-orig-height="664">
-<img src="../tumblr_media/638155534677245952_1.gif" data-orig-width="1132" data-orig-height="664" alt="image" />
-</figure>
-<p>This will keep the functionality working in the event Adobe removes Projector from its website after Dec 31st, 2020 (<a href="https://www.adobe.com/products/flashplayer/end-of-life.html">the EOL date for all Flash software</a>).</p>
-<h2 id="compatibility-mode">Compatibility Mode</h2>
-<p>One of the long-standing issues with NoPlugin is that it had no way around webpages that detected if certain plugins were installed using JavaScript. If a site wouldn&#x2019;t show plugin content because it (correctly) checked the plugin wasn&#x2019;t available, NoPlugin had nothing on the page to replace. This is finally being addressed with a new compatibility mode.</p>
-<p>NoPlugin 7.0 adds a new menu option when you right click a page for toggling the compatibility mode. When enabled, NoPlugin replaces a few variables in the browser&#x2019;s &#x201C;navigator&#x201D; object to simulate various plugins being installed.</p>
-<figure class="tmblr-full" data-orig-width="1234" data-orig-height="778">
-<img src="../tumblr_media/638155534677245952_2.gif" data-orig-width="1234" data-orig-height="778" alt="image" />
-</figure>
-<p>It&#x2019;s not a 100% fix, since some detection libraries relied on loading actual Flash objects instead of just checking the browser&#x2019;s own plugin lists, but it does work on many pages.</p>
-<h2 id="future-updates">Future updates</h2>
-<p>NoPlugin 7.0 is about as feature-complete as I think the extension will ever get, but I will likely release a few smaller updates over the next few months. NoPlugin 7.0 updates its analytics code to send me the file names of Flash media it can&#x2019;t detect, which could allow me to add translation codes for more types of embeds. I won&#x2019;t know for sure until v7.0 rolls out to a large enough amount of people.</p>
-<p>Beyond that, NoPlugin will likely have to be updated to the <a href="https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/">new Manifest V3 extension format</a> sometime in 2021. I&#x2019;m not anticipating any issues there, but it will require some rewrites.</p>
-<p><a href="https://chrome.google.com/webstore/detail/noplugin-previously-quick/llpahfhchhlfdigfpeimeagojnkgeice"><strong>Download for Chrome</strong></a></p>
-<p><a href="https://addons.mozilla.org/en-US/firefox/addon/noplugin/"><strong>Download for Firefox</strong></a><br />
+<p>
+  I’ve been developing a browser extension called NoPlugin for a few years now. It acts as a compatibility layer for modern browsers, allowing content from many plugin embeds (Adobe Flash, QuickTime, Windows Media Player, etc.) to be viewed without said plugins. In recent updates, it has added support for upgrading old Flash players for popular video sites (like Twitch, YouTube, and Vimeo) to their newer HTML5 versions.
 </p>
-<p><a href="https://addons.opera.com/en/extensions/details/noplugin/"><strong>Download for Opera</strong></a></p>
+<p>
+  NoPlugin 7.0 is now rolling out to Chrome, Firefox, and Opera, and it’s a <i>big</i> update. It includes many of the features I’ve wanted to implement for years, along with some much-needed design updates.
+</p>
+<h2>
+  Interface
+</h2>
+<p>
+  Previously, NoPlugin would add a giant yellow banner to the top of webpages where it detected plugin objects, with easy buttons for reporting bugs and viewing the help document. It was modeled after the banner that Chrome used to add when it detected an unsupported plugin. However, it sometimes cut off content on the webpage (and wasted space), so it’s finally going away.
+</p>
+<p>
+  In NoPlugin 7.0, hovering over a media object that NoPlugin replaced will now show a tooltip message with the same controls. It looks much better, and still gives you the same options for reporting bugs.
+</p>
+<figure class="tmblr-full" data-orig-height="329" data-orig-width="725">
+  <img src="638155534677245952_0.gif" data-orig-height="329" data-orig-width="725">
+</figure>
+<p>
+  NoPlugin 7.0 also no longer shows a popup when a media file has been downloaded, with buttons to install VLC Media Player. The code was becoming difficult to maintain (Chrome, Opera, and Firefox all have varying support for the look and functionality in notifications), so now when a file can’t be played in-browser, it will just download with the same popup that your browser uses for all downloads.
+</p>
+<h2>
+  Adobe Flash
+</h2>
+<p>
+  NoPlugin can’t play Adobe Flash content directly in the browser, it can only replace the object with an HTML5 equivelent wherever possible (e.g. converting an old Flash-style Vimeo embed to the newer HTML5 version) or walk you through opening the content in the separate Adobe Flash Projector application. Starting with NoPlugin 7.0, when you click one of the buttons to download Flash Projector, the proper version for your platform will be automatically downloaded from a mirror on the <a href="https://archive.org/index.php">Internet Archive</a>.
+</p>
+<figure data-orig-width="1132" data-orig-height="664" class="tmblr-full">
+  <img src="638155534677245952_1.gif" alt="image" data-orig-width="1132" data-orig-height="664">
+</figure>
+<p>
+  This will keep the functionality working in the event Adobe removes Projector from its website after Dec 31st, 2020 (<a href="https://www.adobe.com/products/flashplayer/end-of-life.html">the EOL date for all Flash software</a>).
+</p>
+<h2>
+  Compatibility Mode
+</h2>
+<p>
+  One of the long-standing issues with NoPlugin is that it had no way around webpages that detected if certain plugins were installed using JavaScript. If a site wouldn’t show plugin content because it (correctly) checked the plugin wasn’t available, NoPlugin had nothing on the page to replace. This is finally being addressed with a new compatibility mode.
+</p>
+<p>
+  NoPlugin 7.0 adds a new menu option when you right click a page for toggling the compatibility mode. When enabled, NoPlugin replaces a few variables in the browser’s “navigator” object to simulate various plugins being installed.
+</p>
+<figure data-orig-width="1234" data-orig-height="778" class="tmblr-full">
+  <img src="638155534677245952_2.gif" alt="image" data-orig-width="1234" data-orig-height="778">
+</figure>
+<p>
+  It’s not a 100% fix, since some detection libraries relied on loading actual Flash objects instead of just checking the browser’s own plugin lists, but it does work on many pages.
+</p>
+<h2>
+  Future updates
+</h2>
+<p>
+  NoPlugin 7.0 is about as feature-complete as I think the extension will ever get, but I will likely release a few smaller updates over the next few months. NoPlugin 7.0 updates its analytics code to send me the file names of Flash media it can’t detect, which could allow me to add translation codes for more types of embeds. I won’t know for sure until v7.0 rolls out to a large enough amount of people.
+</p>
+<p>
+  Beyond that, NoPlugin will likely have to be updated to the <a href="https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/">new Manifest V3 extension format</a> sometime in 2021. I’m not anticipating any issues there, but it will require some rewrites.
+</p>
+<p>
+  <a href="https://chrome.google.com/webstore/detail/noplugin-previously-quick/llpahfhchhlfdigfpeimeagojnkgeice"><b>Download for Chrome</b></a>
+</p>
+<p>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/noplugin/"><b>Download for Firefox</b></a><br>
+</p>
+<p>
+  <a href="https://addons.opera.com/en/extensions/details/noplugin/"><b>Download for Opera</b></a>
+</p>

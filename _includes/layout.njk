@@ -79,6 +79,10 @@
 		{% endif %}
 
 		{{ content | safe }}
+
+		{% if tags and "post" in tags %}
+		<div class="note">You can follow this blog on <a href="https://corbin.io/feed.xml">RSS</a>, or follow my personal accounts on <a href="https://bsky.app/profile/corbin.io" target="_blank">Bluesky</a>, <a href="https://social.corbin.io/@corbin" target="_blank">Fediverse/Mastodon</a>, or <a href="https://www.linkedin.com/in/corbindavenport/" target="_blank">LinkedIn</a>.</div>
+		{% endif %}
 	</main>
 
 </body>

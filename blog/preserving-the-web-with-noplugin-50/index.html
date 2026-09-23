@@ -1,30 +1,69 @@
-<p>Once upon a time, plugins were required to watch videos, listen to audio, or play games in webpages. However, plugins have proved time and time again to be security risks and the cause of various performance issues. Plugins have been gradually phased out in all web browsers over the past few years, and most sites have switched to HTML5 for playing media.<br />
+<p>
+  Once upon a time, plugins were required to watch videos, listen to audio, or play games in webpages. However, plugins have proved time and time again to be security risks and the cause of various performance issues. Plugins have been gradually phased out in all web browsers over the past few years, and most sites have switched to HTML5 for playing media.<br>
 </p>
-<p>But what about the millions of pages that will never be updated, like those in the Internet Archive? This is where NoPlugin comes in. NoPlugin is a browser extension for Chrome, Opera, and Firefox that converts some plugin objects into HTML5 media objects for playback in the browser. If your browser isn&#x2019;t capable of playing the media file in question, NoPlugin can download it to your computer (so you can open it with VLC Media Player or another app).</p>
-<p>After a year and a half with no updates, I&#x2019;m happy to finally release NoPlugin 5.0! This is a massive update that improves performance, media compatibility, and fixes plenty of bugs.</p>
-
-<h2 id="improved-media-support">Improved media support<br />
+<p>
+  But what about the millions of pages that will never be updated, like those in the Internet Archive? This is where NoPlugin comes in. NoPlugin is a browser extension for Chrome, Opera, and Firefox that converts some plugin objects into HTML5 media objects for playback in the browser. If your browser isn’t capable of playing the media file in question, NoPlugin can download it to your computer (so you can open it with VLC Media Player or another app).
+</p>
+<p>
+  After a year and a half with no updates, I’m happy to finally release NoPlugin 5.0! This is a massive update that improves performance, media compatibility, and fixes plenty of bugs.
+</p>
+<h2>
+  Improved media support<br>
 </h2>
-<p>Before this update, NoPlugin determined if the browser could play a certain file by looking at the file ending &#x2014; .mov, .mp3, and so on. This might seem logical, but many media files are actually containers, with wildly varying video and audio codecs. The file ending doesn&#x2019;t tell the full story.</p>
-<p>Starting with version 5.0, NoPlugin will now attempt to play <em>every</em> plugin media file in your browser. If the media file has a supported video and/or audio codec, it should play. If there&#x2019;s an error, NoPlugin will offer to download the file to your computer, just as before.</p>
-<figure class="tmblr-full" data-orig-width="600" data-orig-height="424">
-<img src="../tumblr_media/182837602804_0.gif" data-orig-width="600" data-orig-height="424" alt="image" />
+<p>
+  Before this update, NoPlugin determined if the browser could play a certain file by looking at the file ending — .mov, .mp3, and so on. This might seem logical, but many media files are actually containers, with wildly varying video and audio codecs. The file ending doesn’t tell the full story.
+</p>
+<p>
+  Starting with version 5.0, NoPlugin will now attempt to play <i>every</i> plugin media file in your browser. If the media file has a supported video and/or audio codec, it should play. If there’s an error, NoPlugin will offer to download the file to your computer, just as before.
+</p>
+<figure data-orig-width="600" data-orig-height="424" class="tmblr-full">
+  <img src="182837602804_0.gif" alt="image" data-orig-width="600" data-orig-height="424">
 </figure>
-<p>This change in behavior allows many QuickTime files (.mov, .qt) to be played inside the browser, since many QuickTime files use the H.264 video codec with AAC/MP3 audio codecs &#x2014; all of which are commonly used by HTML5 video in MP4 containers.</p>
-<h2 id="better-performance">Better performance</h2>
-<p>For this release, most of NoPlugin&#x2019;s codebase has been rewritten to use regular JavaScript instead of jQuery. Not only does this slightly improve loading times and overall performance, but it also reduces memory usage. In my testing, NoPluigin 5.0 used around 2/3 the RAM as NoPlugin 4.0.</p>
-<h2 id="internet-archive-compatibility">Internet Archive compatibility</h2>
-<p>NoPlugin 5.0 also improves compatibility with pages saved in the <a href="https://archive.org/web/">Internet Archive Wayback Machine</a>. When loading a page hosted on the Internet Archive, NoPlugin adds the proper Archive web address ( web.archive.org/web/&#x2026;) to the front of the media URL. This allows many previously-broken media embeds to now work, like <a href="https://web.archive.org/web/20060221052813/http://trailers.apple.com/quicktime/guide/hd/batmanbegins.html">this trailer of The Dark Knight on Apple&#x2019;s website from 2006</a>.</p>
-<p>There is still additional work to be done in this area (only the bottom trailer on the above page works), but I&#x2019;ll save that for the next update.</p>
-<h2 id="chrome-os-integration">Chrome OS integration</h2>
-<p>Chromebooks have always been one of the main focuses for NoPlugin. While you can still use Internet Explorer on Windows to view plugin content, or old builds of Firefox or Chrome on Mac, NoPlugin is the only option for playing plugin content on Chrome OS.</p>
-<p>On Chromebooks, NoPlugin 5.0 adds a new &#x2018;Open in VLC for Android&#x2019; button to plugin objects that can&#x2019;t be played in the browser. If your Chromebook has support for Android apps, clicking this button will open the media URL instantly in the Android version of VLC Media Player.</p>
-<figure class="tmblr-full" data-orig-width="600" data-orig-height="338">
-<img src="../tumblr_media/182837602804_1.gif" data-orig-width="600" data-orig-height="338" alt="image" />
+<p>
+  This change in behavior allows many QuickTime files (.mov, .qt) to be played inside the browser, since many QuickTime files use the H.264 video codec with AAC/MP3 audio codecs — all of which are commonly used by HTML5 video in MP4 containers.
+</p>
+<h2>
+  Better performance
+</h2>
+<p>
+  For this release, most of NoPlugin’s codebase has been rewritten to use regular JavaScript instead of jQuery. Not only does this slightly improve loading times and overall performance, but it also reduces memory usage. In my testing, NoPluigin 5.0 used around 2/3 the RAM as NoPlugin 4.0.
+</p>
+<h2>
+  Internet Archive compatibility
+</h2>
+<p>
+  NoPlugin 5.0 also improves compatibility with pages saved in the <a href="https://archive.org/web/">Internet Archive Wayback Machine</a>. When loading a page hosted on the Internet Archive, NoPlugin adds the proper Archive web address ( web.archive.org/web/…) to the front of the media URL. This allows many previously-broken media embeds to now work, like <a href="https://web.archive.org/web/20060221052813/http://trailers.apple.com/quicktime/guide/hd/batmanbegins.html">this trailer of The Dark Knight on Apple’s website from 2006</a>.
+</p>
+<p>
+  There is still additional work to be done in this area (only the bottom trailer on the above page works), but I’ll save that for the next update.
+</p>
+<h2>
+  Chrome OS integration
+</h2>
+<p>
+  Chromebooks have always been one of the main focuses for NoPlugin. While you can still use Internet Explorer on Windows to view plugin content, or old builds of Firefox or Chrome on Mac, NoPlugin is the only option for playing plugin content on Chrome OS.
+</p>
+<p>
+  On Chromebooks, NoPlugin 5.0 adds a new ‘Open in VLC for Android’ button to plugin objects that can’t be played in the browser. If your Chromebook has support for Android apps, clicking this button will open the media URL instantly in the Android version of VLC Media Player.
+</p>
+<figure data-orig-width="600" data-orig-height="338" class="tmblr-full">
+  <img src="182837602804_1.gif" alt="image" data-orig-width="600" data-orig-height="338">
 </figure>
-<p>This doesn&#x2019;t always work, due to some jankiness with <a href="https://developer.chrome.com/multidevice/android/intents">Android&#x2019;s Intent URL scheme</a>, but it&#x2019;s still a great feature. When it doesn&#x2019;t work, you still have the option of downloading the file (which can then be played with the Android or Chrome OS versions of VLC Media Player).</p>
-<h2 id="download-noplugin">Download NoPlugin</h2>
-<p>NoPlugin 5.0 is rolling out right now on the Chrome Web Store and Firefox Add-ons repository. It&#x2019;s currenty waiting to be approved for Opera.</p>
-<p><a href="https://addons.opera.com/en/extensions/details/noplugin/">Download for Opera</a></p>
-<p><a href="https://chrome.google.com/webstore/detail/noplugin-previously-quick/llpahfhchhlfdigfpeimeagojnkgeice">Download for Chrome</a></p>
-<p><a href="https://addons.mozilla.org/en-US/firefox/addon/noplugin/">Download for Firefox</a></p>
+<p>
+  This doesn’t always work, due to some jankiness with <a href="https://developer.chrome.com/multidevice/android/intents">Android’s Intent URL scheme</a>, but it’s still a great feature. When it doesn’t work, you still have the option of downloading the file (which can then be played with the Android or Chrome OS versions of VLC Media Player).
+</p>
+<h2>
+  Download NoPlugin
+</h2>
+<p>
+  NoPlugin 5.0 is rolling out right now on the Chrome Web Store and Firefox Add-ons repository. It’s currenty waiting to be approved for Opera.
+</p>
+<p>
+  <a href="https://addons.opera.com/en/extensions/details/noplugin/">Download for Opera</a>
+</p>
+<p>
+  <a href="https://chrome.google.com/webstore/detail/noplugin-previously-quick/llpahfhchhlfdigfpeimeagojnkgeice">Download for Chrome</a>
+</p>
+<p>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/noplugin/">Download for Firefox</a>
+</p>

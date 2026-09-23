@@ -1,9 +1,7 @@
 {
-  "permalink": "post/805641962529177600/introducing-just-the-browser/index.html",
-  "date": "2026-01-13T16:00:47Z",
-  "tumblr_id": 805641962529177600,
-  "tumblr_url": "https://blog.corbin.io/post/805641962529177600/introducing-just-the-browser",
   "title": "Introducing Just the Browser",
+  "permalink": "/post/805641962529177600/introducing-just-the-browser/index.html",
+  "date": "2026-01-13T16:00:47Z",
   "tags": [
     "post",
     "chrome",
@@ -13,5 +11,9 @@
     "windows 10",
     "deshittification",
     "debloat"
-  ]
+  ],
+  "tumblr_id": 805641962529177600,
+  "tumblr_url": "https://blog.corbin.io/post/805641962529177600/introducing-just-the-browser",
+  "tumblr_short_url": "https://tmblr.co/ZEbilYikDnYmiq00",
+  "tumblr_blog_name": "corbindavenport"
 }

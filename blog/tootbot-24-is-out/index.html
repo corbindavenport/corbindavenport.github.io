@@ -1,21 +1,45 @@
-<p><a href="https://github.com/corbindavenport/tootbot">Tootbot</a> is a Python tool for reposting Reddit content to Twitter and <a href="https://joinmastodon.org/">Mastodon</a>. Earlier this year, I added the ability to run Tootbot in the cloud for free with Heroku, which caused the amount of <a href="https://github.com/corbindavenport/tootbot/wiki/Accounts-using-Tootbot">accounts using it</a> to skyrocket.</p>
-<p>Tootbot 2.4 is now available, with major improvements for Mastodon posting and updated documentation for Twitter posting. Here&#x2019;s whats new:<br />
+<p>
+  <a href="https://github.com/corbindavenport/tootbot">Tootbot</a> is a Python tool for reposting Reddit content to Twitter and <a href="https://joinmastodon.org/">Mastodon</a>. Earlier this year, I added the ability to run Tootbot in the cloud for free with Heroku, which caused the amount of <a href="https://github.com/corbindavenport/tootbot/wiki/Accounts-using-Tootbot">accounts using it</a> to skyrocket.
 </p>
-
-<h2 id="mastodon-hd-media">Mastodon HD media</h2>
-<p>The <a href="https://github.com/tweepy/tweepy">Tweepy API</a>, which is used by Tootbot to make posts to Twitter, doesn&#x2019;t support uploading videos - only GIFs 3MB or smaller. Because of this limitation, Tootbot could only post low-quality GIFs/video encodes, not the high-quality MP4 versions of videos and GIFs that you would see on Reddit.</p>
-<p>The Mastodon API never had this limitation (it supports videos up to 8MB), but I wanted to use the same code for both platforms to keep the codebase simple. Over the past few months, I&#x2019;ve been emailed by a few Mastodon bot admins that asked me to fix this, so I finally sat down and implemented it.</p>
-<figure class="tmblr-full" data-orig-width="979" data-orig-height="512">
-<img src="../tumblr_media/178461369759_0.png" data-orig-width="979" data-orig-height="512" />
+<p>
+  Tootbot 2.4 is now available, with major improvements for Mastodon posting and updated documentation for Twitter posting. Here’s whats new:<br>
+</p>
+<h2>
+  Mastodon HD media
+</h2>
+<p>
+  The <a href="https://github.com/tweepy/tweepy">Tweepy API</a>, which is used by Tootbot to make posts to Twitter, doesn’t support uploading videos - only GIFs 3MB or smaller. Because of this limitation, Tootbot could only post low-quality GIFs/video encodes, not the high-quality MP4 versions of videos and GIFs that you would see on Reddit.
+</p>
+<p>
+  The Mastodon API never had this limitation (it supports videos up to 8MB), but I wanted to use the same code for both platforms to keep the codebase simple. Over the past few months, I’ve been emailed by a few Mastodon bot admins that asked me to fix this, so I finally sat down and implemented it.
+</p>
+<figure data-orig-width="979" data-orig-height="512" class="tmblr-full">
+  <img src="178461369759_0.png" data-orig-width="979" data-orig-height="512">
 </figure>
-<p>As of version 2.4, Tootbot now uploads high-quality MP4 files to Mastodon instead of low-quality GIFs. This only applies links from Imgur, Giphy, and Gfycat (as well as direct links to .mp4 files). Posts to Twitter are still low quality, but there might be <a href="https://github.com/corbindavenport/tootbot/issues/75">a way to fix that</a> in the future.<br />
+<p>
+  As of version 2.4, Tootbot now uploads high-quality MP4 files to Mastodon instead of low-quality GIFs. This only applies links from Imgur, Giphy, and Gfycat (as well as direct links to .mp4 files). Posts to Twitter are still low quality, but there might be <a href="https://github.com/corbindavenport/tootbot/issues/75">a way to fix that</a> in the future.<br>
 </p>
-<p>Reddit-hosted videos are also supported by Tootbot, but the Mastodon API appears to have issues with the file format Reddit uses. I&#x2019;m not yet sure what is required to fix this, but the vast majority of GIF/video links on Reddit are still using Imgur and Gfycat.</p>
-<h2 id="simplified-codebase-and-bug-fixes">Simplified codebase and bug fixes</h2>
-<p>I&#x2019;ve spent some time trying to simplify the codebase in version 2.4. I&#x2019;ve split up some functions and updated variable names, so it should be easier for new contributors to modify Tootbot.</p>
-<p>I&#x2019;ve also fixed a few bugs, including one where some Imgur GIFs would fail for Twitter posts.</p>
-<h2 id="important-note-for-twitter-bots">Important note for Twitter bots</h2>
-<p>If you currently operate a Twitter account that uses Tootbot, you must apply for a Twitter Developer Account. If you don&#x2019;t, <strong>Twitter will eventually shut off your API access.</strong></p>
-<p>There&#x2019;s <a href="https://github.com/corbindavenport/tootbot/wiki/Migrating-existing-Twitter-bots-to-the-new-API-Dashboard">a wiki page</a> with instructions for upgrading existing accounts to the new dashboard. For anyone creating a new account for Tootbot, the <a href="https://github.com/corbindavenport/tootbot/wiki/Setting-up-Tootbot-(Heroku)">Heroku</a> and <a href="https://github.com/corbindavenport/tootbot/wiki/Setting-up-Tootbot-(local-installation)">local setup</a> guides have already been updated with the new instructions.</p>
-<p>You can see the full changelog for Tootbot 2.4 (and download the update) on GitHub <a href="https://github.com/corbindavenport/tootbot/releases/tag/2.4">here</a>. If you find any bugs, please <a href="https://github.com/corbindavenport/tootbot/issues/new">leave an issue</a>.<br />
+<p>
+  Reddit-hosted videos are also supported by Tootbot, but the Mastodon API appears to have issues with the file format Reddit uses. I’m not yet sure what is required to fix this, but the vast majority of GIF/video links on Reddit are still using Imgur and Gfycat.
+</p>
+<h2>
+  Simplified codebase and bug fixes
+</h2>
+<p>
+  I’ve spent some time trying to simplify the codebase in version 2.4. I’ve split up some functions and updated variable names, so it should be easier for new contributors to modify Tootbot.
+</p>
+<p>
+  I’ve also fixed a few bugs, including one where some Imgur GIFs would fail for Twitter posts.
+</p>
+<h2>
+  Important note for Twitter bots
+</h2>
+<p>
+  If you currently operate a Twitter account that uses Tootbot, you must apply for a Twitter Developer Account. If you don’t, <b>Twitter will eventually shut off your API access.</b>
+</p>
+<p>
+  There’s <a href="https://github.com/corbindavenport/tootbot/wiki/Migrating-existing-Twitter-bots-to-the-new-API-Dashboard">a wiki page</a> with instructions for upgrading existing accounts to the new dashboard. For anyone creating a new account for Tootbot, the <a href="https://github.com/corbindavenport/tootbot/wiki/Setting-up-Tootbot-(Heroku)">Heroku</a> and <a href="https://github.com/corbindavenport/tootbot/wiki/Setting-up-Tootbot-(local-installation)">local setup</a> guides have already been updated with the new instructions.
+</p>
+<p>
+  You can see the full changelog for Tootbot 2.4 (and download the update) on GitHub <a href="https://github.com/corbindavenport/tootbot/releases/tag/2.4">here</a>. If you find any bugs, please <a href="https://github.com/corbindavenport/tootbot/issues/new">leave an issue</a>.<br>
 </p>

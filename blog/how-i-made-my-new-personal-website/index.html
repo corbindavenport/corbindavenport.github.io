@@ -1,68 +1,131 @@
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="720" data-orig-width="1280">
-<img src="../tumblr_media/752757825366835200_0.png" data-orig-height="720" data-orig-width="1280" srcset="../tumblr_media/752757825366835200_0.png 75w, ../tumblr_media/752757825366835200_0.png 100w, ../tumblr_media/752757825366835200_0.png 250w, ../tumblr_media/752757825366835200_0.png 400w, ../tumblr_media/752757825366835200_0.png 500w, ../tumblr_media/752757825366835200_0.png 540w, ../tumblr_media/752757825366835200_0.png 640w, ../tumblr_media/752757825366835200_0.png 1280w" sizes="(max-width: 1280px) 100vw, 1280px" alt="Screenshot of about page" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="720" data-orig-width="1280">
+    <img src="752757825366835200_0.png" data-orig-height="720" data-orig-width="1280" alt="Screenshot of about page" srcset="752757825366835200_0.png 75w, 752757825366835200_0.png 100w, 752757825366835200_0.png 250w, 752757825366835200_0.png 400w, 752757825366835200_0.png 500w, 752757825366835200_0.png 540w, 752757825366835200_0.png 640w, 752757825366835200_0.png 1280w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
 </div>
-<p>I just finished making <a href="https://corbin.io/">my new personal site</a>, powered by the Eleventy static site generator, a custom template, and GitHub Actions. It&#x2019;s fast, easy for me to maintain, and doesn&#x2019;t cost me anything to host. Here&#x2019;s how I made it.</p>
-
-<p>My <a href="https://web.archive.org/web/20240122055940id_/https:/corbin.io/">previous personal site</a> was a static HTML site hosted on GitHub Pages, which I initially <a href="https://blog.corbin.io/post/177683469374/how-i-built-my-website">made in 2018</a> to replace my Blogger-based site (that&#x2019;s a throwback!). I made the layout and site theme myself instead of using a heavier web framework, and I moved the blog section to Tumblr with a new <a href="https://blog.corbin.io/">blog.corbin.io</a> domain. I later tried switching to WordPress managed hosting, but that costs more money, and I wasn&#x2019;t a fan of most modern WordPress themes and how resource-heavy they were. WordPress is great for larger sites, but it was overkill for my simple personal site.</p>
-<p>My ideal setup here would be a site that is easy to edit, gives me full control over the template, and (ideally) doesn&#x2019;t require paid hosting. My first idea was moving the content to Markdown files, and then using <a href="https://jekyllrb.com/docs/github-pages/">GitHub&#x2019;s Jekyll integration</a> to generate a static site. Creating a Jekyll theme turned out to be a bit clunkier than I wanted, though, so I started looking at other static site generators.</p>
-<p>I eventually discovered <a href="https://www.11ty.dev/">Eleventy</a>, which doesn&#x2019;t have the extensive feature set of Jekyll or some other static site generators, but it looked perfect for my project. It can generate sites from Markdown (or other data formats) using simple HTML templates, and I could keep using free GitHub Pages hosting. It&#x2019;s also possible to create reusable widget components with contents, which can be filled in by the main Eleventy generation script. The <a href="https://www.11ty.dev/docs/">official getting started guide</a> was helpful.</p>
-<p>The most clear way for me to talk about my process is just go through each of the files in the <a href="https://github.com/corbindavenport/corbindavenport.github.io">GitHub repository</a>, so that&#x2019;s what I&#x2019;ll do!</p>
-<h2 id="the-main-pages">The main pages</h2>
-<p>I wrote all the pages for the site, like the <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/about.md">About page</a>, in Markdown format. It&#x2019;s mostly the same syntax that as GitHub, but with an added table at the top to define the page title, permalink, and template layout. This is a huge upgrade over my previous site, where I was writing the &lt;head&gt; and other shared elements in each page and tried to keep them synchronized.</p>
+<p>
+  I just finished making <a href="https://corbin.io/">my new personal site</a>, powered by the Eleventy static site generator, a custom template, and GitHub Actions. It’s fast, easy for me to maintain, and doesn’t cost me anything to host. Here’s how I made it.
+</p>
+<p>
+  My <a href="https://web.archive.org/web/20240122055940id_/https:/corbin.io/">previous personal site</a> was a static HTML site hosted on GitHub Pages, which I initially <a href="https://blog.corbin.io/post/177683469374/how-i-built-my-website">made in 2018</a> to replace my Blogger-based site (that’s a throwback!). I made the layout and site theme myself instead of using a heavier web framework, and I moved the blog section to Tumblr with a new <a href="https://blog.corbin.io/">blog.corbin.io</a> domain. I later tried switching to WordPress managed hosting, but that costs more money, and I wasn’t a fan of most modern WordPress themes and how resource-heavy they were. WordPress is great for larger sites, but it was overkill for my simple personal site.
+</p>
+<p>
+  My ideal setup here would be a site that is easy to edit, gives me full control over the template, and (ideally) doesn’t require paid hosting. My first idea was moving the content to Markdown files, and then using <a href="https://jekyllrb.com/docs/github-pages/">GitHub’s Jekyll integration</a> to generate a static site. Creating a Jekyll theme turned out to be a bit clunkier than I wanted, though, so I started looking at other static site generators.
+</p>
+<p>
+  I eventually discovered <a href="https://www.11ty.dev/">Eleventy</a>, which doesn’t have the extensive feature set of Jekyll or some other static site generators, but it looked perfect for my project. It can generate sites from Markdown (or other data formats) using simple HTML templates, and I could keep using free GitHub Pages hosting. It’s also possible to create reusable widget components with contents, which can be filled in by the main Eleventy generation script. The <a href="https://www.11ty.dev/docs/">official getting started guide</a> was helpful.
+</p>
+<p>
+  The most clear way for me to talk about my process is just go through each of the files in the <a href="https://github.com/corbindavenport/corbindavenport.github.io">GitHub repository</a>, so that’s what I’ll do!
+</p>
+<h2>
+  The main pages
+</h2>
+<p>
+  I wrote all the pages for the site, like the <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/about.md">About page</a>, in Markdown format. It’s mostly the same syntax that as GitHub, but with an added table at the top to define the page title, permalink, and template layout. This is a huge upgrade over my previous site, where I was writing the &lt;head&gt; and other shared elements in each page and tried to keep them synchronized.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="775" data-orig-width="1265">
-<img src="../tumblr_media/752757825366835200_1.png" data-orig-height="775" data-orig-width="1265" srcset="../tumblr_media/752757825366835200_1.png 75w, ../tumblr_media/752757825366835200_1.png 100w, ../tumblr_media/752757825366835200_1.png 250w, ../tumblr_media/752757825366835200_1.png 400w, ../tumblr_media/752757825366835200_1.png 500w, ../tumblr_media/752757825366835200_1.png 540w, ../tumblr_media/752757825366835200_1.png 640w, ../tumblr_media/752757825366835200_1.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px" alt="Markdown code for Software page" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="775" data-orig-width="1265">
+    <img src="752757825366835200_1.png" data-orig-height="775" data-orig-width="1265" alt="Markdown code for Software page" srcset="752757825366835200_1.png 75w, 752757825366835200_1.png 100w, 752757825366835200_1.png 250w, 752757825366835200_1.png 400w, 752757825366835200_1.png 500w, 752757825366835200_1.png 540w, 752757825366835200_1.png 640w, 752757825366835200_1.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px">
+  </figure>
 </div>
-<p>Eleventy converts Markdown format to the equivalent standard HTML code when the site is generated. For example, &#x201C;# Hello&#x201D; becomes &#x201C;&lt;h1&gt;Hello&lt;/h1&gt;&#x201D;. That makes styling the site with CSS in the layout template easy, and it&#x2019;s great for accessibility. You can also put custom HTML content in the Markdown file and it will render as expected.</p>
-<p>It&#x2019;s much easier for me to make quick edits to Markdown files than raw HTML. I can even do it from the GitHub app on my phone.</p>
-<h2 id="the-special-pages">The special pages</h2>
-<p>GitHub Pages allows you to <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site">create a custom 404 page</a>, which appears to still work with custom site generators as long as the resulting file is called &#x201C;404.md&#x201D; or &#x201C;404.html&#x201D; in the main directory. I <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/404.md">made one</a> and set the permalink to &#x201C;404.html&#x201D; and it works as expected.</p>
-<p>My earlier site had a few redirecting pages, mostly for blog posts that used to be on my main domain but were later moved to my blog. Those had to be in specific locations to work with my earlier site, cluttering up the site structure, but Eleventy gave me a much cleaner solution. I created a &#x201C;redirects&#x201D; folder for all of them, set the permalinks to the proper locations, and added an HTML redirect element to the Markdown file.</p>
+<p>
+  Eleventy converts Markdown format to the equivalent standard HTML code when the site is generated. For example, “# Hello” becomes “&lt;h1&gt;Hello&lt;/h1&gt;”. That makes styling the site with CSS in the layout template easy, and it’s great for accessibility. You can also put custom HTML content in the Markdown file and it will render as expected.
+</p>
+<p>
+  It’s much easier for me to make quick edits to Markdown files than raw HTML. I can even do it from the GitHub app on my phone.
+</p>
+<h2>
+  The special pages
+</h2>
+<p>
+  GitHub Pages allows you to <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site">create a custom 404 page</a>, which appears to still work with custom site generators as long as the resulting file is called “404.md” or “404.html” in the main directory. I <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/404.md">made one</a> and set the permalink to “404.html” and it works as expected.
+</p>
+<p>
+  My earlier site had a few redirecting pages, mostly for blog posts that used to be on my main domain but were later moved to my blog. Those had to be in specific locations to work with my earlier site, cluttering up the site structure, but Eleventy gave me a much cleaner solution. I created a “redirects” folder for all of them, set the permalinks to the proper locations, and added an HTML redirect element to the Markdown file.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="349" data-orig-width="1265">
-<img src="../tumblr_media/752757825366835200_2.png" data-orig-height="349" data-orig-width="1265" srcset="../tumblr_media/752757825366835200_2.png 75w, ../tumblr_media/752757825366835200_2.png 100w, ../tumblr_media/752757825366835200_2.png 250w, ../tumblr_media/752757825366835200_2.png 400w, ../tumblr_media/752757825366835200_2.png 500w, ../tumblr_media/752757825366835200_2.png 540w, ../tumblr_media/752757825366835200_2.png 640w, ../tumblr_media/752757825366835200_2.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px" alt="Screenshot of redirect page" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="349" data-orig-width="1265">
+    <img src="752757825366835200_2.png" data-orig-height="349" data-orig-width="1265" alt="Screenshot of redirect page" srcset="752757825366835200_2.png 75w, 752757825366835200_2.png 100w, 752757825366835200_2.png 250w, 752757825366835200_2.png 400w, 752757825366835200_2.png 500w, 752757825366835200_2.png 540w, 752757825366835200_2.png 640w, 752757825366835200_2.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px">
+  </figure>
 </div>
-<p>For example, I originally had a blog post at <a href="https://corbin.io/wikipedia-search-11">corbin.io/wikipedia-search-11</a>. When I moved that blog post to my Tumblr blog, I had to create a redirect HTML file at that specific location (root/wikipedia-search-11/index.html), which then cluttered up the root directory of my code repository. With Eleventy, I can place the redirects anywhere I want and call the files anything I want. I made a page in my &#x201C;redirects&#x201D; directory with the permalink &#x201C;wikipedia-search-11/index.html&#x201D; and it worked exactly as expected.</p>
-<h2 id="the-node-packages">The Node packages</h2>
-<p>Eleventy uses Node.js, so there&#x2019;s a <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/package.json">package.json file</a> in the root directory that tells Node what packages are needed. Right now, my only dependencies are RSS parser (more on that later) and Eleventy. Running the setup command &#x201C;npm install&#x201D; installs those packages.</p>
-<h2 id="the-layout-theme">The layout theme</h2>
-<p>The <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/_includes/layout.njk">layout theme</a> is stored at _includes/layout.njk, though the file can be called anything. It contains everything around the main content, including the general HTML page structure, any links to JavaScript or CSS files, and so on.</p>
-<p>My custom template is a minimalist one-column layout and some basic CSS. I went back and forth on possible site designs, including some more 90s-inspired layouts, but I ended up staying close to the old design. Some of the changes include a new navigation bar that changes size based on screen size (no hamburger menu!) and removing Google Fonts.</p>
-<p>I also wanted to see if I could make my site render properly on older web browsers, because that&#x2019;s a fun challenge. However, the Let&#x2019;s Encrypt SSL certificate that GitHub sets up for my site uses the <a href="https://letsencrypt.org/docs/certificate-compatibility/">ISRG Root X1 root certificate</a>, which isn&#x2019;t available on most platforms and browsers released before the mid-2010s. Legacy web browsers can&#x2019;t load the site in the first place, so there&#x2019;s not much of a point in doing that testing. I did add some compatibility tweaks for earlier WebKit and Firefox browsers, though, and the site <em>should</em> work in Internet Explorer 8 and above.</p>
-<p>The &lt;head&gt; section contains code for an Open Graph card, so linking any page on platforms like Slack, Facebook, Discord, and iMessage will create a rich preview. The image is set to my current <a href="https://gravatar.com/">Gravatar</a> image, so if I decide to change my profile picture, it is automatically applied to my personal site at the same time as everything else connected to my Gravatar.</p>
+<p>
+  For example, I originally had a blog post at <a href="https://corbin.io/wikipedia-search-11">corbin.io/wikipedia-search-11</a>. When I moved that blog post to my Tumblr blog, I had to create a redirect HTML file at that specific location (root/wikipedia-search-11/index.html), which then cluttered up the root directory of my code repository. With Eleventy, I can place the redirects anywhere I want and call the files anything I want. I made a page in my “redirects” directory with the permalink “wikipedia-search-11/index.html” and it worked exactly as expected.
+</p>
+<h2>
+  The Node packages
+</h2>
+<p>
+  Eleventy uses Node.js, so there’s a <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/package.json">package.json file</a> in the root directory that tells Node what packages are needed. Right now, my only dependencies are RSS parser (more on that later) and Eleventy. Running the setup command “npm install” installs those packages.
+</p>
+<h2>
+  The layout theme
+</h2>
+<p>
+  The <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/_includes/layout.njk">layout theme</a> is stored at _includes/layout.njk, though the file can be called anything. It contains everything around the main content, including the general HTML page structure, any links to JavaScript or CSS files, and so on.
+</p>
+<p>
+  My custom template is a minimalist one-column layout and some basic CSS. I went back and forth on possible site designs, including some more 90s-inspired layouts, but I ended up staying close to the old design. Some of the changes include a new navigation bar that changes size based on screen size (no hamburger menu!) and removing Google Fonts.
+</p>
+<p>
+  I also wanted to see if I could make my site render properly on older web browsers, because that’s a fun challenge. However, the Let’s Encrypt SSL certificate that GitHub sets up for my site uses the <a href="https://letsencrypt.org/docs/certificate-compatibility/">ISRG Root X1 root certificate</a>, which isn’t available on most platforms and browsers released before the mid-2010s. Legacy web browsers can’t load the site in the first place, so there’s not much of a point in doing that testing. I did add some compatibility tweaks for earlier WebKit and Firefox browsers, though, and the site <i>should</i> work in Internet Explorer 8 and above.
+</p>
+<p>
+  The &lt;head&gt; section contains code for an Open Graph card, so linking any page on platforms like Slack, Facebook, Discord, and iMessage will create a rich preview. The image is set to my current <a href="https://gravatar.com/">Gravatar</a> image, so if I decide to change my profile picture, it is automatically applied to my personal site at the same time as everything else connected to my Gravatar.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="196" data-orig-width="647">
-<img src="../tumblr_media/752757825366835200_3.png" data-orig-height="196" data-orig-width="647" srcset="../tumblr_media/752757825366835200_3.png 75w, ../tumblr_media/752757825366835200_3.png 100w, ../tumblr_media/752757825366835200_3.png 250w, ../tumblr_media/752757825366835200_3.png 400w, ../tumblr_media/752757825366835200_3.png 500w, ../tumblr_media/752757825366835200_3.png 540w, ../tumblr_media/752757825366835200_3.png 640w, ../tumblr_media/752757825366835200_3.png 647w" sizes="(max-width: 647px) 100vw, 647px" alt="Screenshot of Discord message with link to about page, showing a rich preview with a profile picture and description." />
-</figure>
+  <figure class="tmblr-full" data-orig-height="196" data-orig-width="647">
+    <img src="752757825366835200_3.png" data-orig-height="196" data-orig-width="647" alt="Screenshot of Discord message with link to about page, showing a rich preview with a profile picture and description." srcset="752757825366835200_3.png 75w, 752757825366835200_3.png 100w, 752757825366835200_3.png 250w, 752757825366835200_3.png 400w, 752757825366835200_3.png 500w, 752757825366835200_3.png 540w, 752757825366835200_3.png 640w, 752757825366835200_3.png 647w" sizes="(max-width: 647px) 100vw, 647px">
+  </figure>
 </div>
-<p>I also added link tags in the &lt;head&gt; for several RSS feeds, including the feed for my personal blog (which is on a Tumblr custom domain) and the RSS for my Tech Tales podcast. If someone puts my website into an RSS reader like Feedly or Inoreader, or they have a browser extension that shows any available RSS feeds, those feeds appear as subscription options.</p>
+<p>
+  I also added link tags in the &lt;head&gt; for several RSS feeds, including the feed for my personal blog (which is on a Tumblr custom domain) and the RSS for my Tech Tales podcast. If someone puts my website into an RSS reader like Feedly or Inoreader, or they have a browser extension that shows any available RSS feeds, those feeds appear as subscription options.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="704" data-orig-width="1213">
-<img src="../tumblr_media/752757825366835200_4.png" data-orig-height="704" data-orig-width="1213" srcset="../tumblr_media/752757825366835200_4.png 75w, ../tumblr_media/752757825366835200_4.png 100w, ../tumblr_media/752757825366835200_4.png 250w, ../tumblr_media/752757825366835200_4.png 400w, ../tumblr_media/752757825366835200_4.png 500w, ../tumblr_media/752757825366835200_4.png 540w, ../tumblr_media/752757825366835200_4.png 640w, ../tumblr_media/752757825366835200_4.png 1213w" sizes="(max-width: 1213px) 100vw, 1213px" alt="Feedly screenshot showing matching feeds for corbin.io." />
-</figure>
+  <figure class="tmblr-full" data-orig-height="704" data-orig-width="1213">
+    <img src="752757825366835200_4.png" data-orig-height="704" data-orig-width="1213" alt="Feedly screenshot showing matching feeds for corbin.io." srcset="752757825366835200_4.png 75w, 752757825366835200_4.png 100w, 752757825366835200_4.png 250w, 752757825366835200_4.png 400w, 752757825366835200_4.png 500w, 752757825366835200_4.png 540w, 752757825366835200_4.png 640w, 752757825366835200_4.png 1213w" sizes="(max-width: 1213px) 100vw, 1213px">
+  </figure>
 </div>
-<p>Finally, I added <a href="https://joinmastodon.org/verification">verification code for the Mastodon social network</a> as a hidden link at the bottom of the &lt;body&gt; section. That allows my site to appear as a verified link on my <a href="https://toot.community/@corbin">Mastodon profile</a>.</p>
-<h2 id="the-eleventy-script">The Eleventy script</h2>
-<p>The <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/.eleventy.js">.eleventy.js file</a> is where the magic happens: it&#x2019;s the Node script that generates the site with all the custom configuration options. I added &#x201C;passthroughs&#x201D; for the media folder, robots.txt file, favicon file, and other resources that need to be copied to the generated site for everything to work.</p>
+<p>
+  Finally, I added <a href="https://joinmastodon.org/verification">verification code for the Mastodon social network</a> as a hidden link at the bottom of the &lt;body&gt; section. That allows my site to appear as a verified link on my <a href="https://toot.community/@corbin">Mastodon profile</a>.
+</p>
+<h2>
+  The Eleventy script
+</h2>
+<p>
+  The <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/.eleventy.js">.eleventy.js file</a> is where the magic happens: it’s the Node script that generates the site with all the custom configuration options. I added “passthroughs” for the media folder, robots.txt file, favicon file, and other resources that need to be copied to the generated site for everything to work.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="764" data-orig-width="1265">
-<img src="../tumblr_media/752757825366835200_5.png" data-orig-height="764" data-orig-width="1265" srcset="../tumblr_media/752757825366835200_5.png 75w, ../tumblr_media/752757825366835200_5.png 100w, ../tumblr_media/752757825366835200_5.png 250w, ../tumblr_media/752757825366835200_5.png 400w, ../tumblr_media/752757825366835200_5.png 500w, ../tumblr_media/752757825366835200_5.png 540w, ../tumblr_media/752757825366835200_5.png 640w, ../tumblr_media/752757825366835200_5.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px" alt="Screenshot of Eleventy generation script" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="764" data-orig-width="1265">
+    <img src="752757825366835200_5.png" data-orig-height="764" data-orig-width="1265" alt="Screenshot of Eleventy generation script" srcset="752757825366835200_5.png 75w, 752757825366835200_5.png 100w, 752757825366835200_5.png 250w, 752757825366835200_5.png 400w, 752757825366835200_5.png 500w, 752757825366835200_5.png 540w, 752757825366835200_5.png 640w, 752757825366835200_5.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px">
+  </figure>
 </div>
-<p>This is also where I defined shortcodes that I use in some pages, which are reusable components that Eleventy can drop in during the generation process. For example, I have download buttons for browser extensions on my <a href="https://corbin.io/software/">software page</a>, and I didn&#x2019;t want to manually define the same image and link structure over a dozen times. I defined a &#x201C;downloadBtn&#x201D; shortcode with arguments for the platform and URL, which generates a download link button with that data. I also made a shortcode for the HTML redirect for my redirect pages, and other functions I&#x2019;m using on other pages.</p>
-<p>I also created a &#x201C;letterboxd&#x201D; shortcode for displaying my recent Letterboxd reviews on my about page. You can use any Node code in this script, so I&#x2019;m using the <a href="https://www.npmjs.com/package/rss-parser">rss-parser Node library</a> to download the RSS feed from my Letterboxd profile and parse it in HTML format with links. My custom &#x201C;flickr&#x201D; shortcode does the same for my recent Flickr images.</p>
-<h2 id="the-github-action">The GitHub Action</h2>
-<p>The final piece is the <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/.github/workflows/eleventy_build.yml">GitHub Action</a> for building and deploying the website. It runs after each new commit and automatically once a day (so data used in the Letterboxd and Flickr shortcodes is fresh). The script checks out the repository code, installs all the NPM dependencies, runs Eleventy to generate the site, and then uploads the package to GitHub Pages.</p>
-<p>With this integration, I can make changes to my site from anywhere, and then a minute or two later the changes are live on the site. The code repository isn&#x2019;t even cluttered with the generated HTML files, since I added the &#x201C;_site/&#x201D; output directory to the gitignore file.</p>
-<h2 id="the-end">The end</h2>
-<p>I&#x2019;m pretty happy with my new personal site. It&#x2019;s fast to load, easy for me to edit from anywhere, and completely free to host. Since all the core content is server-side generated, it even works in text-based browsers like Lynx.</p>
+<p>
+  This is also where I defined shortcodes that I use in some pages, which are reusable components that Eleventy can drop in during the generation process. For example, I have download buttons for browser extensions on my <a href="https://corbin.io/software/">software page</a>, and I didn’t want to manually define the same image and link structure over a dozen times. I defined a “downloadBtn” shortcode with arguments for the platform and URL, which generates a download link button with that data. I also made a shortcode for the HTML redirect for my redirect pages, and other functions I’m using on other pages.
+</p>
+<p>
+  I also created a “letterboxd” shortcode for displaying my recent Letterboxd reviews on my about page. You can use any Node code in this script, so I’m using the <a href="https://www.npmjs.com/package/rss-parser">rss-parser Node library</a> to download the RSS feed from my Letterboxd profile and parse it in HTML format with links. My custom “flickr” shortcode does the same for my recent Flickr images.
+</p>
+<h2>
+  The GitHub Action
+</h2>
+<p>
+  The final piece is the <a href="https://github.com/corbindavenport/corbindavenport.github.io/blob/main/.github/workflows/eleventy_build.yml">GitHub Action</a> for building and deploying the website. It runs after each new commit and automatically once a day (so data used in the Letterboxd and Flickr shortcodes is fresh). The script checks out the repository code, installs all the NPM dependencies, runs Eleventy to generate the site, and then uploads the package to GitHub Pages.
+</p>
+<p>
+  With this integration, I can make changes to my site from anywhere, and then a minute or two later the changes are live on the site. The code repository isn’t even cluttered with the generated HTML files, since I added the “_site/” output directory to the gitignore file.
+</p>
+<h2>
+  The end
+</h2>
+<p>
+  I’m pretty happy with my new personal site. It’s fast to load, easy for me to edit from anywhere, and completely free to host. Since all the core content is server-side generated, it even works in text-based browsers like Lynx.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="854" data-orig-width="1350">
-<img src="../tumblr_media/752757825366835200_6.png" data-orig-height="854" data-orig-width="1350" srcset="../tumblr_media/752757825366835200_6.png 75w, ../tumblr_media/752757825366835200_6.png 100w, ../tumblr_media/752757825366835200_6.png 250w, ../tumblr_media/752757825366835200_6.png 400w, ../tumblr_media/752757825366835200_6.png 500w, ../tumblr_media/752757825366835200_6.png 540w, ../tumblr_media/752757825366835200_6.png 640w, ../tumblr_media/752757825366835200_6.png 1280w, ../tumblr_media/752757825366835200_6.png 1350w" sizes="(max-width: 1280px) 100vw, 1280px" alt="Screenshot of Software page in Lynx" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="854" data-orig-width="1350">
+    <img src="752757825366835200_6.png" data-orig-height="854" data-orig-width="1350" alt="Screenshot of Software page in Lynx" srcset="752757825366835200_6.png 75w, 752757825366835200_6.png 100w, 752757825366835200_6.png 250w, 752757825366835200_6.png 400w, 752757825366835200_6.png 500w, 752757825366835200_6.png 540w, 752757825366835200_6.png 640w, 752757825366835200_6.png 1280w, 752757825366835200_6.png 1350w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
 </div>
-<p>If you want to set up something similar, feel free to <a href="https://github.com/corbindavenport/corbindavenport.github.io/">fork my site&#x2019;s repository on GitHub</a>.</p>
+<p>
+  If you want to set up something similar, feel free to <a href="https://github.com/corbindavenport/corbindavenport.github.io/">fork my site’s repository on GitHub</a>.
+</p>

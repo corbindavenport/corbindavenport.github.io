@@ -14,6 +14,9 @@ const { JSDOM } = jsdom;
 // Time zone for blog posts
 const globalTimeZone = "America/New_York";
 
+// robots.txt list
+const robotsTxt = "https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt";
+
 // Eleventy configuration
 module.exports = function (eleventyConfig) {
     // Set time zone for all date strings
@@ -173,18 +176,26 @@ module.exports = function (eleventyConfig) {
     });
     // Generate RSS feeds
     eleventyConfig.addPlugin(rssPlugin);
-    // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss
+    // Post-processing steps
     eleventyConfig.on("eleventy.after", async function ({ dir }) {
+        // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss
         const source = path.join(dir.output, "feed.xml");
         const dest = path.join(dir.output, "rss");
         await fs.mkdir(path.dirname(dest), { recursive: true });
         await fs.copyFile(source, dest);
-    });
-    // Force exit on site builds, because there's sometimes a hanging process
-    if (process.env.ELEVENTY_ENV === "production" || !process.argv.includes("--serve")) {
-        eleventyConfig.on("eleventy.after", function () {
+        // Add ai.robots.txt list to robots.txt
+        try {
+            const response = await fetch(robotsTxt);
+            const remoteRobotsTxt = await response.text();
+            const outputPath = path.join(dir.output, "robots.txt");
+            await fs.appendFile(outputPath, `\n\n# AI Crawlers (ai.robots.txt)\n${remoteRobotsTxt}`);
+        } catch (error) {
+            console.error("Failed to fetch ai.robots.txt list:", error);
+        }
+        // Force exit on site builds, because there's sometimes a hanging process
+        if (process.env.ELEVENTY_ENV === "production" || !process.argv.includes("--serve")) {
             console.log("Forcing exit...");
             process.exit(0);
-        });
-    }
+        }
+    });
 };

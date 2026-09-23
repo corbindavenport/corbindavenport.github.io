@@ -1,87 +1,243 @@
-<p><strong>Note:&#xA0;</strong>This guide was originally written in 2013. I have no idea if it still works.</p>
+<p>
+  <b>Note:&nbsp;</b>This guide was originally written in 2013. I have no idea if it still works.
+</p>
 <figure class="tmblr-full" data-orig-height="448" data-orig-width="1200">
-<img src="../tumblr_media/177684106024_0.jpg" data-orig-height="448" data-orig-width="1200" />
+  <img src="177684106024_0.jpg" data-orig-height="448" data-orig-width="1200">
 </figure>
-<p><a href="https://3.bp.blogspot.com/-yWQVZQoaxPs/W0rQ8VK9HQI/AAAAAAABSuA/aBTo2Ig6tE8uYa4_CAwnT6LFKiSPjUuOwCLcBGAs/s1600/1200px-Nintendo_Wi-Fi_USB_Connector.jpg"></a></p>
-<p>Recently I have been using my Nintendo DS a little more, since I have been playing my first Pokemon game (Pokemon White) and I wanted to play online with others. Playing online with the DS used to be simple, because it was compatible with the main network security standard at the time, WEP. If you didn&#x2019;t have a Wifi network, you could also get the Nintendo Wifi connector above and connect it into your computer to make a network only visible to Nintendo systems. Using Nintendo&#x2019;s software you can whitelist which consoles (Wii, DS, or 3DS) can connect to you.</p>
-
-<p>Nowadays, things are more complicated. WPA and WPA-2 networks are the norm, which original DS systems are not compatible with. Even if you have a Nintendo DSi or DSi XL, only a few games take advantage of the system&#x2019;s ability to work with WPA/WPA2. But what if you want to use the Wifi connector? Too bad, because it&#x2019;s been discontinued and can only be found used on eBay for $50+. Why don&#x2019;t we make our own that will be cheaper than Nintendo&#x2019;s? I did, so here is a guide on how to make your own Nintendo Wifi USB Connector.</p>
-<p>The guide may look long, but that is because I explain every single step in detail. If you have a decent knowledge of computers, you should be able to get through this in 10-20 minutes.</p>
-<h2 id="things-you-will-need">Things you will need</h2>
+<p>
+  <a href="https://3.bp.blogspot.com/-yWQVZQoaxPs/W0rQ8VK9HQI/AAAAAAABSuA/aBTo2Ig6tE8uYa4_CAwnT6LFKiSPjUuOwCLcBGAs/s1600/1200px-Nintendo_Wi-Fi_USB_Connector.jpg"></a>
+</p>
+<p>
+  Recently I have been using my Nintendo DS a little more, since I have been playing my first Pokemon game (Pokemon White) and I wanted to play online with others. Playing online with the DS used to be simple, because it was compatible with the main network security standard at the time, WEP. If you didn’t have a Wifi network, you could also get the Nintendo Wifi connector above and connect it into your computer to make a network only visible to Nintendo systems. Using Nintendo’s software you can whitelist which consoles (Wii, DS, or 3DS) can connect to you.
+</p>
+<p>
+  Nowadays, things are more complicated. WPA and WPA-2 networks are the norm, which original DS systems are not compatible with. Even if you have a Nintendo DSi or DSi XL, only a few games take advantage of the system’s ability to work with WPA/WPA2. But what if you want to use the Wifi connector? Too bad, because it’s been discontinued and can only be found used on eBay for $50+. Why don’t we make our own that will be cheaper than Nintendo’s? I did, so here is a guide on how to make your own Nintendo Wifi USB Connector.
+</p>
+<p>
+  The guide may look long, but that is because I explain every single step in detail. If you have a decent knowledge of computers, you should be able to get through this in 10-20 minutes.
+</p>
+<h2>
+  Things you will need
+</h2>
 <ol>
-<li>A Wifi USB dongle based on the Ralink RT2500 chipset, which is what the original Nintendo Wifi USB connector had. An entire list is available <a href="http://ralink.rapla.net/">here</a>. Pick a device from the first table and buy it from Amazon/eBay. If it&#x2019;s not on that list, it won&#x2019;t work.</li>
-<li>A PC running Windows XP or Windows Vista. It might also work if you have 32-bit Windows 7, but you&#x2019;re on your own for getting that working. This guide was made with instructions for Windows XP and Vista users.</li>
-<li>A Hex Editor. The best one to use with this tutorial is <a href="http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm">XVI32</a>, but you can use your own. If you don&#x2019;t know what a hex editor is, download XVI32 because the tutorial will have directions for it.</li>
-<li>Some knowledge of how to use text editors and installing drivers.</li>
-<li>Patience.</li>
+  <li>A Wifi USB dongle based on the Ralink RT2500 chipset, which is what the original Nintendo Wifi USB connector had. An entire list is available <a href="http://ralink.rapla.net/">here</a>. Pick a device from the first table and buy it from Amazon/eBay. If it’s not on that list, it won’t work.
+  </li>
+  <li>A PC running Windows XP or Windows Vista. It might also work if you have 32-bit Windows 7, but you’re on your own for getting that working. This guide was made with instructions for Windows XP and Vista users.
+  </li>
+  <li>A Hex Editor. The best one to use with this tutorial is <a href="http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm">XVI32</a>, but you can use your own. If you don’t know what a hex editor is, download XVI32 because the tutorial will have directions for it.
+  </li>
+  <li>Some knowledge of how to use text editors and installing drivers.
+  </li>
+  <li>Patience.
+  </li>
 </ol>
-<h2 id="setting-up-the-adapter">Setting up the adapter</h2>
-<p>So now you have your shiny (or not) USB adapter meant to give wired computers the gift of wireless internet. You need to download the driver for your adapter and get it working. Windows might do it for you when you plug it in, if not you need to install it from a CD that came with it (if one did) or find one on the internet. There are so many ways this can be done, so I can&#x2019;t help with this much. I might be able to help if you put your USB adapter model in the comments, but no promises.</p>
-<h2 id="finding-the-device-id">Finding the Device ID</h2>
-<p>Now that you have the drivers installed, we need to find out what the Device ID is. The Device ID is what your adapter identifies to Windows as, it&#x2019;s like a name and every USB device has one. To find yours, open up the Control Panel and click on &#x201C;Printers and other hardware&#x201D;.</p>
-<p><strong>Make sure that your adapter is connected to your computer.</strong></p>
-<p>On the left of the Control Panel there should be a menu with an option called &#x201C;System&#x201D;. Click on it. You should see a window open that says &#x2018;System Properties&#x2019; with some information about your computer. Click the Hardware tab and click on the 'Device Manager&#x2019; button.</p>
-<p>This window lists every single device connected to your computer. Find the item named 'Network Adapters&#x2019; and click on the + next to it. You should see the adapter connected to your computer, for example I bought a D-Link adapter so mine says &#x2019;D-Link DWL-G122 REV.B&#x2019;. Right-click on yours and select Properties. Now click on Details and select 'Device Instance ID&#x2019;. It should read something like:</p>
-<p>USB\VID_2001&amp;PID_3C00\5&amp;2E155997&amp;0&amp;8</p>
-<p>But all we need is this part:</p>
-<p>USB\VID_2001&amp;PID_3C00</p>
-<p>That is your device ID (not the one above, the one in your window). Write it down because you are going to need it later. That was the hard part, now for the easy stuff.</p>
-<h2 id="downloading-nintendos-software">Downloading Nintendo&#x2019;s software</h2>
-<p>Now we need to get Nintendo&#x2019;s USB software. Go to their page</p>
-<p><a href="https://web.archive.org/web/20141008023351/http://www.nintendo.com:80/consumer/wfc/en_na/customersupport/downloadUSB.jsp">here</a></p>
-<p>and download the latest version (1.07 at the time of writing). Unzip it with your favorite zip software and place the Nintendo_WFC_USB folder somewhere easy to get to. This folder contains the installer for the Nintendo Wifi USB Connector software, which we are going to modify to work with our adapter.</p>
-<h2 id="modifying-text-files">Modifying text files</h2>
-<p>Now we need to start modifying Nintendo&#x2019;s software to work with our adapter. Open the folder you unzipped and you should see files like 'setup&#x2019; and a bunch of language files. Open the folder named 'U2G54&#x2019; inside of it. If you are using Windows 2000 or Windows XP, open the Win2000 folder. If you are using Windows Vista, open the WinVista folder. Now open the file named 'rt25usbap&#x2019; in Notepad. Look for the part that looks like this:</p>
-<p>[Ralink]</p>
-<p>; DisplayName &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; Section &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; DeviceID</p>
-<p>; &#x2014;&#x2014;&#x2014;&#x2013; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#x2014;&#x2014;- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#x2014;&#x2014;&#x2013;</p>
-<p>%Ralink.DeviceDesc% = &#xA0; &#xA0; &#xA0; RALINK.ndi, &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; USB\VID_0411&amp;PID_008B</p>
-<p>;%Ralink.DeviceDesc% = &#xA0; &#xA0; &#xA0; RALINK.ndi, &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; USB\VID_148f&amp;PID_2570</p>
-<p>and change it to look like this:</p>
-<p>[Ralink]</p>
-<p>; DisplayName &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; Section &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; DeviceID</p>
-<p>; &#x2014;&#x2014;&#x2014;&#x2013; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#x2014;&#x2014;- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#x2014;&#x2014;&#x2013;</p>
-<p>%Ralink.DeviceDesc% = &#xA0; &#xA0; &#xA0; RALINK.ndi, &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; DeviceID</p>
-<p>;%Ralink.DeviceDesc% = &#xA0; &#xA0; &#xA0; RALINK.ndi, &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; USB\VID_148f&amp;PID_2570</p>
-<p>You see where I put the bold and underlined word DeviceID? That&#x2019;s where you have to put your device ID you got earlier. After you finish that, save and close the file. Now go back to the NintendoWFCReg folder (the one with the setup in it) and open 'INST&#x2019; in Notepad. Now follow the directions for your Windows version. If you are using Windows XP, look for the words that look like this:</p>
-<p>[WINXP]</p>
-<p>0,Nintendo Wi-Fi USB Connector</p>
-<p>1,USB\VID_0411&amp;PID_008B</p>
-<p>and change it to this:</p>
-<p>[WINXP]</p>
-<p>0,Nintendo Wi-Fi USB Connector</p>
-<p>1,DeviceID</p>
-<p>Again, put in your Device ID where the bold and underlined words are. If you are using Windows Vista, you have to find the part that looks like this:</p>
-<p>[WINVISTA]</p>
-<p>0,Nintendo Wi-Fi USB Connector</p>
-<p>1,USB\VID_0411&amp;PID_008B</p>
-<p>and change it to this:</p>
-<p>[WINVISTA]</p>
-<p>0,Nintendo Wi-Fi USB Connector</p>
-<p>1,DeviceID</p>
-<p>Make sure to put in your Device ID where the bold and underlined words are. We are done with separate instructions for Vista and XP users, so both XP and Vista users have to find this part in the same file:</p>
-<p>NO_COMPLETE0=BUFFALO WLI-PCI-OP</p>
-<p>NO_COMPLETE1=BUFFALO WLI-U2-KAMG54 Bootloader</p>
-<p>and change it to look like this:</p>
-<p>;NO_COMPLETE0=BUFFALO WLI-PCI-OP</p>
-<p>;NO_COMPLETE1=BUFFALO WLI-U2-KAMG54 Bootloader</p>
-<p>Now we are done with that file, so save and close it. Now open the folder named 'SoftAP&#x2019; and open the file named 'DEVREMOVE&#x2019; (not the program, the config file. the program has an icon of a laptop, open the other file.) in Notepad. Look for the part that says:</p>
-<p>[WLAN]</p>
-<p>#WLA-U2-G54</p>
-<p>PID0=USB\VID_0411&amp;PID_008B</p>
-<p>and change it to look like this:</p>
-<p>[WLAN]</p>
-<p>#WLA-U2-G54</p>
-<p>PID0=DeviceID</p>
-<p>Just like last time, replace the bold and underlined word with your Device ID. We are done editing files, now we have to edit the rest with a hex editor.</p>
-<h2 id="hex-editing-the-last-files">Hex editing the last files</h2>
-<p>We are nearly done, but it&#x2019;s always the toughest before it&#x2019;s over. Now we have to use a Hex Editor to edit the rest of the files. These directions will be for the XVI32 Hex Editor you may have downloaded in the 'Things you will need&#x2019; section. Open XVI32 and go to File &gt; Open and select the file named 'ICSAPI.DLL&#x2019;.</p>
-<p>Now you should see a bunch of random numbers and letters. This looks really complicated, but it&#x2019;s basically the same thing as editing text files. Go to Search &gt; Find and click the bubble next to 'Text String&#x2019;. In the box type in USB\ and click OK. On the right side of the window, XVI should have found the Device ID for Nintendo&#x2019;s connector. You need to replace it with your own. Use the arrow keys to select which box you need to modify and type the correct letter and number. Make sure the letters in the Device ID (if there are any) are capitalized. The hex editor is case-sensitive.</p>
-<p>After you are done, save the file and go to File &gt; Open again and choose the ICSAPI.DLL file in the folder named 'SoftAP&#x2019;. Do the same thing as you did before and save it. After that go to File &gt; Open and choose the file named WIFICON.DLL in the SoftAP folder and do the same thing again. After that you are done editing files, now time for the easy stuff!</p>
-<h2 id="uninstalling-the-wifi-adapter-drivers">Uninstalling the Wifi Adapter drivers</h2>
-<p>Now you need to uninstall the drivers for your USB adapter, so we can use Nintendo&#x2019;s instead. Open up the Control Panel and click on &#x201C;Printers and other hardware&#x201D;. Make sure that your adapter is connected to your computer. On the left of the Control Panel there should be a menu with an option called &#x201C;System&#x201D;. Click on it. You should see a window open that says 'System Properties&#x2019; with some information about your computer. Click the Hardware tab and click on the 'Device Manager&#x2019; button.</p>
-<p>Find the item named 'Network Adapters&#x2019; and click on the + next to it. You should see the adapter connected to your computer, the same one you got the Device ID from. Right-click on yours and select Uninstall. This will uninstall the drivers for the adapter. When it&#x2019;s all done, unplug the adapter from your computer.</p>
-<h2 id="installing-the-nintendo-wifi-usb-connector-software">Installing the Nintendo Wifi USB Connector software</h2>
-<p>Now that you have patched Nintendo&#x2019;s software to use your adapter instead, it&#x2019;s time to install it. Open the program named 'setup&#x2019; and select your language. After installing some stuff it will ask you to connect your Nintendo Wifi USB connector. Plug in your adapter. If you did everything right, the installer will install it&#x2019;s own drivers and install the Nintendo Wifi software. If it can&#x2019;t detect your adapter, you might have put in the wrong Device ID (I did this the first time). You could also try another USB port.</p>
-<p>You can now use the Nintendo Wifi USB Connector program with your adapter! Now you can give your Nintendo DS, Wii, or 3DS a secure network of its own.</p>
-<p><em>This guide was based off of this one from <a href="http://forum.gbadev.org/viewtopic.php?t=7912&amp;postdays=0&amp;postorder=asc&amp;start=0">GBADev</a>, but it is adapted for both XP and Vista systems as well as some other changes. A huge amount of credit goes to them.</em></p>
+<h2>
+  Setting up the adapter
+</h2>
+<p>
+  So now you have your shiny (or not) USB adapter meant to give wired computers the gift of wireless internet. You need to download the driver for your adapter and get it working. Windows might do it for you when you plug it in, if not you need to install it from a CD that came with it (if one did) or find one on the internet. There are so many ways this can be done, so I can’t help with this much. I might be able to help if you put your USB adapter model in the comments, but no promises.
+</p>
+<h2>
+  Finding the Device ID
+</h2>
+<p>
+  Now that you have the drivers installed, we need to find out what the Device ID is. The Device ID is what your adapter identifies to Windows as, it’s like a name and every USB device has one. To find yours, open up the Control Panel and click on “Printers and other hardware”.
+</p>
+<p>
+  <b>Make sure that your adapter is connected to your computer.</b>
+</p>
+<p>
+  On the left of the Control Panel there should be a menu with an option called “System”. Click on it. You should see a window open that says ‘System Properties’ with some information about your computer. Click the Hardware tab and click on the 'Device Manager’ button.
+</p>
+<p>
+  This window lists every single device connected to your computer. Find the item named 'Network Adapters’ and click on the + next to it. You should see the adapter connected to your computer, for example I bought a D-Link adapter so mine says ’D-Link DWL-G122 REV.B’. Right-click on yours and select Properties. Now click on Details and select 'Device Instance ID’. It should read something like:
+</p>
+<p>
+  USB\VID_2001&amp;PID_3C00\5&amp;2E155997&amp;0&amp;8
+</p>
+<p>
+  But all we need is this part:
+</p>
+<p>
+  USB\VID_2001&amp;PID_3C00
+</p>
+<p>
+  That is your device ID (not the one above, the one in your window). Write it down because you are going to need it later. That was the hard part, now for the easy stuff.
+</p>
+<h2>
+  Downloading Nintendo’s software
+</h2>
+<p>
+  Now we need to get Nintendo’s USB software. Go to their page
+</p>
+<p>
+  <a href="https://web.archive.org/web/20141008023351/http://www.nintendo.com:80/consumer/wfc/en_na/customersupport/downloadUSB.jsp">here</a>
+</p>
+<p>
+  and download the latest version (1.07 at the time of writing). Unzip it with your favorite zip software and place the Nintendo_WFC_USB folder somewhere easy to get to. This folder contains the installer for the Nintendo Wifi USB Connector software, which we are going to modify to work with our adapter.
+</p>
+<h2>
+  Modifying text files
+</h2>
+<p>
+  Now we need to start modifying Nintendo’s software to work with our adapter. Open the folder you unzipped and you should see files like 'setup’ and a bunch of language files. Open the folder named 'U2G54’ inside of it. If you are using Windows 2000 or Windows XP, open the Win2000 folder. If you are using Windows Vista, open the WinVista folder. Now open the file named 'rt25usbap’ in Notepad. Look for the part that looks like this:
+</p>
+<p>
+  [Ralink]
+</p>
+<p>
+  ; DisplayName &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Section &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DeviceID
+</p>
+<p>
+  ; ———– &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ——- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ——–
+</p>
+<p>
+  %Ralink.DeviceDesc% = &nbsp; &nbsp; &nbsp; RALINK.ndi, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USB\VID_0411&amp;PID_008B
+</p>
+<p>
+  ;%Ralink.DeviceDesc% = &nbsp; &nbsp; &nbsp; RALINK.ndi, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USB\VID_148f&amp;PID_2570
+</p>
+<p>
+  and change it to look like this:
+</p>
+<p>
+  [Ralink]
+</p>
+<p>
+  ; DisplayName &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Section &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DeviceID
+</p>
+<p>
+  ; ———– &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ——- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ——–
+</p>
+<p>
+  %Ralink.DeviceDesc% = &nbsp; &nbsp; &nbsp; RALINK.ndi, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DeviceID
+</p>
+<p>
+  ;%Ralink.DeviceDesc% = &nbsp; &nbsp; &nbsp; RALINK.ndi, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USB\VID_148f&amp;PID_2570
+</p>
+<p>
+  You see where I put the bold and underlined word DeviceID? That’s where you have to put your device ID you got earlier. After you finish that, save and close the file. Now go back to the NintendoWFCReg folder (the one with the setup in it) and open 'INST’ in Notepad. Now follow the directions for your Windows version. If you are using Windows XP, look for the words that look like this:
+</p>
+<p>
+  [WINXP]
+</p>
+<p>
+  0,Nintendo Wi-Fi USB Connector
+</p>
+<p>
+  1,USB\VID_0411&amp;PID_008B
+</p>
+<p>
+  and change it to this:
+</p>
+<p>
+  [WINXP]
+</p>
+<p>
+  0,Nintendo Wi-Fi USB Connector
+</p>
+<p>
+  1,DeviceID
+</p>
+<p>
+  Again, put in your Device ID where the bold and underlined words are. If you are using Windows Vista, you have to find the part that looks like this:
+</p>
+<p>
+  [WINVISTA]
+</p>
+<p>
+  0,Nintendo Wi-Fi USB Connector
+</p>
+<p>
+  1,USB\VID_0411&amp;PID_008B
+</p>
+<p>
+  and change it to this:
+</p>
+<p>
+  [WINVISTA]
+</p>
+<p>
+  0,Nintendo Wi-Fi USB Connector
+</p>
+<p>
+  1,DeviceID
+</p>
+<p>
+  Make sure to put in your Device ID where the bold and underlined words are. We are done with separate instructions for Vista and XP users, so both XP and Vista users have to find this part in the same file:
+</p>
+<p>
+  NO_COMPLETE0=BUFFALO WLI-PCI-OP
+</p>
+<p>
+  NO_COMPLETE1=BUFFALO WLI-U2-KAMG54 Bootloader
+</p>
+<p>
+  and change it to look like this:
+</p>
+<p>
+  ;NO_COMPLETE0=BUFFALO WLI-PCI-OP
+</p>
+<p>
+  ;NO_COMPLETE1=BUFFALO WLI-U2-KAMG54 Bootloader
+</p>
+<p>
+  Now we are done with that file, so save and close it. Now open the folder named 'SoftAP’ and open the file named 'DEVREMOVE’ (not the program, the config file. the program has an icon of a laptop, open the other file.) in Notepad. Look for the part that says:
+</p>
+<p>
+  [WLAN]
+</p>
+<p>
+  #WLA-U2-G54
+</p>
+<p>
+  PID0=USB\VID_0411&amp;PID_008B
+</p>
+<p>
+  and change it to look like this:
+</p>
+<p>
+  [WLAN]
+</p>
+<p>
+  #WLA-U2-G54
+</p>
+<p>
+  PID0=DeviceID
+</p>
+<p>
+  Just like last time, replace the bold and underlined word with your Device ID. We are done editing files, now we have to edit the rest with a hex editor.
+</p>
+<h2>
+  Hex editing the last files
+</h2>
+<p>
+  We are nearly done, but it’s always the toughest before it’s over. Now we have to use a Hex Editor to edit the rest of the files. These directions will be for the XVI32 Hex Editor you may have downloaded in the 'Things you will need’ section. Open XVI32 and go to File &gt; Open and select the file named 'ICSAPI.DLL’.
+</p>
+<p>
+  Now you should see a bunch of random numbers and letters. This looks really complicated, but it’s basically the same thing as editing text files. Go to Search &gt; Find and click the bubble next to 'Text String’. In the box type in USB\ and click OK. On the right side of the window, XVI should have found the Device ID for Nintendo’s connector. You need to replace it with your own. Use the arrow keys to select which box you need to modify and type the correct letter and number. Make sure the letters in the Device ID (if there are any) are capitalized. The hex editor is case-sensitive.
+</p>
+<p>
+  After you are done, save the file and go to File &gt; Open again and choose the ICSAPI.DLL file in the folder named 'SoftAP’. Do the same thing as you did before and save it. After that go to File &gt; Open and choose the file named WIFICON.DLL in the SoftAP folder and do the same thing again. After that you are done editing files, now time for the easy stuff!
+</p>
+<h2>
+  Uninstalling the Wifi Adapter drivers
+</h2>
+<p>
+  Now you need to uninstall the drivers for your USB adapter, so we can use Nintendo’s instead. Open up the Control Panel and click on “Printers and other hardware”. Make sure that your adapter is connected to your computer. On the left of the Control Panel there should be a menu with an option called “System”. Click on it. You should see a window open that says 'System Properties’ with some information about your computer. Click the Hardware tab and click on the 'Device Manager’ button.
+</p>
+<p>
+  Find the item named 'Network Adapters’ and click on the + next to it. You should see the adapter connected to your computer, the same one you got the Device ID from. Right-click on yours and select Uninstall. This will uninstall the drivers for the adapter. When it’s all done, unplug the adapter from your computer.
+</p>
+<h2>
+  Installing the Nintendo Wifi USB Connector software
+</h2>
+<p>
+  Now that you have patched Nintendo’s software to use your adapter instead, it’s time to install it. Open the program named 'setup’ and select your language. After installing some stuff it will ask you to connect your Nintendo Wifi USB connector. Plug in your adapter. If you did everything right, the installer will install it’s own drivers and install the Nintendo Wifi software. If it can’t detect your adapter, you might have put in the wrong Device ID (I did this the first time). You could also try another USB port.
+</p>
+<p>
+  You can now use the Nintendo Wifi USB Connector program with your adapter! Now you can give your Nintendo DS, Wii, or 3DS a secure network of its own.
+</p>
+<p>
+  <i>This guide was based off of this one from <a href="http://forum.gbadev.org/viewtopic.php?t=7912&amp;postdays=0&amp;postorder=asc&amp;start=0">GBADev</a>, but it is adapted for both XP and Vista systems as well as some other changes. A huge amount of credit goes to them.</i>
+</p>

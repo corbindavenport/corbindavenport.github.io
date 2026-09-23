@@ -1,41 +1,83 @@
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="1080" data-orig-width="1920">
-<img src="../tumblr_media/825394531006644224_0.png" data-orig-height="1080" data-orig-width="1920" srcset="../tumblr_media/825394531006644224_0.png 75w, ../tumblr_media/825394531006644224_0.png 100w, ../tumblr_media/825394531006644224_0.png 250w, ../tumblr_media/825394531006644224_0.png 400w, ../tumblr_media/825394531006644224_0.png 500w, ../tumblr_media/825394531006644224_0.png 540w, ../tumblr_media/825394531006644224_0.png 640w, ../tumblr_media/825394531006644224_0.png 1280w, ../tumblr_media/825394531006644224_0.png 1920w" sizes="(max-width: 1280px) 100vw, 1280px" alt="Cleaning a YouTube link in the Terminal on a Mac" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="1080" data-orig-width="1920">
+    <img src="825394531006644224_0.png" data-orig-height="1080" data-orig-width="1920" alt="Cleaning a YouTube link in the Terminal on a Mac" srcset="825394531006644224_0.png 75w, 825394531006644224_0.png 100w, 825394531006644224_0.png 250w, 825394531006644224_0.png 400w, 825394531006644224_0.png 500w, 825394531006644224_0.png 540w, 825394531006644224_0.png 640w, 825394531006644224_0.png 1280w, 825394531006644224_0.png 1920w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
 </div>
-<p>I released the <a href="https://linkcleaner.app/">Link Cleaner web app</a> in 2021 as a way to quickly remove tracking data and other unnecessary parameters from URLs, primarily on mobile devices where text strings are difficult to edit. The web app now has over 25K monthly active users, with a recent spike that is partially due to <a href="https://www.youtube.com/shorts/8d1PpFac5n8">YouTube doxing people through its tracking links</a>.</p>
-<p>There have been some requests for versions of Link Cleaner that don&#x2019;t require opening a web app, like a browser extension or command-line application. Some functions also aren&#x2019;t feasible inside a web browser (at least with fully-local processing), but would be possible in other environments.</p>
-<p>For these use cases, I&#x2019;m excited to announce two projects based on Link Cleaner. The first is <strong>Link Cleaner JS</strong>, a JavaScript library for cleaning and un-shortening URLs. The second is <strong>Link Cleaner CLI</strong>, a command-line tool for Windows, Mac, and Linux based on the new library.</p>
-<h2 id="link-cleaner-js">Link Cleaner JS</h2>
-<p><a href="https://github.com/corbindavenport/link-cleaner-js#how-to-install-the-js-library">Link Cleaner JS</a> is a tiny JavaScript library for cleaning URLs, ready for use in any web app, browser extension, or Node.js application. It&#x2019;s a slightly-improved version of the URL processing from the Link Cleaner web app, which will now use the library.</p>
-<p>The URL processing starts by removing all parameters (the parts after the <strong>?</strong> character) from the input URL. It then restores any parameters known to be required for the given website, like the &#x201C;id&#x201D; parameter in YouTube video links. For some types of links, like products from Amazon or Walmart, it constructs an entirely new URL.</p>
+<p>
+  I released the <a href="https://linkcleaner.app/">Link Cleaner web app</a> in 2021 as a way to quickly remove tracking data and other unnecessary parameters from URLs, primarily on mobile devices where text strings are difficult to edit. The web app now has over 25K monthly active users, with a recent spike that is partially due to <a href="https://www.youtube.com/shorts/8d1PpFac5n8">YouTube doxing people through its tracking links</a>.
+</p>
+<p>
+  There have been some requests for versions of Link Cleaner that don’t require opening a web app, like a browser extension or command-line application. Some functions also aren’t feasible inside a web browser (at least with fully-local processing), but would be possible in other environments.
+</p>
+<p>
+  For these use cases, I’m excited to announce two projects based on Link Cleaner. The first is <b>Link Cleaner JS</b>, a JavaScript library for cleaning and un-shortening URLs. The second is <b>Link Cleaner CLI</b>, a command-line tool for Windows, Mac, and Linux based on the new library.
+</p>
+<h2>
+  Link Cleaner JS
+</h2>
+<p>
+  <a href="https://github.com/corbindavenport/link-cleaner-js#how-to-install-the-js-library">Link Cleaner JS</a> is a tiny JavaScript library for cleaning URLs, ready for use in any web app, browser extension, or Node.js application. It’s a slightly-improved version of the URL processing from the Link Cleaner web app, which will now use the library.
+</p>
+<p>
+  The URL processing starts by removing all parameters (the parts after the <b>?</b> character) from the input URL. It then restores any parameters known to be required for the given website, like the “id” parameter in YouTube video links. For some types of links, like products from Amazon or Walmart, it constructs an entirely new URL.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="478" data-orig-width="1140">
-<img src="../tumblr_media/825394531006644224_1.png" data-orig-height="478" data-orig-width="1140" srcset="../tumblr_media/825394531006644224_1.png 75w, ../tumblr_media/825394531006644224_1.png 100w, ../tumblr_media/825394531006644224_1.png 250w, ../tumblr_media/825394531006644224_1.png 400w, ../tumblr_media/825394531006644224_1.png 500w, ../tumblr_media/825394531006644224_1.png 540w, ../tumblr_media/825394531006644224_1.png 640w, ../tumblr_media/825394531006644224_1.png 1140w" sizes="(max-width: 1140px) 100vw, 1140px" alt="Example of cleaning and shortening a YouTube link" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="478" data-orig-width="1140">
+    <img src="825394531006644224_1.png" data-orig-height="478" data-orig-width="1140" alt="Example of cleaning and shortening a YouTube link" srcset="825394531006644224_1.png 75w, 825394531006644224_1.png 100w, 825394531006644224_1.png 250w, 825394531006644224_1.png 400w, 825394531006644224_1.png 500w, 825394531006644224_1.png 540w, 825394531006644224_1.png 640w, 825394531006644224_1.png 1140w" sizes="(max-width: 1140px) 100vw, 1140px">
+  </figure>
 </div>
-<p>You can also use the same options found in the Link Cleaner app, like shortening YouTube links, converting Bluesky and Twitter/X links to their <a href="https://github.com/FxEmbed/FxEmbed">FxEmbed</a> equivalents, and more.</p>
-<p>The library also has an asynchronous clean function, which first makes a request to the input URL to retrieve the destination page, <em>then</em> cleans that. This makes it possible to clean shortened URLs (like bit.ly or TinyURL links), post links shared from the Reddit mobile app, and other links that completely obscure the destination. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS">CORS</a> prevents this from working in a web browser, but it does work in Node.js and other environments.</p>
-<h2 id="link-cleaner-cli">Link Cleaner CLI</h2>
-<p><a href="https://github.com/corbindavenport/link-cleaner-js#how-to-install-the-cli">Link Cleaner CLI</a> is a command-line application that uses the JavaScript library in a Node.js runtime, allowing you to clean and un-shorten links on any Windows, macOS, or Linux system. It can be used in a terminal, or easily integrated into Bash scripts and other automations.</p>
+<p>
+  You can also use the same options found in the Link Cleaner app, like shortening YouTube links, converting Bluesky and Twitter/X links to their <a href="https://github.com/FxEmbed/FxEmbed">FxEmbed</a> equivalents, and more.
+</p>
+<p>
+  The library also has an asynchronous clean function, which first makes a request to the input URL to retrieve the destination page, <i>then</i> cleans that. This makes it possible to clean shortened URLs (like bit.ly or TinyURL links), post links shared from the Reddit mobile app, and other links that completely obscure the destination. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS">CORS</a> prevents this from working in a web browser, but it does work in Node.js and other environments.
+</p>
+<h2>
+  Link Cleaner CLI
+</h2>
+<p>
+  <a href="https://github.com/corbindavenport/link-cleaner-js#how-to-install-the-cli">Link Cleaner CLI</a> is a command-line application that uses the JavaScript library in a Node.js runtime, allowing you to clean and un-shorten links on any Windows, macOS, or Linux system. It can be used in a terminal, or easily integrated into Bash scripts and other automations.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="1018" data-orig-width="1576">
-<img src="../tumblr_media/825394531006644224_2.png" data-orig-height="1018" data-orig-width="1576" srcset="../tumblr_media/825394531006644224_2.png 75w, ../tumblr_media/825394531006644224_2.png 100w, ../tumblr_media/825394531006644224_2.png 250w, ../tumblr_media/825394531006644224_2.png 400w, ../tumblr_media/825394531006644224_2.png 500w, ../tumblr_media/825394531006644224_2.png 540w, ../tumblr_media/825394531006644224_2.png 640w, ../tumblr_media/825394531006644224_2.png 1280w, ../tumblr_media/825394531006644224_2.png 1576w" sizes="(max-width: 1280px) 100vw, 1280px" alt="Link Cleaner in the Terminal, cleaning Reddit and YouTube links and displaying the help message" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="1018" data-orig-width="1576">
+    <img src="825394531006644224_2.png" data-orig-height="1018" data-orig-width="1576" alt="Link Cleaner in the Terminal, cleaning Reddit and YouTube links and displaying the help message" srcset="825394531006644224_2.png 75w, 825394531006644224_2.png 100w, 825394531006644224_2.png 250w, 825394531006644224_2.png 400w, 825394531006644224_2.png 500w, 825394531006644224_2.png 540w, 825394531006644224_2.png 640w, 825394531006644224_2.png 1280w, 825394531006644224_2.png 1576w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
 </div>
-<p>You just run &#x201C;linkcleaner&#x201D; in a terminal or script, followed by the URL you want to clean, and it outputs the cleaned version. The un-shorten mode is available by adding the &#x201C;-u&#x201D; or &#x201C;&#x2013;unshorten&#x201D; flags, and all the options from the library/web app are available as more flags. You can also use <a href="https://www.geeksforgeeks.org/linux-unix/piping-in-unix-or-linux/">piping</a>.</p>
-<p>Here&#x2019;s how you can use it to un-shorten and clean a URL in your clipboard on a Wayland-based Linux distribution, using <a href="https://man.archlinux.org/man/wl-clipboard.1">wl-clipboard</a>, and then copy the result back to the clipboard:</p>
-<pre><code>wl-paste | linkcleaner -u | wl-copy</code></pre>
-<p>Here&#x2019;s the same example on a macOS system:</p>
-<pre><code>pbpaste | linkcleaner -u | pbcopy</code></pre>
-<p>As a more advanced example, I made a Shortcut on my Mac that starts the CLI app, using input from the Services Menu or my clipboard, and then copies the result to the clipboard. That allows me to clean and un-shorten a link anywhere on my computer just by selecting and right-clicking it, or by pressing a keyboard shortcut with the URL in my clipboard.</p>
+<p>
+  You just run “linkcleaner” in a terminal or script, followed by the URL you want to clean, and it outputs the cleaned version. The un-shorten mode is available by adding the “-u” or “–unshorten” flags, and all the options from the library/web app are available as more flags. You can also use <a href="https://www.geeksforgeeks.org/linux-unix/piping-in-unix-or-linux/">piping</a>.
+</p>
+<p>
+  Here’s how you can use it to un-shorten and clean a URL in your clipboard on a Wayland-based Linux distribution, using <a href="https://man.archlinux.org/man/wl-clipboard.1">wl-clipboard</a>, and then copy the result back to the clipboard:
+</p>
+<p class="npf_chat">
+  wl-paste | linkcleaner -u | wl-copy
+</p>
+<p>
+  Here’s the same example on a macOS system:
+</p>
+<p class="npf_chat">
+  pbpaste | linkcleaner -u | pbcopy
+</p>
+<p>
+  As a more advanced example, I made a Shortcut on my Mac that starts the CLI app, using input from the Services Menu or my clipboard, and then copies the result to the clipboard. That allows me to clean and un-shorten a link anywhere on my computer just by selecting and right-clicking it, or by pressing a keyboard shortcut with the URL in my clipboard.
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="1344" data-orig-width="2148">
-<img src="../tumblr_media/825394531006644224_3.png" data-orig-height="1344" data-orig-width="2148" srcset="../tumblr_media/825394531006644224_3.png 75w, ../tumblr_media/825394531006644224_3.png 100w, ../tumblr_media/825394531006644224_3.png 250w, ../tumblr_media/825394531006644224_3.png 400w, ../tumblr_media/825394531006644224_3.png 500w, ../tumblr_media/825394531006644224_3.png 540w, ../tumblr_media/825394531006644224_3.png 640w, ../tumblr_media/825394531006644224_3.png 1280w, ../tumblr_media/825394531006644224_3.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px" alt="Shortcut on Mac that runs Link Cleaner and pastes the result to the clipboard" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="1344" data-orig-width="2148">
+    <img src="825394531006644224_3.png" data-orig-height="1344" data-orig-width="2148" alt="Shortcut on Mac that runs Link Cleaner and pastes the result to the clipboard" srcset="825394531006644224_3.png 75w, 825394531006644224_3.png 100w, 825394531006644224_3.png 250w, 825394531006644224_3.png 400w, 825394531006644224_3.png 500w, 825394531006644224_3.png 540w, 825394531006644224_3.png 640w, 825394531006644224_3.png 1280w, 825394531006644224_3.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
 </div>
-<p>I&#x2019;m sure similar workflows can be made on Windows (maybe with <a href="https://learn.microsoft.com/en-us/windows/powertoys/keyboard-manager">PowerToys</a>?) and Linux, as well as other use cases I haven&#x2019;t thought about. The possibilities are endless!</p>
-<h2 id="get-started">Get started</h2>
-<p>The Link Cleaner JS library and CLI application are in the same <a href="https://github.com/corbindavenport/link-cleaner-js">GitHub repository</a> and <a href="https://www.npmjs.com/package/link-cleaner-js">NPM package</a>. The Readme includes instructions for installing and using them.</p>
-<p>With these new options for using Link Cleaner, it&#x2019;s even easier to share clean and privacy-preserving links in your messages, social media posts, articles, and other communications. The JS library provides a shared infrastructure for my own projects&#x2014;which will hopefully include a Link Cleaner browser extension in the future&#x2014;while also allowing other software projects to add link cleaning as a feature.</p>
-<p>You can also just keep using the <a href="https://linkcleaner.app/">Link Cleaner web app</a>.</p>
+<p>
+  I’m sure similar workflows can be made on Windows (maybe with <a href="https://learn.microsoft.com/en-us/windows/powertoys/keyboard-manager">PowerToys</a>?) and Linux, as well as other use cases I haven’t thought about. The possibilities are endless!
+</p>
+<h2>
+  Get started
+</h2>
+<p>
+  The Link Cleaner JS library and CLI application are in the same <a href="https://github.com/corbindavenport/link-cleaner-js">GitHub repository</a> and <a href="https://www.npmjs.com/package/link-cleaner-js">NPM package</a>. The Readme includes instructions for installing and using them.
+</p>
+<p>
+  With these new options for using Link Cleaner, it’s even easier to share clean and privacy-preserving links in your messages, social media posts, articles, and other communications. The JS library provides a shared infrastructure for my own projects—which will hopefully include a Link Cleaner browser extension in the future—while also allowing other software projects to add link cleaning as a feature.
+</p>
+<p>
+  You can also just keep using the <a href="https://linkcleaner.app/">Link Cleaner web app</a>.
+</p>

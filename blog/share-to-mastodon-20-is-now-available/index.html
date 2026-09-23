@@ -1,19 +1,38 @@
-<p>Last year <a href="https://blog.corbin.io/post/706477898094264320/introducing-share-to-mastodon">I released Share to Mastodon</a>, a browser extension that made it easy to share links, pages, and text snippets to the <a href="https://joinmastodon.org/">Mastodon</a> social media network from your browser. It could use a few improvements, though, so I&#x2019;ve finished a new version!</p>
-
+<p>
+  Last year <a href="https://blog.corbin.io/post/706477898094264320/introducing-share-to-mastodon">I released Share to Mastodon</a>, a browser extension that made it easy to share links, pages, and text snippets to the <a href="https://joinmastodon.org/">Mastodon</a> social media network from your browser. It could use a few improvements, though, so I’ve finished a new version!
+</p>
 <div class="npf_row">
-<figure class="tmblr-full" data-orig-height="840" data-orig-width="1280">
-<img src="../tumblr_media/710160748534530048_0.jpg" data-orig-height="840" data-orig-width="1280" srcset="../tumblr_media/710160748534530048_0.jpg 75w, ../tumblr_media/710160748534530048_0.jpg 100w, ../tumblr_media/710160748534530048_0.jpg 250w, ../tumblr_media/710160748534530048_0.jpg 400w, ../tumblr_media/710160748534530048_0.jpg 500w, ../tumblr_media/710160748534530048_0.jpg 540w, ../tumblr_media/710160748534530048_0.jpg 640w, ../tumblr_media/710160748534530048_0.jpg 1280w" sizes="(max-width: 1280px) 100vw, 1280px" />
-</figure>
+  <figure class="tmblr-full" data-orig-height="840" data-orig-width="1280">
+    <img src="710160748534530048_0.jpg" data-orig-height="840" data-orig-width="1280" srcset="710160748534530048_0.jpg 75w, 710160748534530048_0.jpg 100w, 710160748534530048_0.jpg 250w, 710160748534530048_0.jpg 400w, 710160748534530048_0.jpg 500w, 710160748534530048_0.jpg 540w, 710160748534530048_0.jpg 640w, 710160748534530048_0.jpg 1280w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
 </div>
-<p>The core functionality is still the same: you click the extension&#x2019;s button, or right-click a page or link and select &#x201C;Share to Mastodon,&#x201D; or use the keyboard shortcut, and a small popup window appears with the text and link pre-filled. It&#x2019;s the same experience you get with the share buttons on sites, but integrated into the browser and customizable for whatever Mastodon server you use.</p>
-<p>The main improvement here is support for multiple servers. It&#x2019;s still a one-click action if you only use one Mastodon server, but if you save more than one in the settings, you pick the one you want from a customizable list.</p>
-<figure class="tmblr-full" data-orig-height="1080" data-orig-width="1920" data-npf="{&quot;type&quot;:&quot;video&quot;,&quot;provider&quot;:&quot;tumblr&quot;,&quot;url&quot;:&quot;../tumblr_media/710160748534530048_1.mp4&quot;,&quot;media&quot;:{&quot;url&quot;:&quot;../tumblr_media/710160748534530048_1.mp4&quot;,&quot;type&quot;:&quot;video/mp4&quot;,&quot;width&quot;:1920,&quot;height&quot;:1080}}">
-
+<p>
+  The core functionality is still the same: you click the extension’s button, or right-click a page or link and select “Share to Mastodon,” or use the keyboard shortcut, and a small popup window appears with the text and link pre-filled. It’s the same experience you get with the share buttons on sites, but integrated into the browser and customizable for whatever Mastodon server you use.
+</p>
+<p>
+  The main improvement here is support for multiple servers. It’s still a one-click action if you only use one Mastodon server, but if you save more than one in the settings, you pick the one you want from a customizable list.
+</p>
+<figure class="tmblr-full" data-orig-height="1080" data-orig-width="1920" data-npf='{"type":"video","provider":"tumblr","url":"710160748534530048_1.mp4","media":{"url":"710160748534530048_1.mp4","type":"video/mp4","width":1920,"height":1080}}'>
+  <video controls="controls" autoplay="autoplay" playsinline="playsinline" muted="muted"><source src="710160748534530048_1.mp4" type="video/mp4"></video>
 </figure>
-<p>The list of servers is synchronized with your browser, so you&#x2019;ll always have your favorites within reach. The extension still loads the compose window hosted on the server itself, so no special authentication or API access is required &#x2013; if your browser is already logged in, you&#x2019;re good to go.</p>
-<p>In addition to regular Mastodon servers, I&#x2019;ve added support for <a href="https://elk.zone/">Elk</a>, a popular web client for Mastodon. If you add Elk to your list of saved servers, you can share to it just like a regular Mastodon server. This could be expanded to other web Mastodon/Fediverse clients in the future, but I&#x2019;m not aware of any other popular options that support auto-filling text and links with just URL parameters.</p>
-<p>Besides multi-server support, most of the work in this release went towards Firefox compatibility. The original version for Firefox was <a href="https://github.com/corbindavenport/share-to-mastodon/tree/firefox">a backport to the earlier Manifest V2 standard</a>, because Mozilla had not shipped Manifest V3 support yet. That changed with <a href="https://www.mozilla.org/en-US/firefox/109.0/releasenotes/">Firefox 109</a>, so with a little bit of work, the extension now has a shared codebase across all browsers.</p>
-<p>There are a few other small tweaks in this release, like an outline around the toolbar/menu icons for easier visibility on dark mode, and some bug fixes. Share to Mastodon 2.0 is rolling out now, and you can <a href="https://github.com/corbindavenport/share-to-mastodon">check out the source code on GitHub</a>.</p>
-<p><strong><a href="https://chrome.google.com/webstore/detail/bibnjflclpdmbbcncejifemmbggkcjde">Download for Google Chrome</a></strong></p>
-<p><strong><a href="https://addons.mozilla.org/en-US/firefox/addon/share-to-mastodon/">Download for Mozilla Firefox</a></strong></p>
-<p><strong><a href="https://microsoftedge.microsoft.com/addons/detail/share-to-mastodon/ppgabkpkgkkcejnnmgckomgfdeanejnc">Download for Microsoft Edge</a></strong></p>
+<p>
+  The list of servers is synchronized with your browser, so you’ll always have your favorites within reach. The extension still loads the compose window hosted on the server itself, so no special authentication or API access is required – if your browser is already logged in, you’re good to go.
+</p>
+<p>
+  In addition to regular Mastodon servers, I’ve added support for <a href="https://elk.zone/">Elk</a>, a popular web client for Mastodon. If you add Elk to your list of saved servers, you can share to it just like a regular Mastodon server. This could be expanded to other web Mastodon/Fediverse clients in the future, but I’m not aware of any other popular options that support auto-filling text and links with just URL parameters.
+</p>
+<p>
+  Besides multi-server support, most of the work in this release went towards Firefox compatibility. The original version for Firefox was <a href="https://github.com/corbindavenport/share-to-mastodon/tree/firefox">a backport to the earlier Manifest V2 standard</a>, because Mozilla had not shipped Manifest V3 support yet. That changed with <a href="https://www.mozilla.org/en-US/firefox/109.0/releasenotes/">Firefox 109</a>, so with a little bit of work, the extension now has a shared codebase across all browsers.
+</p>
+<p>
+  There are a few other small tweaks in this release, like an outline around the toolbar/menu icons for easier visibility on dark mode, and some bug fixes. Share to Mastodon 2.0 is rolling out now, and you can <a href="https://github.com/corbindavenport/share-to-mastodon">check out the source code on GitHub</a>.
+</p>
+<p>
+  <b><a href="https://chrome.google.com/webstore/detail/bibnjflclpdmbbcncejifemmbggkcjde">Download for Google Chrome</a></b>
+</p>
+<p>
+  <b><a href="https://addons.mozilla.org/en-US/firefox/addon/share-to-mastodon/">Download for Mozilla Firefox</a></b>
+</p>
+<p>
+  <b><a href="https://microsoftedge.microsoft.com/addons/detail/share-to-mastodon/ppgabkpkgkkcejnnmgckomgfdeanejnc">Download for Microsoft Edge</a></b>
+</p>

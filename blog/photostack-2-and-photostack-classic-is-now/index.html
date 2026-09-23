@@ -1,23 +1,39 @@
-<p>I finished the first version of PhotoStack <a href="https://blog.corbin.io/post/185118375014/introducing-photostack">back in May 2019</a>, after a few months of development. It&#x2019;s a batch photo editor with the ability to make changes to many images at once, including adding watermarks, changing the file name and image format, removing EXIF data, and more.</p>
-<p>PhotoStack has become my most successful web application, and has been covered by outlets like <a href="https://www.androidpolice.com/2019/10/19/14-new-and-notable-android-apps-from-the-last-two-weeks-including-pokemon-wave-hello-photostack-and-hiitmi-interval-timer-10-5-19-10-19-19/">Android Police</a> (mostly because I work there), <a href="https://www.makeuseof.com/tag/free-modern-online-image-editors/">MakeUseOf</a>, <a href="https://www.tekcrispy.com/2020/03/16/photostack/">TekCrispy</a>, and others. Today, I&#x2019;m super happy to announce that PhotoStack 2 is out of beta!</p>
-
-<figure class="tmblr-full" data-orig-height="1536" data-orig-width="2048">
-<img src="../tumblr_media/615497636738433024_0.png" data-orig-height="1536" data-orig-width="2048" />
-</figure>
-<p>PhotoStack 2 may look very similar to the existing version, but it has been significantly re-written to take better advantage of newer browser features like <a href="https://t.umblr.com/redirect?z=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FPromise&amp;t=NWI0ODUyOWE1ODU4ZjNmZjMwNDRjNjQxNzBhNzVkYmY3YmIzN2I0NixTQmxtaXNFZA%3D%3D&amp;b=t%3Al1w6V9_GMCmOQJCKJeQ-oA&amp;p=https%3A%2F%2Fblog.corbin.io%2Fpost%2F190452073284%2Fphotostack-2-is-now-in-beta&amp;m=0">JavaScript Promises</a>. It&#x2019;s now a single-page web app, and thanks to Promises, the interface is more responsive during intensive tasks (like exporting).<br />
+<h1>
+  PhotoStack 2 (and PhotoStack Classic) is now available!
+</h1>
+<p>
+  I finished the first version of PhotoStack <a href="https://blog.corbin.io/post/185118375014/introducing-photostack">back in May 2019</a>, after a few months of development. It’s a batch photo editor with the ability to make changes to many images at once, including adding watermarks, changing the file name and image format, removing EXIF data, and more.
 </p>
-<p>The main improvement to the editor is that images are now resized using <a href="https://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fnodeca%2Fpica&amp;t=ZTllZWM2MmYyMzNkYjYxYTY1MmM1N2M4MDM0NzBlOWE2ZTMxNDE0YixTQmxtaXNFZA%3D%3D&amp;b=t%3Al1w6V9_GMCmOQJCKJeQ-oA&amp;p=https%3A%2F%2Fblog.corbin.io%2Fpost%2F190452073284%2Fphotostack-2-is-now-in-beta&amp;m=0">Pica.js</a>, which means photos scaled down in size will no longer appear heavily pixelated. The pixelation effect on earlier versions of PhotoStack was especially noticeable with screenshots and images with text watermarks. There&#x2019;s also a new sharpness setting for the resize function.</p>
+<p>
+  PhotoStack has become my most successful web application, and has been covered by outlets like <a href="https://www.androidpolice.com/2019/10/19/14-new-and-notable-android-apps-from-the-last-two-weeks-including-pokemon-wave-hello-photostack-and-hiitmi-interval-timer-10-5-19-10-19-19/">Android Police</a> (mostly because I work there), <a href="https://www.makeuseof.com/tag/free-modern-online-image-editors/">MakeUseOf</a>, <a href="https://www.tekcrispy.com/2020/03/16/photostack/">TekCrispy</a>, and others. Today, I’m super happy to announce that PhotoStack 2 is out of beta!
+</p>
+<figure class="tmblr-full" data-orig-height="1536" data-orig-width="2048">
+  <img src="615497636738433024_0.png" data-orig-height="1536" data-orig-width="2048">
+</figure>
+<p>
+  PhotoStack 2 may look very similar to the existing version, but it has been significantly re-written to take better advantage of newer browser features like <a href="https://t.umblr.com/redirect?z=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FPromise&amp;t=NWI0ODUyOWE1ODU4ZjNmZjMwNDRjNjQxNzBhNzVkYmY3YmIzN2I0NixTQmxtaXNFZA%3D%3D&amp;b=t%3Al1w6V9_GMCmOQJCKJeQ-oA&amp;p=https%3A%2F%2Fblog.corbin.io%2Fpost%2F190452073284%2Fphotostack-2-is-now-in-beta&amp;m=0">JavaScript Promises</a>. It’s now a single-page web app, and thanks to Promises, the interface is more responsive during intensive tasks (like exporting).<br>
+</p>
+<p>
+  The main improvement to the editor is that images are now resized using <a href="https://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fnodeca%2Fpica&amp;t=ZTllZWM2MmYyMzNkYjYxYTY1MmM1N2M4MDM0NzBlOWE2ZTMxNDE0YixTQmxtaXNFZA%3D%3D&amp;b=t%3Al1w6V9_GMCmOQJCKJeQ-oA&amp;p=https%3A%2F%2Fblog.corbin.io%2Fpost%2F190452073284%2Fphotostack-2-is-now-in-beta&amp;m=0">Pica.js</a>, which means photos scaled down in size will no longer appear heavily pixelated. The pixelation effect on earlier versions of PhotoStack was especially noticeable with screenshots and images with text watermarks. There’s also a new sharpness setting for the resize function.
+</p>
 <figure class="tmblr-full" data-orig-height="495" data-orig-width="798">
-<img src="../tumblr_media/615497636738433024_1.png" data-orig-height="495" data-orig-width="798" />
+  <img src="615497636738433024_1.png" data-orig-height="495" data-orig-width="798">
 </figure>
-<p>The watermark editor has also been significantly overhauled. Clicking the &#x2018;Manage watermarks&#x2019; button in the main editor now opens a popup containing a list of all saved watermarks - along with edit, delete, and export buttons for each. Also, you can now import multiple watermark files at once.</p>
+<p>
+  The watermark editor has also been significantly overhauled. Clicking the ‘Manage watermarks’ button in the main editor now opens a popup containing a list of all saved watermarks - along with edit, delete, and export buttons for each. Also, you can now import multiple watermark files at once.
+</p>
 <figure class="tmblr-full" data-orig-height="1536" data-orig-width="2048">
-<img src="../tumblr_media/615497636738433024_2.png" data-orig-height="1536" data-orig-width="2048" />
+  <img src="615497636738433024_2.png" data-orig-height="1536" data-orig-width="2048">
 </figure>
-<p>Other improvements in PhotoStack 2 include: keyboard shortcuts, printing support for previews, improved support for Safari, an icon badge for completed exports (<a href="https://web.dev/badging-api/">only on Chrome, for now</a>), a progress bar for exports, a &#x2018;Clear&#x2019; button for clearing imported images, and lots of bug fixes.</p>
-<p>Because PhotoStack 2 requires newer browser features, I&#x2019;m also releasing <a href="https://classic.photostack.app/">PhotoStack Classic</a>. The Classic app is a continuation of the 1.x codebase, so it works in browsers as old as Internet Explorer 10, while also containing some improvements from 2.x (like the Clear button). PhotoStack Classic will continue to be supported, and watermark files created in 2.0 can be opened in Classic, and vice-versa.</p>
+<p>
+  Other improvements in PhotoStack 2 include: keyboard shortcuts, printing support for previews, improved support for Safari, an icon badge for completed exports (<a href="https://web.dev/badging-api/">only on Chrome, for now</a>), a progress bar for exports, a ‘Clear’ button for clearing imported images, and lots of bug fixes.
+</p>
+<p>
+  Because PhotoStack 2 requires newer browser features, I’m also releasing <a href="https://classic.photostack.app/">PhotoStack Classic</a>. The Classic app is a continuation of the 1.x codebase, so it works in browsers as old as Internet Explorer 10, while also containing some improvements from 2.x (like the Clear button). PhotoStack Classic will continue to be supported, and watermark files created in 2.0 can be opened in Classic, and vice-versa.
+</p>
 <figure class="tmblr-full" data-orig-height="1536" data-orig-width="2048">
-<img src="../tumblr_media/615497636738433024_3.png" data-orig-height="1536" data-orig-width="2048" />
+  <img src="615497636738433024_3.png" data-orig-height="1536" data-orig-width="2048">
 </figure>
-<p>You can try out PhotoStack at <a href="https://photostack.app/">photostack.app</a>. There&#x2019;s also an <a href="https://play.google.com/store/apps/details?id=com.photostack.android">Android app</a> available, which is in the process of being updated to 2.0.<br />
+<p>
+  You can try out PhotoStack at <a href="https://photostack.app/">photostack.app</a>. There’s also an <a href="https://play.google.com/store/apps/details?id=com.photostack.android">Android app</a> available, which is in the process of being updated to 2.0.<br>
 </p>

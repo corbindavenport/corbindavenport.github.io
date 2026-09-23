@@ -1,11 +1,18 @@
-<p>Nexus Tools is one of my oldest-running projects. It&#x2019;s a script for installing ADB and Fastboot &#x2014; two applications commonly used for fixing/updating Android devices &#x2014; on Mac and Linux. I&#x2019;ve finally gotten around to finishing version 4.0!<br />
+<p>
+  Nexus Tools is one of my oldest-running projects. It’s a script for installing ADB and Fastboot — two applications commonly used for fixing/updating Android devices — on Mac and Linux. I’ve finally gotten around to finishing version 4.0!<br>
 </p>
-<p>First, Nexus Tools now downloads the <a href="https://developer.android.com/studio/releases/platform-tools">Android Platform Tools</a> package straight from Google&#x2019;s servers, instead of a GitHub mirror. When you run the installer, Nexus Tools downloads the zip file for your operating system, unzips it to a hidden folder in your home directory (~/.nexustools), and adds the folder to your path. In just a few seconds, you get everything you need to debug, fix, or repair any Android device.</p>
-
-<figure class="tmblr-full" data-orig-width="1325" data-orig-height="745">
-<img src="../tumblr_media/181510165559_0.png" data-orig-width="1325" data-orig-height="745" alt="image" />
+<p>
+  First, Nexus Tools now downloads the <a href="https://developer.android.com/studio/releases/platform-tools">Android Platform Tools</a> package straight from Google’s servers, instead of a GitHub mirror. When you run the installer, Nexus Tools downloads the zip file for your operating system, unzips it to a hidden folder in your home directory (~/.nexustools), and adds the folder to your path. In just a few seconds, you get everything you need to debug, fix, or repair any Android device.
+</p>
+<figure data-orig-width="1325" data-orig-height="745" class="tmblr-full">
+  <img src="181510165559_0.png" alt="image" data-orig-width="1325" data-orig-height="745">
 </figure>
-<p>Secondly, Nexus Tools now installs an adb_usb.ini file, so ADB can properly detect all Android devices over USB. The file is <a href="https://github.com/apkudo/adbusbini">maintained by apkudo</a>, and includes every imaginable vendor ID.</p>
-<p>Previous versions of Nexus Tools installed a UDEV rules file, which ensured ADB and Fastboot could work properly on Linux systems. However, the file was horrendously out of date, so Nexus Tools now installs a version <a href="https://github.com/M0Rf30/android-udev-rules/">regularly updated by M0Rf30</a>.</p>
-<p>This release also includes a few other minor features and bug fixes. You can try it out by following <a href="https://github.com/corbindavenport/nexus-tools/blob/master/README.md">the instructions on GitHub</a>.<br />
+<p>
+  Secondly, Nexus Tools now installs an adb_usb.ini file, so ADB can properly detect all Android devices over USB. The file is <a href="https://github.com/apkudo/adbusbini">maintained by apkudo</a>, and includes every imaginable vendor ID.
+</p>
+<p>
+  Previous versions of Nexus Tools installed a UDEV rules file, which ensured ADB and Fastboot could work properly on Linux systems. However, the file was horrendously out of date, so Nexus Tools now installs a version <a href="https://github.com/M0Rf30/android-udev-rules/">regularly updated by M0Rf30</a>.
+</p>
+<p>
+  This release also includes a few other minor features and bug fixes. You can try it out by following <a href="https://github.com/corbindavenport/nexus-tools/blob/master/README.md">the instructions on GitHub</a>.<br>
 </p>
