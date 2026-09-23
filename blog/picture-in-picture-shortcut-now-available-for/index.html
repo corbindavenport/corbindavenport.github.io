@@ -1,0 +1,34 @@
+<p>
+  Google Chrome and other modern web browsers have the ability to ‘pop out’ video players in sites into small floating windows, called <a href="https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture">Picture-in-Picture Mode</a>. This is an incredibly useful feature for videos that don’t need someone’s full attention, or when someone doesn’t want to waste screen space with the browser and page during multi-tasking.
+</p>
+<p>
+  However, Chrome doesn’t have a universal keyboard shortcut for Picture-in-Picture. Most sites don’t have a PiP button, so this useful feature requires two clicks to access (first opening Chrome’s media menu, then clicking the PiP button). I’ve now made an extension to fix this problem: <b>Picture-in-Picture Shortcut</b>.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="800" data-orig-width="1280">
+    <img src="679711769909968896_0.png" data-orig-height="800" data-orig-width="1280" alt="Screenshot of the extension" srcset="679711769909968896_0.png 75w, 679711769909968896_0.png 100w, 679711769909968896_0.png 250w, 679711769909968896_0.png 400w, 679711769909968896_0.png 500w, 679711769909968896_0.png 540w, 679711769909968896_0.png 640w, 679711769909968896_0.png 1280w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  This extension adds a keyboard shortcut, <b>Ctrl+Period</b>, which toggles Picture-in-Picture Mode for whatever video is currently playing in the tab you have open. You can use the shortcut again to place the video back in its page, or simply click the close button on the popup. Easy!
+</p>
+<p>
+  There are a few other Chrome extensions with similar functionality, but this one leverages existing web and extension APIs to be as lightweight and compatible as possible. The entire JavaScript codebase is <a href="https://github.com/corbindavenport/pip-shortcut/blob/1.0/background.js">less than 100 lines</a>, and it has full interoperability with Chrome’s own PiP button or any buttons a page itself might offer. For example, if you use Chrome’s own PiP button in the media controls popup to move a video to PiP, the keyboard shortcut can still put the video back in its original tab.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="800" data-orig-width="1280">
+    <img src="679711769909968896_1.png" data-orig-height="800" data-orig-width="1280" alt="Changing the keyboard shortcut" srcset="679711769909968896_1.png 75w, 679711769909968896_1.png 100w, 679711769909968896_1.png 250w, 679711769909968896_1.png 400w, 679711769909968896_1.png 500w, 679711769909968896_1.png 540w, 679711769909968896_1.png 640w, 679711769909968896_1.png 1280w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  Besides the keyboard shortcut, Picture-in-Picture Shortcut also overrides the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/disablePictureInPicture">disablePictureInPicture attribute</a> that pages use to block Chrome from showing its own PiP button. That means when you open PiP with the keyboard shortcut, you can use Picture-in-Picture with sites that normally block it, such as Hulu and Twitter. Firefox and most other browsers do the same thing for their Picture-in-Picture modes.
+</p>
+<p>
+  The extension also attempts to add play/pause controls to the Picture-in-Picture popup even when sites don’t support PiP, which doesn’t always work. For example, I’ve noticed that pausing a show from Hulu in PiP starts again after a few seconds. Sites that already support PiP work just fine.
+</p>
+<p>
+  You can download Picture-in-Picture Shortcut at the link below. I might bring it to Firefox at some point, but Firefox already only requires one click to move a video to PiP (as opposed to Chrome’s two clicks), and also ignores pages that want to block PiP just like this extension does. There’s less of a reason for this to exist on Firefox.
+</p>
+<p>
+  <a href="https://chrome.google.com/webstore/detail/ednlokepbjfieampgfdabeglnceoheni"><b>Download for Chrome</b></a>
+</p>

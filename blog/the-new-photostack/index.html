@@ -1,0 +1,56 @@
+<p>
+  <a href="https://photostack.app/">PhotoStack</a> is my web app for watermarking and editing several photos at once, and the last overhaul <a href="https://blog.corbin.io/post/615497636738433024/photostack-2-and-photostack-classic-is-now">was in 2020</a>. I’ve now updated it with a cleaner look and a more solid foundation.
+</p>
+<p>
+  I originally made PhotoStack because I needed to resize and watermark photos on a regular basis for my job at <i>Android Police</i>, and later <i>XDA</i>, and there was no cross-platform solution I was happy with. I was pretty happy with <a href="https://blog.corbin.io/post/185118375014/introducing-photostack">the initial public version</a>, and then I fixed some of the biggest problems with a v2 release in 2020.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1390" data-orig-width="2280">
+    <img src="721937668373626880_0.png" data-orig-height="1390" data-orig-width="2280" alt="PhotoStack screenshot" srcset="721937668373626880_0.png 75w, 721937668373626880_0.png 100w, 721937668373626880_0.png 250w, 721937668373626880_0.png 400w, 721937668373626880_0.png 500w, 721937668373626880_0.png 540w, 721937668373626880_0.png 640w, 721937668373626880_0.png 1280w, 721937668373626880_0.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  I don’t actually need to watermark or bulk edit photos very often these days, but PhotoStack is still an important project to me and at least a few other people. In the past month alone, it had somewhere around 1,000 unique users. It has also received positive press from <a href="https://www.computerworld.com/article/3622366/the-best-progressive-web-apps-for-productivity.html#:~:text=PhotoStack">ComputerWorld</a>, <a href="https://developer.chrome.com/fugu-showcase/#edit.photostack.app">Google’s Project Fugu showcase</a>, and other sources. And hey, maybe I’ll need it again on a daily basis at some point.
+</p>
+<p>
+  I’ve been working on a new major update for PhotoStack on and off over the past few months, and it’s now rolled out. <b>The new PhotoStack is mostly a visual and organizational overhaul, as well as some code cleanup, rather than focused on adding new features.</b>
+</p>
+<p>
+  Before now, PhotoStack was split between two domains: the landing page at photostack.app, and the editor at edit.photostack.app. Now, everything is on the same photostack.app site, with a Home page that acts as a landing page, and an Editor page with the photo editor. I’ve also moved Watermarks to its own page in the same navigation bar. This is pretty close to how the original PhotoStack worked — sometimes you get it right on the first try, I guess.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1360" data-orig-width="2280">
+    <img src="721937668373626880_1.png" data-orig-height="1360" data-orig-width="2280" alt="PhotoStack home page screenshot" srcset="721937668373626880_1.png 75w, 721937668373626880_1.png 100w, 721937668373626880_1.png 250w, 721937668373626880_1.png 400w, 721937668373626880_1.png 500w, 721937668373626880_1.png 540w, 721937668373626880_1.png 640w, 721937668373626880_1.png 1280w, 721937668373626880_1.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  The Home page right now just contains a few large buttons for jumping into the editor, watermarks manager, or the GitHub project, with general information about PhotoStack below that. Eventually, I do want to make it more useful, but it works fine for now.
+</p>
+<p>
+  The Editor isn’t too different from the editing screen in previous versions of PhotoStack, but there are a lot of small changes. There’s not a top and bottom bar anymore on mobile screens: instead, everything is crammed into the top bar, which only needs to be expanded on phone-sized displays. This gives you more room to view the preview and settings. I’ve spent a lot of time making this the best experience possible at all screen sizes.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1360" data-orig-width="2280">
+    <img src="721937668373626880_2.png" data-orig-height="1360" data-orig-width="2280" alt="PhotoStack editor screenshot" srcset="721937668373626880_2.png 75w, 721937668373626880_2.png 100w, 721937668373626880_2.png 250w, 721937668373626880_2.png 400w, 721937668373626880_2.png 500w, 721937668373626880_2.png 540w, 721937668373626880_2.png 640w, 721937668373626880_2.png 1280w, 721937668373626880_2.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  The export options now appear in the Export popup, instead of taking up room on the main sidebar. Print preview isn’t broken anymore, so when you try to print the editor page (or click the new “Print preview” link at the bottom of the sidebar), you can print out the current preview with none of the editor visible.
+</p>
+<p>
+  Finally, the Watermarks page is where you create, edit, export, and import watermarks for use in the main editor. This UI might change eventually to something closer to the main photo editor.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1360" data-orig-width="2280">
+    <img src="721937668373626880_3.png" data-orig-height="1360" data-orig-width="2280" alt="Watermarks page screenshot" srcset="721937668373626880_3.png 75w, 721937668373626880_3.png 100w, 721937668373626880_3.png 250w, 721937668373626880_3.png 400w, 721937668373626880_3.png 500w, 721937668373626880_3.png 540w, 721937668373626880_3.png 640w, 721937668373626880_3.png 1280w, 721937668373626880_3.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  You might have noticed the overall design of PhotoStack is different with this update. That’s because the UI framework used by PhotoStack and my other web apps, Bootstrap, now has a built-in dark theme! The new PhotoStack update uses that dark mode, which cuts back on the custom code and looks a bit cleaner.
+</p>
+<p>
+  This update also drops support for the PhotoStack wrapper app in the Google Play Store, which I unpublished a few months ago. Google makes it a pain in the ass to keep the wrapper updated and I don’t want to deal with that anymore. Installing PhotoStack through Chrome or another Chromium-based browser on Android gives you the same exact experience. If you have the Android app, or you try to visit the old domain, you’ll see a redirect message explaining the change.
+</p>
+<p>
+  With these changes, PhotoStack is cleaner, easier to navigate, and easier for me to maintain in the long term. There’s more work to be done, but now it’s better than ever. It’s available now at <a href="https://photostack.app/">photostack.app</a>., and the original version remains available at <a href="https://classic.photostack.app/">classic.photostack.app</a> for use on legacy web browsers.
+</p>

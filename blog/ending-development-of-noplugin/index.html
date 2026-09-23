@@ -1,0 +1,20 @@
+<p>
+  I released the first version of QuickChrome in early 2016, as a browser extension that replaced old QuickTime media embedded players in webpages with a modern HTML5 player. It was a convenient way (when it worked) to interact with old websites without using an old and insecure web browser. I have released 19 updates since then, and the extension has a combined total of ~27,000 active users across Chrome and Firefox under its current name of <a href="https://github.com/corbindavenport/noplugin">NoPlugin</a>.
+</p>
+<p>
+  NoPlugin is one of the most complex software projects I’ve ever worked on. It supports replacing embeds for Windows Media Player, QuickTime, Adobe Flash, and others, some of which can be played natively in the browser, and for the rest it downloads the content to your PC for playback with VLC or another application. NoPlugin even supports parsing media playlists, replacing legacy YouTube and Vimeo embedded players with their modern equivelents, and even a “compatibility mode” that tricks the page into displaying Flash content.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="800" data-orig-width="1280">
+    <img src="667791666532483072_0.png" data-orig-height="800" data-orig-width="1280" srcset="667791666532483072_0.png 75w, 667791666532483072_0.png 100w, 667791666532483072_0.png 250w, 667791666532483072_0.png 400w, 667791666532483072_0.png 500w, 667791666532483072_0.png 540w, 667791666532483072_0.png 640w, 667791666532483072_0.png 1280w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  However, NoPlugin is also a lot of work to maintain, and it has also received a steady stream of negative reviews for edge cases where it’s not helpful. Also, NoPlugin will likely need some time-intensive rewrites for <a href="https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/">Google’s new Manifest V3 requirements</a>, which will be enforced in the near future. Because of all that, I’m ending development on NoPlugin.
+</p>
+<p>
+  <b>NoPlugin 7.1, which I’m working on as I write this, will contain a few bug fixes and the removal of all Google Analytics code.</b> That will likely be the last NoPlugin update from me. NoPlugin should continue to work as-is until all browsers start enforcing Manifest V3 requirements.
+</p>
+<p>
+  If any browser extension developers are interested in continuing development of NoPlugin, I’m happy to help make that happen. If that’s you, send me an email at me@corbin.io.
+</p>

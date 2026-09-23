@@ -1,9 +1,10 @@
 ---
+layout: false
 pagination:
   data: redirects
   size: 1
-  alias: redirect
-permalink: "{{ redirect[0] }}"
+  alias: key
+permalink: "{{ key }}"
 ---
 
 <!doctype html>
@@ -13,7 +14,7 @@ permalink: "{{ redirect[0] }}"
 	<title>Redirecting...</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex" />
-    <meta http-equiv="refresh" content="0; url={{ redirect[1] }}" />
+    <meta http-equiv="refresh" content="0; url={{ redirects[key] }}" />
     <style>
         body {
             background: #FAFAFA;
@@ -34,6 +35,6 @@ permalink: "{{ redirect[0] }}"
 </head>
 <body>
     <p>You are being redirected...</p>
-    <p><br /><br />Didn't work? Click <a href="{{ redirect[1] }}">here</a> instead.</p>
+    <p><br /><br />Didn't work? Click <a href="{{ redirects[key] }}">here</a> instead.</p>
 </body>
 </html>

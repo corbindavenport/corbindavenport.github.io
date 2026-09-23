@@ -1,0 +1,31 @@
+<p>
+  Earlier today, I got a weird email from <a href="https://search.google.com/search-console/about">Google Search Console</a>, the service used for submitting domains and pages to Google’s search index and tracking their performance. It said that someone had been added as an owner for the subdomain test.corbin.io, which is under the corbin.io domain that I own and have registered through Google.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="644" data-orig-width="1366">
+    <img src="772417532865970176_0.png" data-orig-height="644" data-orig-width="1366" alt="To: Owner of corbin.io, Google has identified that [censored] has been added as an owner of http://test.corbin.io. Property owners can change critical settings that affect how Google Search interacts with your site. It's important that only people who need this level of access have owner status. Be sure to revoke this role when it's no longer needed." srcset="772417532865970176_0.png 75w, 772417532865970176_0.png 100w, 772417532865970176_0.png 250w, 772417532865970176_0.png 400w, 772417532865970176_0.png 500w, 772417532865970176_0.png 540w, 772417532865970176_0.png 640w, 772417532865970176_0.png 1280w, 772417532865970176_0.png 1366w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  I didn’t add anyone as a property owner, so I decided to check the test.corbin.io domain. It loaded what seemed to be a landing page for a slot gambling website in Indonesia, with the page written in Indonesian and some Chinese in the HTML comments.
+</p>
+<p>
+  I definitely didn’t set this up, and I didn’t even remember what test.corbin.io was originally hosting. I checked my domain registrar for that domain, Hover, and the test subdomain was set as a CNAME record redirecting to corbindavenport.github.io.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="845" data-orig-width="1519">
+    <img src="772417532865970176_1.png" data-orig-height="845" data-orig-width="1519" alt="Screenshot of the gambling landing page." srcset="772417532865970176_1.png 75w, 772417532865970176_1.png 100w, 772417532865970176_1.png 250w, 772417532865970176_1.png 400w, 772417532865970176_1.png 500w, 772417532865970176_1.png 540w, 772417532865970176_1.png 640w, 772417532865970176_1.png 1280w, 772417532865970176_1.png 1519w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  I set up test.corbin.io last year to host <a href="https://blog.corbin.io/post/752757825366835200/how-i-made-my-new-personal-website">the rewritten version of my personal website</a>, before it was ready to replace my main website at corbin.io. My domain was already set up to use <a href="https://pages.github.com/">GitHub Pages</a>, the static web hosting service, so I just made a CNAME record at that subdomain and set it as <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site">the custom domain for the test website’s repository</a>.
+</p>
+<p>
+  <b>Here’s what I think happened.</b> When my new website was done a few months ago, I moved it to the root domain (corbin.io) but left the test domain pointing to GitHub. Someone else set test.corbin.io as the custom directory for GitHub Pages on their repository, and since that domain was already pointing to GitHub, no setup was required on my part. I assume once I removed that custom domain from my own repository, the lock was released and GitHub allowed someone else to claim it.
+</p>
+<p>
+  I’m not sure how long ago this was set up, and I probably wouldn’t have caught it if the other person didn’t try to set up as a Search Console property. As far as I can tell, none of my accounts were ever compromised, and I already had two-factor authentication enabled on both GitHub and Hover. I deleted the subdomain record in Hover and the website no longer works.
+</p>
+<p>
+  Learn from my mistake: check your domains and subdomains for possible hijacking, especially if they’re pointing to GitHub, and remove GitHub from any domain records you aren’t actively using. I have mirrored <a href="https://gist.github.com/corbindavenport/241f6416bc2be452e448ea69569bd2b8">the website’s HTML code</a> to a GitHub Gist if anyone wants to do more digging.
+</p>

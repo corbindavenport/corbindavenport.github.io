@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Tech Tales
 permalink: "podcast/index.html"
 ---

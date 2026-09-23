@@ -1,0 +1,75 @@
+<p>
+  <a href="https://blog.corbin.io/2016/04/my-new-site.html">For the past two years</a>, I’ve hosted my personal site (first corbin.cc, then later corbin.io) on Blogger. At the time, I was using my site as a blog I rarely posted to, so it didn’t seem like a good idea to pay for a host that supported WordPress. Even though Google rarely touches it these days, Blogger is still a decent platform, especially since it supports custom HTML/CSS/JS.
+</p>
+<p>
+  Last month, I wanted to try replacing it with a static site. My main goal was to highlight my social media accounts more promiently. I also wanted it to load quickly and not use any JS/CSS frameworks, like&nbsp;<a href="https://getbootstrap.com/">Bootstrap</a>&nbsp;or&nbsp;<a href="https://bulma.io/">Bulma</a>. There’s nothing wrong with those projects, I just wanted to try writing my own solution from scratch.
+</p>
+<p>
+  First, I had to choose a host. I settled on&nbsp;<a href="https://pages.github.com/">GitHub Pages</a>, mostly because I’ve used it before. It allows you to host static web content (no PHP) for free, so it’s perfect for basic websites. By default, it will host your site as a sub-domain on GitHub, but you can use a custom domain as well.
+</p>
+<h2>
+  The design
+</h2>
+<p>
+  Next, I had to actually write the site. I use Visual Studio Code as my text editor of choice, and there's&nbsp;<a href="https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate">a plugin that will automatically generate HTML5 boilerplate</a>, with all the meta tags required for modern pages to work properly. The basic formatting of my site is pretty simple - a navigation bar with links, and a container for the rest of the content. The navigation is fixed, so it stays at the top of the screen, even while scrolling.
+</p>
+<figure data-orig-width="1600" data-orig-height="1200" class="tmblr-full">
+  <img src="177683469374_0.png" alt="image" data-orig-width="1600" data-orig-height="1200">
+</figure>
+<p>
+  On smaller screens, the navigation bar switches to a menu button, which shows links when tapped. This is pretty standard for mobile sites, but JavaScript is commonly used to render the menu. I wanted to try making a pure CSS solution, based on&nbsp;<a href="https://www.sitepoint.com/pure-css-off-screen-navigation-menu/">various</a>&nbsp;<a href="https://www.cssscript.com/basic-sidebar-navigation-pure-css/">tutorials</a>&nbsp;from other developers.
+</p>
+<p>
+  I won’t fully explain how it works here, but I do want to go over the basic premise. On some web forms, clicking the text next to a checkbox will toggle the box, because the text is inside a&nbsp;<a href="https://www.w3schools.com/tags/tag_label.asp">&lt;label&gt; tag</a>. With CSS, it’s possible to apply styles to a checkbox depending on if it’s checked or not, using&nbsp;<a href="https://www.w3schools.com/cssref/sel_checked.asp">the :checked selector</a>. It’s also possible to apply styles to an element adjacent to another element, using&nbsp;<a href="https://www.w3schools.com/cssref/sel_element_pluss.asp">the + selector</a>.
+</p>
+<p>
+  By combining these selectors, you can apply code to an HTML element next to a checked checkbox. With this in mind, I laid out the code for my navigation like this:
+</p>
+<div class="gist">
+  cde61b2fb3b4d2af9f437a06f6813a1c
+</div>
+<p>
+  The menu icon is inside a label element, so clicking it will click the hidden checkbox. Once the box is checked, this CSS code kicks in, which will slide out the menu:
+</p>
+<div class="gist">
+  c31b9e614c98f73367296dab5901df8a
+</div>
+<p>
+  Tapping the menu icon again will un-check the box, therefore hiding the navigation menu again. It’s a hacky solution, and definitely not ideal in all circumstances, but it worked out great in my case.
+</p>
+<figure data-orig-width="800" data-orig-height="600" class="tmblr-full">
+  <img src="177683469374_1.gif" alt="image" data-orig-width="800" data-orig-height="600">
+</figure>
+<p>
+  If you’re interested to see more of my site’s code, you can take a look&nbsp;<a href="https://github.com/corbindavenport/corbindavenport.github.io">here</a>.
+</p>
+<h2>
+  Going live and moving the blog
+</h2>
+<p>
+  With my new static site ready, it was time to move it from a subdomain on GitHub to my own domain. But first, I had to move my Blogger blog to a new location - I chose blog.corbin.io. For this, I just entered the new URL in Blogger’s ‘Basic’ settings, and it gave me two CNAME values to put into CloudFlare’s DNS records.
+</p>
+<p>
+  I expected all previous links to my blog would break by doing this, but CloudFlare actually provides a solution using&nbsp;<a href="https://www.cloudflare.com/features-page-rules/">Page Rules</a>. Since all blog posts started with a year (2016, 2017, etc), I set up a rule to redirect all URLs starting with “corbin.io/20*” to “blog.corbin.io/20*”, where * is the rest of the address. This meant that all existing links to my blog posts continued to work - thanks CloudFlare!
+</p>
+<figure data-orig-width="834" data-orig-height="548" class="tmblr-full">
+  <img src="177683469374_2.png" alt="image" data-orig-width="834" data-orig-height="548">
+</figure>
+<p>
+  Finally, it was time to move the new static site to my domain. I basically just followed&nbsp;<a href="https://gist.github.com/cvan/8630f847f579f90e0c014dc5199c337b">this tutorial</a>, and after waiting a while for the changes to take effect, my new site was live!
+</p>
+<h2>
+  Adding AMP pages
+</h2>
+<p>
+  As a bonus objective of sorts, I wanted to try implementing support for&nbsp;<a href="https://www.ampproject.org/">Google AMP</a>. I’m not a fan of the product in general (<a href="https://www.theregister.co.uk/2017/05/19/open_source_insider_google_amp_bad_bad_bad/">this article explains why</a>), but I wanted to get familiar with how it works. Simply put, AMP is a format for mobile static pages, designed to load quickly on mobile by cutting out most HTML and JS code. For sites adopting the technology, each page would have an AMP version, usually generated automatically.
+</p>
+<p>
+  The only reason AMP has taken off is because sites using it will rank higher in Google search results. Since my site’s home page is the only one shown in search results (at least on the first page of results), I only made an AMP version of that page. Since my site had almost no JavaScript to begin with, very few changes were required for the AMP version. I replaced the Google Analytics code with the AMP equivalent, and moved all CSS into the document head - that’s it.
+</p>
+<figure data-orig-width="1600" data-orig-height="900" class="tmblr-full">
+  <img src="177683469374_3.png" alt="image" data-orig-width="1600" data-orig-height="900">
+</figure>
+<p>
+  Once the&nbsp;<a href="https://www.ampproject.org/docs/getting_started/create/basic_markup">validation tool</a>&nbsp;gave me the thumbs up, I uploaded the AMP page and pasted the address into to&nbsp;<a href="https://search.google.com/test/amp">the online tester</a>. It showed what it would look like in search results, and had a button for submitting the page to Google. Two days later, the AMP page appeared in mobile search results. It looks identical to the main site, but it loads slightly quicker because&nbsp;<a href="https://corbin-io.cdn.ampproject.org/c/s/corbin.io/index-amp.html">Google caches it on their servers</a>.
+</p>

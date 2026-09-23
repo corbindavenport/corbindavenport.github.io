@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Rockwell
 permalink: "rockwell/index.html"
 ---

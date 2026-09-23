@@ -1,0 +1,31 @@
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="881" data-orig-width="1304">
+    <img src="760449212397830145_0.png" data-orig-height="881" data-orig-width="1304" alt="A social media post of a dog with the generated alt text: A dog wearing a Santa hat and a gray sweater sits beside a decorated Christmas tree and holiday gifts." srcset="760449212397830145_0.png 75w, 760449212397830145_0.png 100w, 760449212397830145_0.png 250w, 760449212397830145_0.png 400w, 760449212397830145_0.png 500w, 760449212397830145_0.png 540w, 760449212397830145_0.png 640w, 760449212397830145_0.png 1280w, 760449212397830145_0.png 1304w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  Earlier this year, I released <a href="https://github.com/corbindavenport/alt-text-creator/">Alt Text Creator</a>, a browser extension that can generate <a href="https://support.microsoft.com/en-us/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2">alternative text</a>&nbsp;for images by right-clicking them, using OpenAI’s GPT-4 with Vision model. The new v1.2 update is now rolling out, with support for OpenAI’s newer AI models and a new custom server option.
+</p>
+<p>
+  Alt Text Creator can now use OpenAI’s latest <a href="https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/">GPT-4o Mini</a>&nbsp;or GPT-4o AI models for processing images, which are faster and cheaper than the original GPT-4 with Vision model that the extension previously used (and will soon be deprecated by OpenAI). You should be able to generate alt text for several images with less than $0.01 in API billing. Alt Text Creator still uses an API key provided by the user, and uses the low resolution option, so it runs at the lowest possible cost with the user’s own API billing.
+</p>
+<p>
+  This update also introduces the ability to use a custom server instead of OpenAI. The LM Studio desktop application now supports downloading AI models with vision abilities to run locally, and can enable a web server to interact with the AI model using an OpenAI-like API. Alt Text Creator can now connect to that server (and theoretically other similar API limitations), allowing you to create alt text entirely on-device without paying OpenAI for API access.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1008" data-orig-width="1501">
+    <img src="760449212397830145_1.png" data-orig-height="1008" data-orig-width="1501" alt="Screenshot of LM Studio running an AI model web server for Alt Text Creator." srcset="760449212397830145_1.png 75w, 760449212397830145_1.png 100w, 760449212397830145_1.png 250w, 760449212397830145_1.png 400w, 760449212397830145_1.png 500w, 760449212397830145_1.png 540w, 760449212397830145_1.png 640w, 760449212397830145_1.png 1280w, 760449212397830145_1.png 1501w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  The feature is <a href="https://github.com/corbindavenport/alt-text-creator/blob/main/CUSTOM.md">a bit complicated to set up</a>, is slower than OpenAI’s API (unless you have an incredibly powerful PC), and requires leaving LM Studio open, so I don’t expect many people will use this option for now. I primarily tested it with the <a href="https://huggingface.co/second-state/Llava-v1.5-7B-GGUF">Llava 1.5 7B model</a>&nbsp;on a 16GB M1 Mac Mini, and it was about half the speed of an OpenAI request (8 vs 4 seconds for one example) while having generally lower-quality results.
+</p>
+<p>
+  You can download Alt Text Creator for Chrome and Firefox, and <a href="https://github.com/corbindavenport/alt-text-creator/">the source code is on GitHub</a>. I still want to look into support for other AI models, like Google’s Gemini, and the option for the user to change the prompt, but I wanted to get these changes out soon before GPT-4 Vision was deprecated.
+</p>
+<p>
+  <b><a href="https://chromewebstore.google.com/detail/alt-text-creator-with-gpt/nlahkceofkdggfgfpheakpaphdfplaio">Download for Google Chrome</a>&nbsp;</b>
+</p>
+<p>
+  <b><a href="https://addons.mozilla.org/en-US/firefox/addon/alt-text-creator/">Download for Mozilla Firefox</a>&nbsp;</b>
+</p>

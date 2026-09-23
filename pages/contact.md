@@ -1,5 +1,4 @@
 ---
-layout: layout.njk
 title: Contact Me
 permalink: "contact/index.html"
 ---

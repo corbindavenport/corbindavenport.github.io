@@ -1,0 +1,116 @@
+<p>
+  A few weeks ago, I finally got my hands on the Samsung Gear Live. It’s a smartwatch powered by Google’s new Android Wear operating system. And like pretty much everything I buy with a screen, I started messing around with it.
+</p>
+<p>
+  It turns out that Android Wear isn’t as far off from normal Android as I thought - with some caveats, it’s possible to install plain Android apps manually. So I published a video of&nbsp;<a href="http://youtu.be/ul6y0yOKthI">Minecraft Pocket Edition</a>&nbsp;on my watch, which became somewhat popular. I’ve made a few more videos since then, my most popular one (currently) being a demo of&nbsp;<a href="http://youtu.be/GZx-LJH5J_I">Windows 95</a>.
+</p>
+<p>
+  Many people have asked me for a tutorial, so I’m splitting this into a few sections for better organization. This part introduces you to ADB and manually installing applications. This will not void your warranty on your watch, and this works with any Android Wear watch. This may seem long, but that’s just because I’ve explained everything in great detail for beginner users.
+</p>
+<p>
+  Installing ADBADB, which stands for Android Debugging Bridge, is a program designed to help developers test their applications on Android devices. It’s also useful for recovering corrupted devices, and other power-user tasks.
+</p>
+<p>
+  If you have Windows,&nbsp;<a href="http://forum.xda-developers.com/showthread.php?t=2588979">this tool</a>&nbsp;works great for installing the ADB program (just follow the directions there). If you have a Mac or Linux computer, I’ve written my own ADB installer called&nbsp;<a href="https://github.com/corbindavenport/nexus-tools">Nexus Tools</a>&nbsp;(directions on the page). Once you have ADB installed (you can test by typing ‘ADB’ in the command line/terminal and see if it prints out help), you can continue to the next part.
+</p>
+<h2>
+  Enabling Debugging Mode
+</h2>
+<p>
+  Now go to the Settings app on whatever Android device your watch is paired to, go to About Phone, and keep tapping the 'Build number’ until a message says 'You are a developer!’. Go back to the main screen and press the new 'Developer’ menu item. Now tap 'USB Debugging’ to enable your computer to access your phone via ADB.
+</p>
+<p>
+  Now we have to do the same thing, but on the watch. On the home screen of your watch, say 'okay google, open settings’ or hold down the power button on your watch. Now that you are in Settings, scroll to 'About’ and press the 'Build number’ until you get the same 'You are now a developer!’ message.
+</p>
+<p>
+  Go to the Developer Options in the watch settings and tap 'ADB Debugging’ and 'Debugging over Bluetooth’. Finally, open the Android Wear app on your phone, press the Settings button on the top right, and check 'Debugging over Bluetooth’. It should say 'Host: disconnected’ and 'Target: connected’ after you’re done.
+</p>
+<p>
+  Tip: You might also want to turn on 'Stay awake while charging’, because when the screen turns off whatever app you have open will quit. This will keep the screen on as long as you have your watch plugged in (remember to turn it off after you’re done!
+</p>
+<h2>
+  Installing applications
+</h2>
+<p>
+  Now for the fun part - installing Android apps on your watch. Android applications are stored in files called Android Application Packages, or .apk files. You can find APK’s of popular Android apps on various websites, or copy them straight from your phone.
+</p>
+<p>
+  For this tutorial we will use a port of&nbsp;<a href="https://f-droid.org/repository/browse/?fdcategory=Games&amp;fdid=com.glTron&amp;fdpage=2">GL Tron</a>&nbsp;found on the F-Droid store.&nbsp;<a href="https://f-droid.org/repo/com.glTron_4.apk">Click here</a>&nbsp;to download the APK, then find it on your hard drive. If you’re on Windows, open the Command Line by opening the Start Menu and typing 'cmd’ in the search. On Mac and Linux, open the Terminal app.
+</p>
+<p>
+  Plug your phone into your computer via USB, type 'adb devices’ in the command and press enter. It should print something like this:
+</p>
+<p>
+  List of devices attached
+</p>
+<p>
+  03107f69d0218bba device
+</p>
+<p>
+  Congratulations, this means you have successfully connected your phone to your computer! But now we have to get your watch connected too. Type these commands into the command line (press enter after each command):
+</p>
+<p>
+  adb forward tcp:6666 localabstract:/adb-hubadb connect localhost:6666
+</p>
+<p>
+  Now do the same 'adb devices’ command. If you’ve followed these steps correctly, you should see a new device called 'localhost’:
+</p>
+<p>
+  03107f69d0218bba &nbsp; devicelocalhost:6666 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;device
+</p>
+<p>
+  Now let’s try installing that game. Type 'adb -e install’, a space, and then drag the APK file into the command line window. It should result in something like this:
+</p>
+<p>
+  adb -e install C:\Users\corbin\Downloads\com.glTron_4.apk
+</p>
+<p>
+  Now press enter and watch the magic. If you see 'Success’ you, well, succeeded! But how do you get to your apps? Well, you can tap on the home screen (bringing up the OK Google screen), and scroll down until you see Start. Tap it, and you will see all your apps (Android Wear, as well as the ones you installed) on the list. You can also install&nbsp;<a href="https://play.google.com/store/apps/details?id=com.npi.wearminilauncher&amp;hl=en">Wear Mini Launcher</a>&nbsp;on your phone to give easy access to your apps as well, or say 'ok google, run gl tron’ with voice.
+</p>
+<p>
+  You should see GL Tron on your apps list, tap it and press the left or right sides of the screen to control your lightcycle. Congratulations, you just installed an Android app on your watch!
+</p>
+<h2>
+  What works and what doesn’t
+</h2>
+<p>
+  The above tutorial also works for almost any application, except these:
+</p>
+<ul>
+  <li>
+    <strike>Apps that require internet access. Android Wear has no API for direct internet connections, so apps that require an internet connection for any reason either crash or report that you are not connected to the internet.</strike> This is no longer true, Android apps that require internet access can be used by disconnecting the host phone and making sure the watch is connected to WiFi.
+  </li>
+  <li>Apps with an action bar. An action bar is the top bar found in some apps, see <a href="http://developer.android.com/guide/topics/ui/actionbar.html">here</a> for examples on what they look like. In some cases, apps just hide the action bar instead of crashing.
+  </li>
+  <li>Apps that use video. Almost all video players (and apps that use video) crash on Android Wear, due to the lack of built-in video playback. Only some software-accelerated video players work, like QQPlayer.
+  </li>
+  <li>Apps that aren’t built for small screens: Some apps just really don’t like that you have a tiny screen, and either encounter bugs or have buttons cut off. Increasing the DPI with ADB may help, but it’s reset on the watch’s reboot and makes everything on the screen smaller.
+  </li>
+</ul>
+<h2>
+  Uninstalling Applications
+</h2>
+<p>
+  Uninstalling applications is a bit more work than installing them, I tried dozens of app removers and none of them seemed to work on Android Wear (it must be missing some libraries for that to work). Instead, you have to remove them on your computer via the ADB tool. Type this into the console:
+</p>
+<p>
+  adb -e shell pm list packages -3
+</p>
+<p>
+  This will list all the applications installed on your watch (not including system apps, which you can’t delete anyways). Find the ID of the app you want to un-install, for this example we will uninstall GL Tron. The ID will begin with something like com. or org. and end with the name of the app. So in this case, the ID is:
+</p>
+<p>
+  com.glTron
+</p>
+<p>
+  Now to un-install it, simply type this command and press enter:
+</p>
+<p>
+  adb -e uninstall com.glTron
+</p>
+<p>
+  You will notice that the ID of the app you want to un-install is at the end of the command. Once the command prints 'Success’, the app should be deleted from your watch.
+</p>
+<p>
+  <b><a href="/post/177684013109/hacking-android-wear-part-two/">Click here for Part Two</a></b>
+</p>

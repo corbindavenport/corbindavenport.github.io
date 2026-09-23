@@ -1,0 +1,21 @@
+<p>
+  Peek is a browser extension I created that lets you preview links to files by simply dragging your mouse over them. It was originally released in 2015, but I haven’t worked on it much since 2017. I’m excited to finally release version 3.0, a complete rewrite with a ton of added functionality!
+</p>
+<p>
+  The previous version of Peek was functional, but it had a lot of drawbacks. The library it was using to generate popups created all of them on the initial page load, instead of when they were actually needed, which meant Peek maxed out at 20 previews per page (or else the browser could freeze). Peek also heavily used jQuery, which increased the amount of system RAM the extension used in the background.
+</p>
+<figure data-orig-width="565" data-orig-height="283" class="tmblr-full">
+  <img src="186108556849_0.gif" alt="image" data-orig-width="565" data-orig-height="283">
+</figure>
+<p>
+  <b>Peek 3.0 is nearly a complete rewrite.</b> It now uses the Tippy.js library to render previews, which generates popups only when you scroll over a link — not when the page is first loaded. That means Peek no longer slows down the browser, and the maximum limit for previews on a single page is gone.
+</p>
+<p>
+  The new version also supports more types of links. <b>JPEG, PNG, GIF, SVG, PNG, APNG, ICO, and BMP images</b> can now be previewed, as well as <b>plain text (.txt) files</b> and <b>links to iCloud documents</b>.
+</p>
+<p>
+  There are lots of other smaller improvements as well. Firefox is now supported, detection for Google Docs links has been improved, PDF previews work better on Chrome and Opera, and many bugs have been fixed.
+</p>
+<p>
+  Peek 3.0 is rolling out now on the <a href="https://chrome.google.com/webstore/detail/peek/bfpogemllmpcpclnadighnpeeaegigjk?hl=en">Chrome Web Store</a> and <a href="https://addons.opera.com/en/extensions/details/peek/">Opera add-ons</a> site. The Firefox version is currently under review, and should go live <a href="https://addons.mozilla.org/en-US/firefox/addon/peek-preview/">here</a> when it’s ready.<br>
+</p>

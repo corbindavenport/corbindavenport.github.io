@@ -1,0 +1,20 @@
+<p>
+  <a href="https://github.com/corbindavenport/nexus-tools">Nexus Tools</a> is a simple installer for the <a href="https://developer.android.com/studio/releases/platform-tools">Android SDK Platform Tools</a> package, which includes <a href="https://developer.android.com/studio/command-line/adb.html">ADB</a>, Fastboot, <a href="https://developer.android.com/studio/profile/systrace-commandline.html">Systrace</a>, and other applications. It’s one of my oldest software projects, and still one of the most popular — almost 200 people have used it in just the past week. Since Nexus Tools is just a bash script, it works on macOS, most Linux distros, Chrome OS, and even Windows (through the Linux subsystem).
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="677" data-orig-width="1064">
+    <img src="656179711651758080_0.png" data-orig-height="677" data-orig-width="1064" alt="Screenshot of Nexus Tools running" srcset="656179711651758080_0.png 75w, 656179711651758080_0.png 100w, 656179711651758080_0.png 250w, 656179711651758080_0.png 400w, 656179711651758080_0.png 500w, 656179711651758080_0.png 540w, 656179711651758080_0.png 640w, 656179711651758080_0.png 1064w" sizes="(max-width: 1064px) 100vw, 1064px">
+  </figure>
+</div>
+<p>
+  Google doesn’t distribute ARM-native builds of the SDK Platform Tools yet, so when Nexus Tools is run on an ARM-based Mac computer, the apps have to run in Apple’s Rosetta 2 compatibility layer. This normally works fine, but I didn’t know that Rosetta isn’t turned on by default on ARM Macs, and the prompt to enable it (which always works for GUI apps) sometimes doesn’t appear for command-line applications. This means if the platform tools were the first x86 applications you installed on your ARM Mac, they might not work at all.
+</p>
+<p>
+  Nexus Tools 4.7 fixes this issue by checking if Rosetta 2 is enabled on ARM Macs, and if not, the user is asked to enable it during the installation process. No more weird compatibility issues (hopefully)!
+</p>
+<p>
+  The update also fixes a bug where Nexus Tools would detect ADB and other applications as already installed if the .nexustools folder was blank. I’ve also updated the project’s readme page with a new compatibility table, which is easier to read.
+</p>
+<p>
+  You can check out Nexus Tools <a href="https://github.com/corbindavenport/nexus-tools">on GitHub</a>.
+</p>

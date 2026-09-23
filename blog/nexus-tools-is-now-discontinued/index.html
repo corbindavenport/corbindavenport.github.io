@@ -1,0 +1,90 @@
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1080" data-orig-width="1920">
+    <img src="809284475060174848_0.jpg" data-orig-height="1080" data-orig-width="1920" alt="A meme image of a person smiling over a grave. The grave says Nexus Tools, and the person is labelled as winget, brew, and linux repositories." srcset="809284475060174848_0.jpg 75w, 809284475060174848_0.jpg 100w, 809284475060174848_0.jpg 250w, 809284475060174848_0.jpg 400w, 809284475060174848_0.jpg 500w, 809284475060174848_0.jpg 540w, 809284475060174848_0.jpg 640w, 809284475060174848_0.jpg 1280w, 809284475060174848_0.jpg 1920w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  I have officially ended development of <a href="https://github.com/corbindavenport/nexus-tools">Nexus Tools</a>, my installer for ADB, Fastboot, and other Android system tools for Windows, Mac, and Linux. It’s for a good reason, though: the alternatives are better and more accessible.
+</p>
+<p>
+  When I made the first version of Nexus Tools for Linux and Mac in 2013, Google did not provide ADB, Fastboot, and other common Android utilities as simple downloads. You had to install the Android SDK first, or download the binaries from somewhere else and add them to your system’s path. Some Linux distributions had them available as a package, but they were often out of date. Nexus Tools turned the installation into a one-step process, using a Bash script and mirrored copies of Google’s binaries.
+</p>
+<p>
+  Later versions added improved support for Chrome OS and the Windows Subsystem for Linux (at the time, <a href="https://www.poppastring.com/blog/adding-bash-on-windows-10new-dev-tools">Bash for Windows 10</a>), udev rules installation to fix USB detection issues on Linux, fixes for different shell environments, and other small improvements. Nexus Tools was covered by <a href="https://www.makeuseof.com/how-to-unlock-android-device-bootloader">MakeUseOf</a>, <a href="https://www.xda-developers.com/set-up-adb-and-fastboot-on-linux-mac-os-x-and-chrome-os-with-a-single-command/">XDA</a>, <a href="https://www.androidpolice.com/install-and-use-adb-on-windows-mac-linux-android-chromebooks-browser/">Android Police</a>, <a href="https://9to5google.com/2021/12/02/how-to-downgrade-from-android-12-to-android-11-on-google-pixel/#:~:text=Nexus%20Tools">9to5Google</a>, <a href="https://wccftech.com/set-android-adb-fastboot-mac-os/">Wccftech</a>, <a href="https://www.redmondpie.com/how-to-install-android-5.0-lollipop-on-nexus-5-using-mac-the-easy-way/">Redmond Pie</a>, and other outlets over the years. In 2021, I <a href="https://blog.corbin.io/post/661416060249128960/nexus-tools-5">rewrote it in Dart</a> and added support for Windows.
+</p>
+<p>
+  However, Nexus Tools gradually became unnecessary. In 2017, Google <a href="https://www.xda-developers.com/google-releases-separate-adb-and-fastboot-binary-downloads/">finally created an official download</a> for ADB and Fastboot without the Android SDK, and Nexus Tools switched to that method shortly afterwards. That download also made it easy for other package managers to offer ADB and Fastboot, and keep them updated along with all your other installed software.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="960" data-orig-width="1972">
+    <img src="809284475060174848_1.png" data-orig-height="960" data-orig-width="1972" alt="Graph showing Nexus Tools users from October 2021 to February 2026" srcset="809284475060174848_1.png 75w, 809284475060174848_1.png 100w, 809284475060174848_1.png 250w, 809284475060174848_1.png 400w, 809284475060174848_1.png 500w, 809284475060174848_1.png 540w, 809284475060174848_1.png 640w, 809284475060174848_1.png 1280w, 809284475060174848_1.png 1972w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  The easy availability of other methods, along with fewer breaking changes in new versions of Android, has contributed to Nexus Tools usage dropping over the years. Nexus Tools peaked at around 500 users per week in 2023, and now averages around 50 users per week.
+</p>
+<p>
+  Nexus Tools is cited in many guides and videos around Android modding and development, and I didn’t want to break those resources. If you run one of the Nexus Tools installation scripts today, you will see instructions for installing ADB and Fastboot with another package manager, such as Homebrew, Winget, APT, or DNF. The <a href="https://github.com/corbindavenport/nexus-tools/blob/main/README.md">Readme file in the GitHub repository</a> contains the same instructions.
+</p>
+<div class="npf_row">
+  <figure class="tmblr-full" data-orig-height="1225" data-orig-width="2350">
+    <img src="809284475060174848_2.png" data-orig-height="1225" data-orig-width="2350" alt="Nexus Tools script asking the user to install ADB and Fastboot with Winget" srcset="809284475060174848_2.png 75w, 809284475060174848_2.png 100w, 809284475060174848_2.png 250w, 809284475060174848_2.png 400w, 809284475060174848_2.png 500w, 809284475060174848_2.png 540w, 809284475060174848_2.png 640w, 809284475060174848_2.png 1280w, 809284475060174848_2.png 2048w" sizes="(max-width: 1280px) 100vw, 1280px">
+  </figure>
+</div>
+<p>
+  If you already have those applications installed on your system with Nexus Tools, the script will offer to delete those copies, so they don’t conflict with the other methods. There are also standalone uninstall scripts for Mac, Linux, and Windows in the repository.
+</p>
+<p>
+  Nexus Tools had a good run, but it’s turned into a package manager for one specific package, and it’s just not needed at this point.
+</p>
+<h2>
+  Nexus Tools statistics
+</h2>
+<p>
+  As a final farewell, here are some fun statistics about Nexus Tools, using the data collected from November 2023 to February 2026 through Plausible Analytics.
+</p>
+<p>
+  <b>Installations by platform</b>
+</p>
+<ul>
+  <li>Windows 64-bit x86: 23.4k
+  </li>
+  <li>macOS 64-bit x86: 7.9k
+  </li>
+  <li>macOS Apple Silicon: 6.8k
+  </li>
+  <li>Linux 64-bit x86: 3.2k
+  </li>
+  <li>ChromeOS 64-bit x86: 1.7k
+  </li>
+  <li>Windows Subsystem for Linux (WSL) 64-bit x86: 252
+  </li>
+  <li>Windows Subsystem for Linux (WSL) 64-bit ARM: 41
+  </li>
+</ul>
+<p>
+  <b>Installations by country</b>
+</p>
+<ul>
+  <li>United States: 5.9k
+  </li>
+  <li>Poland: 1.4k
+  </li>
+  <li>India: 1.3k
+  </li>
+  <li>United Kingdom: 1.2k
+  </li>
+  <li>Canada: 1k
+  </li>
+  <li>Italy: 976
+  </li>
+  <li>Germany: 814
+  </li>
+  <li>Vietnam: 580
+  </li>
+  <li>Russia: 620
+  </li>
+</ul>
+<p>
+  Bye, Nexus Tools. 👋
+</p>

@@ -4,6 +4,7 @@
     --text-color: #424242;
     --nav-link-color: #FFFFFF;
     --primary-bg: #FAFAFA;
+    --secondary-bg: #ECECEC;
     --nav-bg: #6FCF97;
     --link-color: #1591DC;
     --link-hover-color: #4BB8FA;
@@ -53,10 +54,31 @@ a:hover {
     color: var(--link-hover-color);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
 a,
 img {
     border: none;
     outline: none;
+}
+
+.note,
+pre:has(code) {
+    background: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+}
+
+iframe[src*="youtube.com"] {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: var(--border-radius);
 }
 
 /* Header and navigation */
@@ -198,11 +220,6 @@ table tr:last-of-type td:last-of-type {
     border-bottom-right-radius: var(--border-radius);
 }
 
-audio {
-    margin-top: 1rem;
-    width: 100%;
-}
-
 /* Medium devices */
 
 @media (min-width: 768px) {
@@ -245,6 +262,7 @@ audio {
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-bg: #262626;
+        --secondary-bg: #1C1C1C;
         --nav-bg: #1F6F5F;
         --text-color: #FFFFFF;
     }
