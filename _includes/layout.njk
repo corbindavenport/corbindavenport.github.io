@@ -26,9 +26,9 @@
 	<!-- Analytics -->
 	<script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
 	<!-- OpenGraph and meta description -->
-	{% if snippet %}
-		<meta name="description" content="{{ snippet }}">
-		<meta property="og:description" content="{{ snippet }}">
+	{% if excerpt %}
+		<meta name="description" content="{{ excerpt }}">
+		<meta property="og:description" content="{{ excerpt }}">
 	{% else %}
 		<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 		<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
@@ -58,6 +58,7 @@
 		<nav aria-label="Primary navigation">
 			<ul>
 				<li class="title"><a href="/">Corbin Davenport</a></li>
+				<li><a href="/blog">Blog</a></li>
 				<li><a href="/about">About</a></li>
 				<li><a href="/software">Software</a></li>
 				<li><a href="/podcast">Tech Tales</a></li>
@@ -70,8 +71,8 @@
 		{% if tags and "post" in tags %}
 			<div class="note">This is the new home of <b>The Spacebar</b> and <b>blog.corbin.io</b>. Please update your bookmarks and RSS feeds!</div>
 			<h1 class="blog-title">{{ title }}</h1>
-			{% if snippet %}
-				<h4>{{ snippet }}</h4>
+			{% if excerpt %}
+				<h4>{{ excerpt }}</h4>
 			{% endif %}
 			<p>{{ page.date | longDate }}</p>
 		{% elseif not isindex %}
@@ -81,7 +82,7 @@
 		{{ content | safe }}
 
 		{% if tags and "post" in tags %}
-		<div class="note">You can follow this blog on <a href="https://corbin.io/feed.xml">RSS</a>, or follow my personal accounts on <a href="https://bsky.app/profile/corbin.io" target="_blank">Bluesky</a>, <a href="https://social.corbin.io/@corbin" target="_blank">Fediverse/Mastodon</a>, or <a href="https://www.linkedin.com/in/corbindavenport/" target="_blank">LinkedIn</a>.</div>
+			<div class="note">You can follow this blog on <a href="https://corbin.io/feed.xml">RSS</a>, or follow my personal accounts on <a href="https://bsky.app/profile/corbin.io" target="_blank">Bluesky</a>, <a href="https://social.corbin.io/@corbin" target="_blank">Fediverse/Mastodon</a>, or <a href="https://www.linkedin.com/in/corbindavenport/" target="_blank">LinkedIn</a>.</div>
 		{% endif %}
 	</main>
 

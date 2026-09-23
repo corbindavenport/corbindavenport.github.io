@@ -152,16 +152,6 @@ module.exports = function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
-    // Blog snippets
-    eleventyConfig.addShortcode('excerpt', post => extractExcerpt(post));
-    function extractExcerpt(post) {
-        if (!post.templateContent) return '';
-        if (post.templateContent.indexOf('</p>') > 0) {
-            let end = post.templateContent.indexOf('</p>');
-            return post.templateContent.substr(0, end + 4);
-        }
-        return post.templateContent;
-    }
     // Short date format, like "8/19/2026"
     eleventyConfig.addFilter("shortDate", function (date) {
         return Intl.DateTimeFormat("en").format(date);
