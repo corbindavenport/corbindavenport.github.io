@@ -27,11 +27,13 @@
 	<!-- Analytics -->
 	<script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
 	<!-- OpenGraph and meta description -->
+	<meta property="og:site_name" content="Corbin Davenport">
 	<meta property="og:title" content="{{ title }}" />
 	<meta property="og:url" content="https://corbin.io{{ page.url }}" />
 	{% if tags and "post" in tags %}
 		<meta property="og:type" content="article" />
 		<meta property="article:author" content="https://corbin.io/about" />
+		<meta property="article:tag" content="{{ tags }}" />
 		<meta name="description" content="{{ excerpt if excerpt else (content | excerptFallback) }}">
 		<meta property="og:description" content="{{ excerpt if excerpt else (content | excerptFallback) }}">
 	{% else %}
