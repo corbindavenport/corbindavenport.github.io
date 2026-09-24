@@ -164,6 +164,15 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("isoDate", function (date) {
         return DateTime.fromJSDate(new Date(date)).toISO();
     });
+    // Generate fallback excerpt for a blog post
+    eleventyConfig.addFilter("excerptFallback", function (content) {
+        const dom = new JSDOM(content);
+        let text = dom.window.document.body.textContent.trim().split("\n")[0]
+        if (text.length > 150) {
+            text = text.substring(0, 145) + "..."
+        }
+        return text;
+    });
     // Generate RSS feeds
     eleventyConfig.addPlugin(rssPlugin);
     // Post-processing steps
