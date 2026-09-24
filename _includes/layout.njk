@@ -76,7 +76,11 @@
 			{% if excerpt %}
 				<h4>{{ excerpt }}</h4>
 			{% endif %}
-			<p>{{ page.date | longDate }}</p>
+			<p>
+				<i>
+					<time datetime="{{ page.date | isoDate }}">{{ page.date | longDate }}</time>
+				</i>
+			</p>
 			<hr />
 		{% elseif not isindex %}
 			<h1 class="page-title">{{ title }}</h1>
