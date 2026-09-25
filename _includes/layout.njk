@@ -32,7 +32,7 @@
 	<meta property="og:url" content="https://corbin.io{{ page.url }}" />
 	{% if tags and "post" in tags %}
 		<meta property="og:type" content="article" />
-		<meta property="article:author" content="https://corbin.io/about" />
+		<meta property="article:author" content="Corbin Davenport" />
 		<meta property="article:tag" content="{{ tags }}" />
 		<meta name="description" content="{{ excerpt if excerpt else (content | excerptFallback) }}">
 		<meta property="og:description" content="{{ excerpt if excerpt else (content | excerptFallback) }}">
@@ -40,6 +40,9 @@
 		<meta property="og:type" content="website">
 		<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 		<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
+	{% endif %}
+	{% if image %}
+		<meta property="og:image" content="https://corbin.io{{ image }}" />
 	{% endif %}
 	{% if date %}
 		<meta property="article:published_time" content="{{ page.date | isoDate }}">

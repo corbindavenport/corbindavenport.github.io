@@ -35,12 +35,15 @@ module.exports = function (eleventyConfig) {
     });
     // Set default layout
     eleventyConfig.addGlobalData("layout", "layout.njk");
-    // Render images in pages
+    // Use Eleventy image plugin for converting and rendering images
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         defaultAttributes: {
             alt: ""
         },
         formats: ["webp", "auto"],
+        sharpOptions: {
+            animated: true,
+        },
         htmlOptions: {
             imgAttributes: {
                 loading: "lazy",
@@ -48,6 +51,10 @@ module.exports = function (eleventyConfig) {
             }
         },
     });
+    // Copy video media attachments to each page's output location, because the Eleventy image plugin won't do it
+    eleventyConfig.addPassthroughCopy(["blog/**/*.mp4"], {
+		mode: "html-relative"
+	});
     // Add favicon to site
     eleventyConfig.addPassthroughCopy("favicon.ico");
     // Add robots.txt to site

@@ -54,9 +54,12 @@ a:hover {
     color: var(--link-hover-color);
 }
 
-img {
+img,
+video,
+audio {
     max-width: 100%;
     height: auto;
+    border-radius: var(--border-radius);
 }
 
 a,
@@ -78,6 +81,10 @@ iframe[src*="youtube.com"] {
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
     border-radius: var(--border-radius);
+}
+
+figure {
+    margin: 1em 0;
 }
 
 /* Header and navigation */
