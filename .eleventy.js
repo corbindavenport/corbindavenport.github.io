@@ -1,7 +1,4 @@
 import { DateTime } from "luxon";
-import fs from "node:fs/promises";
-import path from "node:path";
-import pluginRss from "@11ty/eleventy-plugin-rss";
 import Parser from "rss-parser";
 import { JSDOM } from "jsdom";
 
@@ -10,11 +7,8 @@ const parser = new Parser({
     timeout: 5000,
 });
 
-// Time zone for blog posts
+// Time zone for pages with dates
 const globalTimeZone = "America/New_York";
-
-// robots.txt list
-const robotsTxt = "https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt";
 
 // Eleventy configuration
 export default function (eleventyConfig) {
@@ -34,16 +28,6 @@ export default function (eleventyConfig) {
     });
     // Set default layout
     eleventyConfig.addGlobalData("layout", "layout.njk");
-    // Copy video media attachments to each page's output location
-    const mediaFiles = [
-        "blog/**/*.jpg",
-        "blog/**/*.png",
-        "blog/**/*.webp",
-        "blog/**/*.mp4"
-    ]
-    eleventyConfig.addPassthroughCopy(mediaFiles, {
-        mode: "html-relative"
-    });
     // Don't add the base README to the site
     eleventyConfig.ignores.add("README.md");
     // Add favicon to site
@@ -150,41 +134,8 @@ export default function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
-    // Long date format, like "Wednesday, August 19, 2026"
-    eleventyConfig.addFilter("longDate", function (date) {
-        return Intl.DateTimeFormat("en", { dateStyle: "full" }).format(date);
-    });
-    // Generate fallback excerpt for a blog post
-    eleventyConfig.addFilter("excerptFallback", function (content) {
-        const dom = new JSDOM(content);
-        let text = dom.window.document.body.textContent.trim().split("\n")[0]
-        if (text.length > 150) {
-            text = text.substring(0, 145) + "..."
-        }
-        return text;
-    });
-    // Generate RSS feeds
-    eleventyConfig.addPlugin(pluginRss, {
-        posthtmlRenderOptions: {
-            closingSingleTag: "slash"
-        },
-    });
     // Post-processing steps
     eleventyConfig.on("eleventy.after", async function ({ dir }) {
-        // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss
-        const source = path.join(dir.output, "feed.xml");
-        const dest = path.join(dir.output, "rss");
-        await fs.mkdir(path.dirname(dest), { recursive: true });
-        await fs.copyFile(source, dest);
-        // Add ai.robots.txt list to robots.txt
-        try {
-            const response = await fetch(robotsTxt);
-            const remoteRobotsTxt = await response.text();
-            const outputPath = path.join(dir.output, "robots.txt");
-            await fs.appendFile(outputPath, `\n\n# AI Crawlers (ai.robots.txt)\n${remoteRobotsTxt}`);
-        } catch (error) {
-            console.error("Failed to fetch ai.robots.txt list:", error);
-        }
         // Force exit on site builds, because there's sometimes a hanging process
         if (process.env.ELEVENTY_ENV === "production" || !process.argv.includes("--serve")) {
             console.log("Forcing exit...");

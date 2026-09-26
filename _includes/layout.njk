@@ -30,17 +30,9 @@
 	<meta property="og:site_name" content="Corbin Davenport">
 	<meta property="og:title" content="{{ title }}" />
 	<meta property="og:url" content="https://corbin.io{{ page.url }}" />
-	{% if tags and "post" in tags %}
-		<meta property="og:type" content="article" />
-		<meta property="article:author" content="Corbin Davenport" />
-		<meta property="article:tag" content="{{ tags }}" />
-		<meta name="description" content="{{ excerpt if excerpt else (content | excerptFallback) }}">
-		<meta property="og:description" content="{{ excerpt if excerpt else (content | excerptFallback) }}">
-	{% else %}
-		<meta property="og:type" content="website">
-		<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
-		<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
-	{% endif %}
+	<meta property="og:type" content="website">
+	<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
+	<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 	{% if date %}
 		<meta property="article:published_time" content="{{ page.date.toISOString() }}">
 	{% endif %}
@@ -49,8 +41,7 @@
 	<!-- Fediverse creator tag: https://rknight.me/blog/setting-up-mastodon-author-tags -->
 	<meta name="fediverse:creator" content="@corbin@social.corbin.io" />
 	<!-- RSS feeds -->
-	<!-- <link rel="alternate" type="application/rss+xml" title="Blog" href="https://corbin.io/feed.xml" /> -->
-	<link rel="alternate" type="application/rss+xml" title="Blog" href="https://blog.corbin.io/rss" />
+	<link rel="alternate" type="application/rss+xml" title="Corbin's Blog" href="https://blog.corbin.io/rss" />
 	<link rel="alternate" type="application/rss+xml" title="The Spacebar" href="https://www.spacebar.news/feed" />
 	<link rel="alternate" type="application/rss+xml" title="Tech Tales Podcast" href="https://feeds.soundcloud.com/users/soundcloud:users:971533159/sounds.rss" />
 </head>
@@ -60,7 +51,6 @@
 		<nav aria-label="Primary navigation">
 			<ul>
 				<li class="title"><a href="/">Corbin Davenport</a></li>
-				<!-- <li><a href="/blog">Blog</a></li> -->
 				<li><a href="/about">About</a></li>
 				<li><a href="/software">Software</a></li>
 				<li><a href="/podcast">Tech Tales</a></li>
@@ -70,27 +60,9 @@
 	</header>
 
 	<main>
-		{% if tags and "post" in tags %}
-			<div class="note">This is the new home of <b>blog.corbin.io</b>. Please update your bookmarks and RSS feeds!</div>
-			<h1 class="blog-title">{{ title }}</h1>
-			{% if excerpt %}
-				<h4>{{ excerpt }}</h4>
-			{% endif %}
-			<p>
-				<i>
-					<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleDateString('en-US', { dateStyle: 'full' }) }}</time>
-				</i>
-			</p>
-			<hr />
-		{% elseif not isindex %}
-			<h1 class="page-title">{{ title }}</h1>
-		{% endif %}
+		<h1 class="page-title">{{ title }}</h1>
 
 		{{ content | safe }}
-
-		{% if tags and "post" in tags %}
-			<div class="note">You can follow this blog on <a href="https://corbin.io/feed.xml">RSS</a>, or follow my personal accounts on <a href="https://bsky.app/profile/corbin.io" target="_blank">Bluesky</a>, <a href="https://social.corbin.io/@corbin" target="_blank">Fediverse/Mastodon</a>, or <a href="https://www.linkedin.com/in/corbindavenport/" target="_blank">LinkedIn</a>.</div>
-		{% endif %}
 	</main>
 
 </body>
