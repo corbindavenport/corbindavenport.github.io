@@ -1,15 +1,15 @@
-const { DateTime } = require("luxon");
-const fs = require("node:fs/promises");
-const path = require("node:path");
-const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
-const Parser = require("rss-parser");
+import { DateTime } from "luxon";
+import fs from "node:fs/promises";
+import path from "node:path";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import Parser from "rss-parser";
+import { JSDOM } from "jsdom";
+
 const parser = new Parser({
     headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" },
     timeout: 5000,
 });
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
 
 // Time zone for blog posts
 const globalTimeZone = "America/New_York";
@@ -18,7 +18,7 @@ const globalTimeZone = "America/New_York";
 const robotsTxt = "https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt";
 
 // Eleventy configuration
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
     // Set time zone for all date strings
     // Credit: https://www.11ty.dev/docs/dates/#change-a-projects-default-time-zone
     eleventyConfig.addDateParsing(function (dateValue) {
@@ -140,8 +140,8 @@ module.exports = function (eleventyConfig) {
     });
     // Set nofollow, noreferrer, noopener, and target blank attributes for all external links
     eleventyConfig.addTransform("update-links", async function (content) {
-        // Skip this step for links in redirect pages
-        if (this.inputPath.includes("redirects.njk")) {
+        // Skip this step for links in redirect pages, and non-HTML files
+        if ((!this.outputPath.endsWith(".html")) || this.inputPath.includes("redirects.njk")) {
             return content;
         }
         const dom = new JSDOM(content);
@@ -186,7 +186,11 @@ module.exports = function (eleventyConfig) {
         }
     });
     // Generate RSS feeds
-    eleventyConfig.addPlugin(rssPlugin);
+    eleventyConfig.addPlugin(pluginRss, {
+		posthtmlRenderOptions: {
+			closingSingleTag: "slash"
+		},
+	});
     // Post-processing steps
     eleventyConfig.on("eleventy.after", async function ({ dir }) {
         // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss

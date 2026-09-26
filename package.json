@@ -7,6 +7,7 @@
     "start": "npx @11ty/eleventy --serve --port=8081"
   },
   "keywords": [],
+  "type": "module",
   "author": "Corbin Davenport",
   "license": "None",
   "dependencies": {
