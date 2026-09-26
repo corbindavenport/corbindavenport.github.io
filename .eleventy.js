@@ -2,7 +2,6 @@ import { DateTime } from "luxon";
 import fs from "node:fs/promises";
 import path from "node:path";
 import pluginRss from "@11ty/eleventy-plugin-rss";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import Parser from "rss-parser";
 import { JSDOM } from "jsdom";
 
@@ -35,27 +34,16 @@ export default function (eleventyConfig) {
     });
     // Set default layout
     eleventyConfig.addGlobalData("layout", "layout.njk");
-    // Use Eleventy image plugin for converting and rendering images
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-        defaultAttributes: {
-            alt: ""
-        },
-        formats: ["webp", "auto"],
-        sharpOptions: {
-            animated: true,
-            limitInputPixels: 999999999999
-        },
-        htmlOptions: {
-            imgAttributes: {
-                loading: "lazy",
-                decoding: "async",
-            }
-        },
+    // Copy video media attachments to each page's output location
+    const mediaFiles = [
+        "blog/**/*.jpg",
+        "blog/**/*.png",
+        "blog/**/*.webp",
+        "blog/**/*.mp4"
+    ]
+    eleventyConfig.addPassthroughCopy(mediaFiles, {
+        mode: "html-relative"
     });
-    // Copy video media attachments to each page's output location, because the Eleventy image plugin won't do it
-    eleventyConfig.addPassthroughCopy(["blog/**/*.mp4"], {
-		mode: "html-relative"
-	});
     // Don't add the base README to the site
     eleventyConfig.ignores.add("README.md");
     // Add favicon to site
@@ -175,23 +163,12 @@ export default function (eleventyConfig) {
         }
         return text;
     });
-    // Get the rendered URL for the first image in a blog post
-    // This is used primarily for filling out the og:image meta tag
-    eleventyConfig.addFilter("findImage", function (content) {
-        const dom = new JSDOM(content);
-        const img = dom.window.document.querySelector("img[src]")
-        if (img) {
-            return [img.getAttribute("src"), img.getAttribute("alt")]
-        } else {
-            return ["",""]
-        }
-    });
     // Generate RSS feeds
     eleventyConfig.addPlugin(pluginRss, {
-		posthtmlRenderOptions: {
-			closingSingleTag: "slash"
-		},
-	});
+        posthtmlRenderOptions: {
+            closingSingleTag: "slash"
+        },
+    });
     // Post-processing steps
     eleventyConfig.on("eleventy.after", async function ({ dir }) {
         // Add duplicate RSS feed at /rss for redirects from https://blog.corbin.io/rss
