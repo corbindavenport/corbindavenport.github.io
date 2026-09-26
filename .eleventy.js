@@ -43,6 +43,7 @@ export default function (eleventyConfig) {
         formats: ["webp", "auto"],
         sharpOptions: {
             animated: true,
+            limitInputPixels: 999999999999
         },
         htmlOptions: {
             imgAttributes: {
