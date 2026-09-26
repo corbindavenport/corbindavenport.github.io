@@ -1,6 +1,7 @@
 ---
 title: Planr
 permalink: "planr/index.html"
+eleventyExcludeFromCollections: true
 ---
 
 # Planr has been discontinued

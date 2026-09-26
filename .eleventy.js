@@ -55,6 +55,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(["blog/**/*.mp4"], {
 		mode: "html-relative"
 	});
+    // Don't add the base README to the site
+    eleventyConfig.ignores.add("README.md");
     // Add favicon to site
     eleventyConfig.addPassthroughCopy("favicon.ico");
     // Add robots.txt to site
@@ -159,17 +161,9 @@ module.exports = function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
-    // Short date format, like "8/19/2026"
-    eleventyConfig.addFilter("shortDate", function (date) {
-        return Intl.DateTimeFormat("en").format(date);
-    });
     // Long date format, like "Wednesday, August 19, 2026"
     eleventyConfig.addFilter("longDate", function (date) {
         return Intl.DateTimeFormat("en", { dateStyle: "full" }).format(date);
-    });
-    // ISO date format, like "2026-08-19T00:00:00.000-04:00"
-    eleventyConfig.addFilter("isoDate", function (date) {
-        return DateTime.fromJSDate(new Date(date)).toISO();
     });
     // Generate fallback excerpt for a blog post
     eleventyConfig.addFilter("excerptFallback", function (content) {
@@ -179,6 +173,17 @@ module.exports = function (eleventyConfig) {
             text = text.substring(0, 145) + "..."
         }
         return text;
+    });
+    // Get the rendered URL for the first image in a blog post
+    // This is used primarily for filling out the og:image meta tag
+    eleventyConfig.addFilter("findImage", function (content) {
+        const dom = new JSDOM(content);
+        const img = dom.window.document.querySelector("img[src]")
+        if (img) {
+            return [img.getAttribute("src"), img.getAttribute("alt")]
+        } else {
+            return ["",""]
+        }
     });
     // Generate RSS feeds
     eleventyConfig.addPlugin(rssPlugin);

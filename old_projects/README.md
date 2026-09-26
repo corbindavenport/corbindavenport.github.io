@@ -1,1 +1,0 @@
-This folder contains landing pages for discontinued web apps.

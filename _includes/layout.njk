@@ -41,11 +41,8 @@
 		<meta name="description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 		<meta property="og:description" content="Corbin Davenport is a software developer, writer, and podcast host. He has worked at SerpApi, How-To Geek, XDA Developers, and other places.">
 	{% endif %}
-	{% if image %}
-		<meta property="og:image" content="https://corbin.io{{ image }}" />
-	{% endif %}
 	{% if date %}
-		<meta property="article:published_time" content="{{ page.date | isoDate }}">
+		<meta property="article:published_time" content="{{ page.date.toISOString() }}">
 	{% endif %}
 	<!-- Web Monetization: https://webmonetization.org/ -->
 	<link rel="monetization" href="https://corbin.io/support" />
@@ -81,7 +78,7 @@
 			{% endif %}
 			<p>
 				<i>
-					<time datetime="{{ page.date | isoDate }}">{{ page.date | longDate }}</time>
+					<time datetime="{{ page.date.toISOString() }}">{{ date.toLocaleDateString('en-US', { dateStyle: 'full' }) }}</time>
 				</i>
 			</p>
 			<hr />

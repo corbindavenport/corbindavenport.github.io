@@ -1,6 +1,7 @@
 ---
 title: Rockwell
 permalink: "rockwell/index.html"
+eleventyExcludeFromCollections: true
 ---
 
 # Rockwell has been discontinued
