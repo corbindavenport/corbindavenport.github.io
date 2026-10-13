@@ -9,3 +9,7 @@ Disallow: /superembed.js/*
 # Hidden pages
 User-agent: *
 Disallow: /portfolio*
+
+# Test
+User-agent: serpapi
+Disallow: *
