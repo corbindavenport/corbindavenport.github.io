@@ -17,11 +17,7 @@ I like reading, video games, fixing other people's computers, photography, Star 
 
 {% flickr %}
 
-### Recent blog posts
-
-{% rssFeed "https://www.spacebar.news/rss/" true 3 %}
-
-*You can follow The Spacebar with the [RSS feed](https://www.spacebar.news/rss-links/), the [Bluesky](https://bsky.app/profile/spacebar.news) and [Fediverse/Mastodon accounts](https://mastodon.social/@thespacebar), or the [email list](https://www.spacebar.news/subscribe).*
+*You can [follow me on Flickr](https://www.flickr.com/photos/corbindavenport/).*
 
 ### Recently watched movies & shows
 
