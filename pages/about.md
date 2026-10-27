@@ -17,13 +17,19 @@ I like reading, video games, fixing other people's computers, photography, Star 
 
 {% flickr %}
 
-*You can [follow me on Flickr](https://www.flickr.com/photos/corbindavenport/).*
+You can [follow me on Flickr](https://www.flickr.com/photos/corbindavenport/).
 
 ### Recently watched movies & shows
 
 {% rssFeed "https://letterboxd.com/corbindavenport/rss/" %}
 
-*You can [follow me on Letterboxd](https://letterboxd.com/corbindavenport/).*
+You can [follow me on Letterboxd](https://letterboxd.com/corbindavenport/).
+
+### Language progress
+
+{% duolingo %}
+
+You can [follow me on Duolingo](https://www.duolingo.com/profile/corbinthedav).
 
 ### Recent video appearances
 

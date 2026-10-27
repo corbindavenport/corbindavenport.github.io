@@ -23,6 +23,9 @@ jobs:
       run: npm install
 
     - name: Build site
+      env:
+        duolingo_id: ${{ secrets.DUOLINGO_ID }}
+        duolingo_cookie: ${{ secrets.DUOLINGO_COOKIE }}
       run: npx @11ty/eleventy --input=. --output=_site
 
     - name: Update pages artifact
