@@ -2,19 +2,8 @@ import { DateTime } from "luxon";
 import Parser from "rss-parser";
 import { JSDOM } from "jsdom";
 
-// Browser-like user agent string for fetch requests
-const globalUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-
-// Flag emojis for languages
-const langEmoji = {
-    "en": "🇬🇧",
-    "de": "🇩🇪",
-    "es": "🇪🇸",
-    "fr": "🇫🇷"
-}
-
 const parser = new Parser({
-    headers: { "User-Agent": globalUserAgent },
+    headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" },
     timeout: 5000,
 });
 
@@ -118,8 +107,8 @@ export default function (eleventyConfig) {
             html += '</div>'
             return html;
         } catch (e) {
-            console.error(`Error parsing Flickr feed:`, e);
-            return 'There was an error loading my photos.';
+            console.error(`Error parsing Flickr feed`, e);
+            return 'There was an error loading my photos, <a href="https://www.flickr.com/photos/corbindavenport/" target="_blank">check them out on Flickr</a> instead!';
         }
     });
     // Set nofollow, noreferrer, noopener, and target blank attributes for all external links
@@ -145,34 +134,6 @@ export default function (eleventyConfig) {
         var el = `<img src="${favicon}" alt="" style="width: 32px; height: 32px;" />`
         return el;
     });
-    // Function to display Duolingo information
-    eleventyConfig.addShortcode("duolingo", async function () {
-        try {
-            let html = "";
-            // Make request to Duolingo with cookie found in DUOLINGO_COOKIE environment variable
-            const duolingoUrl = `https://www.duolingo.com/2023-05-23/users/${process.env.DUOLINGO_ID}?fields=courses,trackingProperties`;
-            const duolingoHeaders = new Headers({
-                "Cookie": process.env.DUOLINGO_COOKIE,
-                "User-Agent": globalUserAgent
-            });
-            const duolingoResponse = await fetch(duolingoUrl, {
-                method: 'GET',
-                headers: duolingoHeaders
-            });
-            const duolingoData = await duolingoResponse.json();
-            // Display basic user info
-            html += `<p>Duolingo level ${duolingoData.trackingProperties.level}, ${duolingoData.trackingProperties.streak} day streak</p>`;
-            // Display info for each language
-            for (let lang of duolingoData?.courses) {
-                let flag = (lang.topic in langEmoji) ? langEmoji[lang.topic] : "";
-                html += `<p><b>${flag} ${lang.title}</b>: ${lang.xp} XP</p>`;
-            }
-            return html;
-        } catch (e) {
-            console.error(`Error parsing Duolingo progress:`, e);
-            return "There was an error loading my progress."
-        }
-    })
     // Post-processing steps
     eleventyConfig.on("eleventy.after", async function ({ dir }) {
         // Force exit on site builds, because there's sometimes a hanging process
